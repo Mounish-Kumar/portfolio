@@ -25,7 +25,7 @@ public class SpecificationBuilder {
 								current = cb.and(current, cb.equal(root.get(columnName), value));
 							}
 						} catch(Exception e) {
-							throw new PortfolioException(PortfolioErrorMessage.INVALID_COLUMN.getMessage() + " : " + columnName);
+							throw new PortfolioException(PortfolioMessage.INVALID_COLUMN.getMessage() + " : " + columnName);
 						}
 					}
 				}

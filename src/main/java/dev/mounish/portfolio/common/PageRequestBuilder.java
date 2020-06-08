@@ -10,7 +10,7 @@ public class PageRequestBuilder {
 	public static PageRequest createPageRequest(final SearchRequest searchRequest) {
 		PageRequest pageRequest = null;
 		if(searchRequest != null) {
-			int pageNumber = searchRequest.getPageNumber() != null ? searchRequest.getPageNumber() : 1;
+			int pageNumber = searchRequest.getPageNumber() != null ? searchRequest.getPageNumber() - 1 : 0;
 			int pageSize = searchRequest.getPageSize() != null ? searchRequest.getPageSize() : 10;
 			String sortColumn = StringUtils.hasText(searchRequest.getSortColumn()) ? searchRequest.getSortColumn() : "id";
 			Direction sortOrder =  (StringUtils.hasText(searchRequest.getSortOrder()) && "DESC".equalsIgnoreCase(searchRequest.getSortOrder()))

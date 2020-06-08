@@ -22,8 +22,8 @@ public class Document {
 	private Long id;
 	
 	@NotBlank(message = "Mandatory")
-	@Column(name = "DESCRIPTION")
-	private String description;
+	@Column(name = "KEY")
+	private String key;
 	
 	@NotBlank(message = "Mandatory")
 	@Column(name = "FILE_NAME")
@@ -45,12 +45,12 @@ public class Document {
 		this.id = id;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getKey() {
+		return key;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setKey(String key) {
+		this.key = key;
 	}
 
 	public String getFileName() {
@@ -79,7 +79,7 @@ public class Document {
 
 	@Override
 	public String toString() {
-		return "Document [id=" + id + ", description=" + description + ", fileName=" + fileName + ", fileContent="
+		return "Document [id=" + id + ", key=" + key + ", fileName=" + fileName + ", fileContent="
 				+ fileContent + ", creationDate=" + creationDate + "]";
 	}
 }
