@@ -1111,12 +1111,10 @@ body {
   display: -ms-grid;
   display: grid;
   height: 100%;
-  -ms-grid-rows: (3.5rem)[3] auto 3rem;
-      grid-template-rows: repeat(3, 3.5rem) auto 3rem;
   grid-row-gap: 1rem;
 }
 
-#contact .wrapper section:last-child form span {
+#contact .wrapper section:last-child form span.label {
   position: absolute;
   font-size: 0.75rem;
   padding: calc(0.5rem / 2) 0.5rem;
@@ -1145,7 +1143,7 @@ body {
   height: 100%;
 }
 
-#contact .wrapper section:last-child form input[type="submit"] {
+#contact .wrapper section:last-child form input[type="submit"], #contact .wrapper section:last-child form button {
   display: inline-block;
   height: 3rem;
   max-width: 10rem;
@@ -1157,5 +1155,9 @@ body {
   background-color: #ff1744;
   cursor: pointer;
   outline: none;
+}
+
+#contact .wrapper section:last-child form .error span.label, #contact .wrapper section:last-child form .error input[type="text"], #contact .wrapper section:last-child form .error textarea {
+  background-color: #ffcdd2;
 }
 /*# sourceMappingURL=main.css.map */

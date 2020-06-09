@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.mounish.portfolio.common.PageRequestBuilder;
-import dev.mounish.portfolio.common.PortfolioMessage;
 import dev.mounish.portfolio.common.PortfolioException;
+import dev.mounish.portfolio.common.PortfolioMessage;
 import dev.mounish.portfolio.common.ResponseEntityBuilder;
 import dev.mounish.portfolio.common.SearchRequest;
 import dev.mounish.portfolio.common.SpecificationBuilder;
@@ -28,6 +28,7 @@ import dev.mounish.portfolio.models.Message;
 import dev.mounish.portfolio.repositories.MessageRepository;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/v1/message")
 public class MessageController {
 	

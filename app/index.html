@@ -55,7 +55,8 @@
     <div id="home" class="container">
         <img loading="lazy" class="background" data-src="./assets/images/code.jpg" alt="Code">
         <picture>
-            <source media="(min-width: 768px) and (max-width: 1024px)" data-srcset="./assets/images/mounish_tablet.png" />
+            <source media="(min-width: 768px) and (max-width: 1024px)"
+                data-srcset="./assets/images/mounish_tablet.png" />
             <img loading="lazy" class="primary" data-src="./assets/images/mounish.png" alt="Mounish Kumar" />
         </picture>
         <div class="content">
@@ -278,24 +279,30 @@
             </section>
             <section>
                 <h1>Let's Connect</h1>
+                <span class="response-message success"></span>
+                <span class="response-message error"></span>
                 <form>
-                    <label>
-                        <span>Name</span>
+                    <label name="name">
+                        <span class="label">Name</span>
                         <input type="text">
+                        <span class="field-message error"></span>
                     </label>
-                    <label>
-                        <span>Email</span>
+                    <label name="email">
+                        <span class="label">Email</span>
                         <input type="text">
+                        <span class="field-message error"></span>
                     </label>
-                    <label>
-                        <span>Phone Number</span>
+                    <label name="mobile">
+                        <span class="label">Phone Number</span>
                         <input type="text">
+                        <span class="field-message error"></span>
                     </label>
-                    <label>
-                        <span>Message</span>
+                    <label name="message">
+                        <span class="label">Message</span>
                         <textarea></textarea>
+                        <span class="field-message error"></span>
                     </label>
-                    <input type="submit" value="Send">
+                    <button type="button" onclick="sendMessage()">Send</button>
                 </form>
             </section>
         </div>
@@ -303,9 +310,10 @@
 
 
     <script src="./scripts/font-awesome.js"></script>
-    
+    <script src="./scripts/jquery-3.5.1.min.js"></script>
     <script>
-        if('loading' in HTMLImageElement.prototype) {
+        // Lazy load images
+        if ('loading' in HTMLImageElement.prototype) {
             const images = document.querySelectorAll('img[loading="lazy"]');
             images.forEach(img => {
                 img.src = img.dataset.src;
@@ -315,8 +323,8 @@
             script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
             document.body.appendChild(script);
         }
-    </script>
-    <script>
+
+        // Make header small on scroll
         window.addEventListener("scroll", function () {
             let menu = document.getElementById('header');
             if (window.pageYOffset > 0) {
@@ -325,6 +333,66 @@
                 menu.classList.remove("scrolled");
             }
         })
+
+        // Save IP address
+        if(!localStorage.getItem("IP_ADDRESS")) {
+            $.getJSON("https://ipapi.co/json", function(data) {
+                localStorage.setItem("IP_ADDRESS", data.ip);
+            });
+        }
+
+        // Send message
+        function sendMessage() {
+            $(".response-message.success").html(""); // Remove success message
+            $(".response-message.error").html(""); // Remove error message
+            $('.field-message.error').html(""); // Remove field error message
+            $('form > label').removeClass("error"); // Remove field error class
+
+            const requestBody = {
+                name: $('[name="name"] > input').val(),
+                email: $('[name="email"] > input').val(),
+                mobile: $('[name="mobile"] > input').val(),
+                message: $('[name="message"] > textarea').val(),
+                ipAddress: localStorage.getItem("IP_ADDRESS")
+            };
+
+            $.ajax({
+                url: "http://localhost:8080/api/v1/message/send",
+                method: "POST",
+                data: JSON.stringify(requestBody),
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Content-Type": "application/json"
+                },
+                success: function (data, textStatus, jqXHR) {
+                    if(jqXHR.status === 200 && data && data.status === "SENT") {
+                        $(".response-message.success").html("Message sent successfully! We'll get back to you in 48 hours."); // Success message
+                        setTimeout(function() {
+                            $(".response-message.success").html("");
+                        }, 15000); // Remove success message after 15 seconds
+
+                        // Reset fields
+                        $('[name="name"] > input').val("");
+                        $('[name="email"] > input').val("");
+                        $('[name="mobile"] > input').val("");
+                        $('[name="message"] > textarea').val("");
+                    }
+                },
+                error: function (error) {
+                    const data = error && error.responseJSON;
+                    if(data) {
+                        if(data.message) $(".response-message.error").html(data.message); // Error message
+
+                        if(data.fieldErrorMessages && data.fieldErrorMessages.length > 0) {
+                            data.fieldErrorMessages.map(fieldErrorMessage => {
+                                $('[name="' + fieldErrorMessage.field + '"]').addClass("error"); // Add field error class
+                                $('[name="' + fieldErrorMessage.field + '"] > .field-message.error').html(fieldErrorMessage.message); // Field error message
+                            });
+                        }
+                    }
+                }
+            });
+        }
     </script>
 </body>
 
