@@ -60,6 +60,10 @@
   }
 }
 
+.hide {
+  display: none !important;
+}
+
 body {
   font-size: 1rem;
   color: #212121;
@@ -186,7 +190,7 @@ body {
   }
 }
 
-#header nav ul li a.selected i, #header nav ul li a.selected .label {
+#header nav ul li a.active i, #header nav ul li a.active .label {
   font-weight: 700;
   color: #ff1744;
 }
@@ -570,7 +574,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #f5f5f5;
+  background-color: #f5f5f5;
   z-index: 0;
 }
 
@@ -1114,15 +1118,30 @@ body {
   grid-row-gap: 1rem;
 }
 
-#contact .wrapper section:last-child form span.label {
-  position: absolute;
+#contact .wrapper section:last-child form label.error span.label, #contact .wrapper section:last-child form label.error input[type="text"], #contact .wrapper section:last-child form label.error textarea {
+  background-color: #ffcdd2;
+}
+
+#contact .wrapper section:last-child form label span {
   font-size: 0.75rem;
   padding: calc(0.5rem / 2) 0.5rem;
+}
+
+#contact .wrapper section:last-child form label span.label {
+  position: absolute;
   border-radius: 5px;
   background-color: #eee;
 }
 
-#contact .wrapper section:last-child form input[type="text"], #contact .wrapper section:last-child form textarea {
+#contact .wrapper section:last-child form label span.field-message {
+  display: block;
+}
+
+#contact .wrapper section:last-child form label span.field-message.error {
+  color: #ff4444;
+}
+
+#contact .wrapper section:last-child form label input[type="text"], #contact .wrapper section:last-child form label textarea {
   width: 100%;
   font-size: 1.25rem;
   padding: 0.5rem;
@@ -1133,14 +1152,45 @@ body {
   background-color: #eee;
 }
 
-#contact .wrapper section:last-child form input[type="text"] {
+#contact .wrapper section:last-child form label input[type="text"] {
   height: 3.5rem;
 }
 
-#contact .wrapper section:last-child form textarea {
+#contact .wrapper section:last-child form label textarea {
+  display: block;
   resize: none;
   min-height: 3.5rem;
   height: 100%;
+}
+
+#contact .wrapper section:last-child form .response-message {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: calc(0.5rem + 1.25rem + 0.5rem) auto;
+      grid-template-columns: calc(0.5rem + 1.25rem + 0.5rem) auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#contact .wrapper section:last-child form .response-message.success {
+  background-color: #00C851;
+}
+
+#contact .wrapper section:last-child form .response-message.error {
+  background-color: #ff4444;
+}
+
+#contact .wrapper section:last-child form .response-message .fa {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+}
+
+#contact .wrapper section:last-child form .response-message span {
+  font-size: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
 }
 
 #contact .wrapper section:last-child form input[type="submit"], #contact .wrapper section:last-child form button {
@@ -1155,9 +1205,5 @@ body {
   background-color: #ff1744;
   cursor: pointer;
   outline: none;
-}
-
-#contact .wrapper section:last-child form .error span.label, #contact .wrapper section:last-child form .error input[type="text"], #contact .wrapper section:last-child form .error textarea {
-  background-color: #ffcdd2;
 }
 /*# sourceMappingURL=main.css.map */
