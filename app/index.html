@@ -8,9 +8,64 @@
     <title>Mounish - Web Developer</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" />
     <link rel="stylesheet" href="css/main.css" />
+    <style>
+        :root {
+            --brand-color: #ff1744;
+        }
+
+        body #loader {
+            display: none;
+        }
+
+        .body-loading {
+            visibility: hidden;
+            background-color: var(--brand-color);
+            overflow: hidden;
+        }
+
+        .body-loading #loader {
+            visibility: visible;
+            display: grid;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            align-content: center;
+            justify-items: center;
+            background: linear-gradient(135deg, var(--brand-color), var(--brand-color), #ff8800, var(--brand-color), var(--brand-color));
+            background-size: 600% 600%;
+            background-position: right;
+            animation: gradient 1s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: right;
+            }
+            100% {
+                background-position: left;
+            }
+        }
+
+        .body-loading #loader img.logo {
+            width: 8rem;
+        }
+    </style>
+    <script>
+        // Show loader until page loads
+        document.onreadystatechange = function () {
+            if (document.readyState !== "complete") {
+                document.querySelector("body").classList.add("body-loading");
+            } else {
+                document.querySelector("body").classList.remove("body-loading");
+            }
+        };
+    </script>
 </head>
 
 <body>
+    <div id="loader">
+        <img class="logo" src="./assets/images/logo_white.png" alt="MK">
+    </div>
     <header id="header">
         <a href="#home">
             <img loading="lazy" class="logo" data-src="./assets/images/logo.png" alt="MK">
@@ -217,25 +272,38 @@
         <div class="wrapper horizontal-scroll-m">
             <section>
                 <p>August 2016 - Present</p>
-                <img loading="lazy" data-src="./assets/images/centrico.png" alt="Centrico" class="company-logo">
+                <a href="https://www.centrico.tech" target="_blank">
+                    <img loading="lazy" data-src="./assets/images/centrico.png" alt="Centrico" class="company-logo">
+                </a>
                 <h1>Associate Developer</h1>
                 <div class="clients">
-                    <p>Clients</p>
+                    <p>Clients I worked for</p>
                     <ul>
-                        <img loading="lazy" data-src="./assets/images/sella.jpg" alt="Sella">
-                        <img loading="lazy" data-src="./assets/images/hype.jpg" alt="Hype">
-                        <img loading="lazy" data-src="./assets/images/axerve.jpg" alt="Axerve">
+                        <a href="https://www.sella.it" target="_blank">
+                            <img loading="lazy" data-src="./assets/images/sella.jpg" alt="Sella">
+                        </a>
+                        <a href="https://www.hype.it" target="_blank">
+                            <img loading="lazy" data-src="./assets/images/hype.jpg" alt="Hype">
+                        </a>
+                        <a href="https://www.axerve.com/en" target="_blank">
+                            <img loading="lazy" data-src="./assets/images/axerve.jpg" alt="Axerve">
+                        </a>
                     </ul>
                 </div>
             </section>
             <section>
                 <p>April 2014 - July 2016</p>
-                <img loading="lazy" data-src="./assets/images/wipro.png" alt="Wipro Technologies" class="company-logo">
+                <a href="https://www.wipro.com/en-IN" target="_blank">
+                    <img loading="lazy" data-src="./assets/images/wipro.png" alt="Wipro Technologies"
+                        class="company-logo">
+                </a>
                 <h1>Project Engineer</h1>
                 <div class="clients">
-                    <p>Clients</p>
+                    <p>Clients I worked for</p>
                     <ul>
-                        <img loading="lazy" data-src="./assets/images/standard_bank.jpg" alt="Standard Bank">
+                        <a href="https://www.standardbank.co.za" target="_blank">
+                            <img loading="lazy" data-src="./assets/images/standard_bank.jpg" alt="Standard Bank">
+                        </a>
                     </ul>
                 </div>
             </section>
@@ -249,19 +317,27 @@
                 <h1>Contact Info</h1>
                 <ul class="content">
                     <li>
-                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:vmounishkumar@gmail.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
                         <span>vmounishkumar@gmail.com</span>
                     </li>
                     <li>
-                        <i class="fa fa-globe-asia"></i>
+                        <a href="https://www.mounish.dev" target="_blank">
+                            <i class="fa fa-globe-asia"></i>
+                        </a>
                         <span>www.mounish.dev</span>
                     </li>
                     <li>
-                        <i class="fa fa-phone-alt"></i>
+                        <a href="https://api.whatsapp.com/send?phone=+919994444988" target="_blank">
+                            <i class="fa fa-phone-alt"></i>
+                        </a>
                         <span>+91 999 4444 988</span>
                     </li>
                     <li>
-                        <i class="fa fa-map-marker-alt"></i>
+                        <a href="https://goo.gl/maps/JLvnPFKH7LFKa5LC7" target="_blank">
+                            <i class="fa fa-map-marker-alt"></i>
+                        </a>
                         <span>
                             247, Rice Mill Road<br>
                             Vinayagar Kovil Street 7<br>
@@ -271,10 +347,11 @@
                     </li>
                 </ul>
                 <ul class="icons">
-                    <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href=""><i class="fa fa-stack-overflow"></i></a></li>
-                    <li><a href=""><i class="fa fa-github"></i></a></li>
-                    <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Mounish-Kumar" target="_blank"><i class="fa fa-github"></i></a></li>
+                    <li><a href="mailto:vmounishkumar@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=+919994444988" target="_blank"><i
+                                class="fa fa-whatsapp"></i></a></li>
                 </ul>
             </section>
             <section>
@@ -308,7 +385,9 @@
                         <i class="fa fa-times-circle"></i>
                         <span></span>
                     </span>
-                    <button type="button" onclick="sendMessage()">Send</button>
+                    <!-- <button type="button" onclick="sendMessage()">Send</button> -->
+                    <button class="g-recaptcha" data-sitekey="6Lco56IZAAAAAPF2gX710nPTRtwIzPmOqMucfaRB"
+                        data-callback='sendMessage' data-action='submit'>Send</button>
                 </form>
             </section>
         </div>
@@ -317,6 +396,7 @@
 
     <script src="./scripts/font-awesome.js"></script>
     <script src="./scripts/jquery-3.5.1.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         // Lazy load images
         if ('loading' in HTMLImageElement.prototype) {
@@ -341,8 +421,8 @@
         });
 
         // Save IP address
-        if(!localStorage.getItem("IP_ADDRESS")) {
-            $.getJSON("https://ipapi.co/json", function(data) {
+        if (!localStorage.getItem("IP_ADDRESS")) {
+            $.getJSON("https://ipapi.co/json", function (data) {
                 localStorage.setItem("IP_ADDRESS", data.ip);
             });
         }
@@ -374,10 +454,10 @@
                     "Content-Type": "application/json"
                 },
                 success: function (data, textStatus, jqXHR) {
-                    if(jqXHR.status === 200 && data && data.status === "SENT") {
+                    if (jqXHR.status === 200 && data && data.status === "SENT") {
                         $(".response-message.success > span").html("Message sent successfully! We'll get back to you in 48 hours."); // Success message
                         $(".response-message.success").removeClass("hide"); // Show success message
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $(".response-message.success").addClass("hide");
                             $(".response-message.success > span").html("");
                         }, 15000); // Remove success message after 15 seconds
@@ -391,13 +471,13 @@
                 },
                 error: function (error) {
                     const data = error && error.responseJSON;
-                    if(data) {
-                        if(data.message) {
+                    if (data) {
+                        if (data.message) {
                             $(".response-message.error > span").html(data.message); // Error message
                             $(".response-message.success").removeClass("hide"); // Show success message
                         }
 
-                        if(data.fieldErrorMessages && data.fieldErrorMessages.length > 0) {
+                        if (data.fieldErrorMessages && data.fieldErrorMessages.length > 0) {
                             data.fieldErrorMessages.map(fieldErrorMessage => {
                                 $('[name="' + fieldErrorMessage.field + '"]').addClass("error"); // Add field error class
                                 $('[name="' + fieldErrorMessage.field + '"] > .field-message.error').html(fieldErrorMessage.message); // Field error message

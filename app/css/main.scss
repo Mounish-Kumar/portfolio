@@ -37,7 +37,7 @@
 }
 
 $colors: (
-    brand: #ff1744,
+    brand: var(--brand-color),
     primary-text: #212121
 );
 
@@ -54,6 +54,10 @@ $colors: (
     line-height: 1.5;
     word-break: break-word;
     list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 :root {
@@ -905,7 +909,7 @@ body {
                             span {
                                 // white-space: nowrap;
                                 color: #fff;
-                                
+
                                 @include desktop {
                                     font-size: 1.2rem;
                                 }
@@ -1007,7 +1011,7 @@ body {
 
                     .response-message {
                         display: grid;
-                        grid-template-columns: calc(#{$padding} + #{$font-size} + #{$padding}) auto;
+                        grid-template-columns: max-content auto;
                         align-items: center;
                         border-radius: $border-radius;
                         color: #fff;
@@ -1020,8 +1024,8 @@ body {
                             background-color: #ff4444;
                         }
 
-                        .fa {
-                            font-size: $font-size;
+                        .fa, .far {
+                            font-size: 2rem;
                             padding: $padding;
                         }
 

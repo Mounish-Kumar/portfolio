@@ -11,6 +11,10 @@
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 :root {
   scroll-behavior: smooth;
   --nav-height: 4rem;
@@ -186,13 +190,13 @@ body {
 
 @media (min-width: 1025px) and (min-width: 1025px) {
   #header nav ul li a:hover i, #header nav ul li a:hover .label {
-    color: #ff1744;
+    color: var(--brand-color);
   }
 }
 
 #header nav ul li a.active i, #header nav ul li a.active .label {
   font-weight: 700;
-  color: #ff1744;
+  color: var(--brand-color);
 }
 
 @media (max-width: 767px) {
@@ -504,10 +508,10 @@ body {
   display: inline-block;
   text-decoration: none;
   white-space: nowrap;
-  border: 3px solid #ff1744;
+  border: 3px solid var(--brand-color);
   border-radius: 6px;
   font-weight: 500;
-  color: #ff1744;
+  color: var(--brand-color);
   background-color: rgba(255, 255, 255, 0.95);
   cursor: pointer;
 }
@@ -528,7 +532,7 @@ body {
 
 #home .content .action a.primary {
   color: #fff;
-  background-color: #ff1744;
+  background-color: var(--brand-color);
 }
 
 #about {
@@ -828,7 +832,7 @@ body {
   grid-area: progress-bar;
   width: 100%;
   height: 3px;
-  background-color: #ff1744;
+  background-color: var(--brand-color);
 }
 
 #skills .wrapper section ul li img {
@@ -1023,7 +1027,7 @@ body {
 #contact .wrapper section:first-child {
   -ms-grid-rows: var(--page-heading-size) auto auto;
       grid-template-rows: var(--page-heading-size) auto auto;
-  background-color: #ff1744;
+  background-color: var(--brand-color);
 }
 
 @media (min-width: 1280px) {
@@ -1166,8 +1170,9 @@ body {
 #contact .wrapper section:last-child form .response-message {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: calc(0.5rem + 1.25rem + 0.5rem) auto;
-      grid-template-columns: calc(0.5rem + 1.25rem + 0.5rem) auto;
+  -ms-grid-columns: max-content auto;
+      grid-template-columns: -webkit-max-content auto;
+      grid-template-columns: max-content auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1183,8 +1188,8 @@ body {
   background-color: #ff4444;
 }
 
-#contact .wrapper section:last-child form .response-message .fa {
-  font-size: 1.25rem;
+#contact .wrapper section:last-child form .response-message .fa, #contact .wrapper section:last-child form .response-message .far {
+  font-size: 2rem;
   padding: 0.5rem;
 }
 
@@ -1202,7 +1207,7 @@ body {
   border: none;
   border-radius: 30px;
   color: #fff;
-  background-color: #ff1744;
+  background-color: var(--brand-color);
   cursor: pointer;
   outline: none;
 }
