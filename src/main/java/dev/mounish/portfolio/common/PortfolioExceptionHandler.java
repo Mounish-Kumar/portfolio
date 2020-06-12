@@ -43,7 +43,7 @@ public class PortfolioExceptionHandler {
 		List<FieldErrorMessage> fieldErrorMessages = fieldErrors.stream()
 				.map(fieldError -> new FieldErrorMessage(fieldError.getField(), fieldError.getDefaultMessage()))
 				.collect(Collectors.toList());
-		LOG.error(" ::: MethodArgumentNotValidException >> " + status.getReasonPhrase() + " >> " + fieldErrorMessages);
+		LOG.error(" ::: MethodArgumentNotValidException >> " + status.getReasonPhrase() + " >> ", fieldErrorMessages);
 		PortfolioResponse portfolioResponse = new PortfolioResponse(fieldErrorMessages);
 		return ResponseEntityBuilder.buildErrorResponse(portfolioResponse, status);
 	}

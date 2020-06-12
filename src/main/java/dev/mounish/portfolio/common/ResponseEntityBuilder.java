@@ -17,7 +17,7 @@ public class ResponseEntityBuilder {
 	}
 	
 	public static ResponseEntity<Object> buildSuccessResponse(Object object) {
-		LOG.debug(" ::: Success Response >> " + object);
+		LOG.debug(" ::: Success Response >> ", object);
 		if(object != null && !(object instanceof String)) {
 			return new ResponseEntity(object, HttpStatus.OK);
 		} else {
@@ -33,7 +33,7 @@ public class ResponseEntityBuilder {
 	}
 	
 	public static ResponseEntity<Object> buildErrorResponse(Object object, HttpStatus status) {
-		LOG.debug(" ::: Error Response >> " + status.getReasonPhrase() + " >> " + object);
+		LOG.debug(" ::: Error Response >> " + status.getReasonPhrase() + " >> ", object);
 		return new ResponseEntity(object, status);
 	}
 

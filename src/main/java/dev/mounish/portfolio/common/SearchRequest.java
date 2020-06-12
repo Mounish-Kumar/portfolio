@@ -12,7 +12,7 @@ public class SearchRequest {
 	
 	private String sortOrder;
 	
-	List<QueryParam> queries;
+	List<QueryParam> filters;
 
 	public Integer getPageNumber() {
 		return pageNumber;
@@ -46,18 +46,18 @@ public class SearchRequest {
 		this.sortOrder = sortOrder;
 	}
 
-	public List<QueryParam> getQueries() {
-		return queries;
+	public List<QueryParam> getFilters() {
+		return filters;
 	}
 
-	public void setQueries(List<QueryParam> queries) {
-		this.queries = queries;
+	public void setFilters(List<QueryParam> filters) {
+		this.filters = filters;
 	}
 
 	@Override
 	public String toString() {
 		return "SearchRequest [pageNumber=" + pageNumber + ", pageSize=" + pageSize + ", sortColumn=" + sortColumn
-				+ ", sortOrder=" + sortOrder + ", queries=" + queries + "]";
+				+ ", sortOrder=" + sortOrder + ", filters=" + filters + "]";
 	}
 	
 	

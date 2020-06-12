@@ -1,10 +1,8 @@
 function sendMessage() {
-    $(".response-message.success").addClass("hide"); // Hide success message
-    $(".response-message.success > span").html(""); // Empty success message
-    $(".response-message.error").addClass("hide"); // Hide error message
-    $(".response-message.error > span").html(""); // Emtpy error message
-    $('.field-message.error').addClass("hide"); // Hide field error message
-    $('.field-message.error').html(""); // Empty field error message
+    $(".response-message").addClass("hide"); // Hide message
+    $(".response-message > span").html(""); // Empty message
+    $('.field-message').addClass("hide"); // Hide field message
+    $('.field-message').html(""); // Empty field message
     $('form > label').removeClass("error"); // Remove field error class
 
     const requestBody = {
@@ -25,7 +23,7 @@ function sendMessage() {
         },
         success: function (data, textStatus, jqXHR) {
             if (jqXHR.status === 200 && data && data.status === "SENT") {
-                $(".response-message.success > span").html("Message sent successfully! We'll get back to you in 48 hours."); // Success message
+                $(".response-message.success > span").html("Message sent! We'll get back to you in 48 hours."); // Success message
                 $(".response-message.success").removeClass("hide"); // Show success message
                 setTimeout(function () {
                     $(".response-message.success").addClass("hide");
@@ -44,7 +42,7 @@ function sendMessage() {
             if (data) {
                 if (data.message) {
                     $(".response-message.error > span").html(data.message); // Error message
-                    $(".response-message.success").removeClass("hide"); // Show success message
+                    $(".response-message.error").removeClass("hide"); // Show error message
                 }
 
                 if (data.fieldErrorMessages && data.fieldErrorMessages.length > 0) {

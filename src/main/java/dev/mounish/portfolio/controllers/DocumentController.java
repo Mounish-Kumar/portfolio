@@ -42,7 +42,7 @@ public class DocumentController {
 	
 	@PostMapping
 	@ResponseBody ResponseEntity<Object> saveDocument(@Valid @RequestBody final Document document) {
-		LOG.debug(" ::: DocumentController >> saveDocument >> document: " + document);
+		LOG.debug(" ::: DocumentController >> saveDocument >> document : ", document);
 		ResponseEntity<Object> responseEntity = null;
 		Document savedDocument = documentRepository.save(document);
 		responseEntity = ResponseEntityBuilder.buildSuccessResponse(savedDocument);
@@ -51,11 +51,11 @@ public class DocumentController {
 	
 	@PostMapping("/search")
 	@ResponseBody ResponseEntity<Object> getDocuments(@RequestBody final SearchRequest searchRequest) {
-		LOG.debug(" ::: DocumentController >> getDocuments >> searchRequest: " + searchRequest);
+		LOG.debug(" ::: DocumentController >> getDocuments >> searchRequest : ", searchRequest);
 		ResponseEntity<Object> responseEntity = null;
 		PageRequest pageRequest = PageRequestBuilder.createPageRequest(searchRequest);
 		Page<Document> documents = null;
-		if(searchRequest.getQueries() == null || searchRequest.getQueries().isEmpty()) {
+		if(searchRequest.getFilters() == null || searchRequest.getFilters().isEmpty()) {
 			documents = documentRepository.findAll(pageRequest);
 		} else {
 			Specification<Document> specification = specificationBuilder.getSpecification(searchRequest);
@@ -64,6 +64,7 @@ public class DocumentController {
 		if(documents != null && documents.hasContent()) {
 			responseEntity = ResponseEntityBuilder.buildSuccessResponse(documents);
 		} else {
+			LOG.error(" ::: DocumentController >> getDocuments >> " + PortfolioMessage.NO_DATA_AVAILABLE.getMessage());
 			throw new PortfolioException(PortfolioMessage.NO_DATA_AVAILABLE.getMessage());
 		}
 		return responseEntity;
@@ -71,12 +72,13 @@ public class DocumentController {
 	
 	@DeleteMapping("/{id}")
 	@ResponseBody ResponseEntity<Object> deleteDocument(@PathVariable final Long id) {
-		LOG.debug(" ::: DocumentController >> deleteDocument >> id: " + id);
+		LOG.debug(" ::: DocumentController >> deleteDocument >> id : " + id);
 		ResponseEntity<Object> responseEntity = null;
 		if(documentRepository.existsById(id)) {
 			documentRepository.deleteById(id);
 			responseEntity = ResponseEntityBuilder.buildSuccessResponse();
 		} else {
+			LOG.error(" ::: DocumentController >> deleteDocument >> " + PortfolioMessage.ID_NOT_FOUND.getMessage() + " : " + id);
 			throw new PortfolioException(PortfolioMessage.ID_NOT_FOUND.getMessage() + " : " + id);
 		}
 		return responseEntity;
