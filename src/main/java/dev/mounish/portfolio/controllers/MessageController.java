@@ -52,6 +52,7 @@ public class MessageController {
 		Message savedMessage = messageRepository.save(message);
 		LOG.debug(" ::: MessageController >> sendMessage >> Message saved : " + savedMessage.getId());
 		sendEmail(savedMessage);
+		sendSms(savedMessage);
 		savedMessage.setStatus("SENT");
 		messageRepository.save(savedMessage);
 		responseEntity = ResponseEntityBuilder.buildSuccessResponse(savedMessage);
@@ -83,6 +84,10 @@ public class MessageController {
 		ackMail.setText(ackMailBody.toString());
 		emailService.sendEmail(ackMail);
 		LOG.debug(" ::: MessageController >> sendEmail >> Message sent to " + message.getEmail().trim());
+	}
+	
+	private void sendSms(final Message message) {
+		
 	}
 	
 	@PostMapping("/search")

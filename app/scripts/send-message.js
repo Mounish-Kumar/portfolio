@@ -22,7 +22,7 @@ function sendMessage() {
             "Content-Type": "application/json"
         },
         success: function (data, textStatus, jqXHR) {
-            if (jqXHR.status === 200 && data && data.status === "SENT") {
+            if(jqXHR.status === 200 && data && data.status === "SENT") {
                 $(".response-message.success > span").html("Message sent! We'll get back to you in 48 hours."); // Success message
                 $(".response-message.success").removeClass("hide"); // Show success message
                 setTimeout(function () {
@@ -39,13 +39,13 @@ function sendMessage() {
         },
         error: function (error) {
             const data = error && error.responseJSON;
-            if (data) {
-                if (data.message) {
+            if(data) {
+                if(data.message) {
                     $(".response-message.error > span").html(data.message); // Error message
                     $(".response-message.error").removeClass("hide"); // Show error message
                 }
 
-                if (data.fieldErrorMessages && data.fieldErrorMessages.length > 0) {
+                if(data.fieldErrorMessages && data.fieldErrorMessages.length > 0) {
                     data.fieldErrorMessages.map(fieldErrorMessage => {
                         $('[name="' + fieldErrorMessage.field + '"]').addClass("error"); // Add field error class
                         $('[name="' + fieldErrorMessage.field + '"] > .field-message.error').html(fieldErrorMessage.message); // Field error message

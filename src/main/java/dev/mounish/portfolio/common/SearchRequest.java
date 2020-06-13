@@ -4,9 +4,9 @@ import java.util.List;
 
 public class SearchRequest {
 	
-	private Integer pageNumber;
+	private int pageNumber;
 	
-	private Integer pageSize;
+	private int pageSize;
 	
 	private String sortColumn;
 	
@@ -14,20 +14,20 @@ public class SearchRequest {
 	
 	List<QueryParam> filters;
 
-	public Integer getPageNumber() {
+	public int getPageNumber() {
 		return pageNumber;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
+	public void setPageNumber(int pageNumber) {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return pageSize;
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public int getPageSize() {
+		return pageSize;
 	}
 
 	public String getSortColumn() {

@@ -22,7 +22,7 @@ public class PortfolioExceptionHandler {
 	@ResponseBody ResponseEntity<Object> handleException(Exception e) {
 		HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
 		String message = e.getMessage();
-		LOG.error(" ::: Exception >> " + status.getReasonPhrase() + " >> " + message);
+		LOG.error(" ::: PortfolioExceptionHandler >> Exception >> " + status.getReasonPhrase() + " >> " + message);
 		PortfolioResponse portfolioResponse = new PortfolioResponse(message);
 		return ResponseEntityBuilder.buildErrorResponse(portfolioResponse, status);
 	}
@@ -31,7 +31,7 @@ public class PortfolioExceptionHandler {
 	@ResponseBody ResponseEntity<Object> handlePortfolioException(PortfolioException e) {
 		HttpStatus status = e.getStatus() != null ? e.getStatus() : HttpStatus.BAD_REQUEST;
 		String message = e.getMessage();
-		LOG.error(" ::: PortfolioException >> " + status.getReasonPhrase() + " >> " + message);
+		LOG.error(" ::: PortfolioExceptionHandler >> PortfolioException >> " + status.getReasonPhrase() + " >> " + message);
 		PortfolioResponse portfolioResponse = new PortfolioResponse(message);
 		return ResponseEntityBuilder.buildErrorResponse(portfolioResponse, status);
 	}
@@ -43,7 +43,7 @@ public class PortfolioExceptionHandler {
 		List<FieldErrorMessage> fieldErrorMessages = fieldErrors.stream()
 				.map(fieldError -> new FieldErrorMessage(fieldError.getField(), fieldError.getDefaultMessage()))
 				.collect(Collectors.toList());
-		LOG.error(" ::: MethodArgumentNotValidException >> " + status.getReasonPhrase() + " >> ", fieldErrorMessages);
+		LOG.error(" ::: PortfolioExceptionHandler >> MethodArgumentNotValidException >> " + status.getReasonPhrase() + " >> ", fieldErrorMessages);
 		PortfolioResponse portfolioResponse = new PortfolioResponse(fieldErrorMessages);
 		return ResponseEntityBuilder.buildErrorResponse(portfolioResponse, status);
 	}

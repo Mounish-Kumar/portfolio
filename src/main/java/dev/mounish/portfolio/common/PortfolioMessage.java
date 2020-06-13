@@ -8,7 +8,8 @@ public enum PortfolioMessage {
 	NO_DATA_AVAILABLE("No data available"),
 	EMAIL_PARSING_FAILED("Unable to parse Email message"),
 	EMAIL_AUTH_FAILED("Email authentication failed"),
-	FAILED_TO_SEND_EMAIL("Failed to send Email");
+	FAILED_TO_SEND_EMAIL("Failed to send Email"),
+	DOC_NOT_AVAILABLE("Document not available");
 	
 	String message;
 	
