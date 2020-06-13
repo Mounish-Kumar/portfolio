@@ -632,7 +632,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.1;
+    opacity: 0.08;
   }
 }
 
@@ -670,7 +670,7 @@ body {
   display: -ms-grid;
   display: grid;
   grid-gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 767px) {

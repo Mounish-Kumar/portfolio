@@ -19,7 +19,7 @@
 
         .body-loading {
             visibility: hidden;
-            background-color: var(--brand-color);
+            /* background-color: var(--brand-color); */
             overflow: hidden;
         }
 
@@ -31,29 +31,31 @@
             width: 100vw;
             align-content: center;
             justify-items: center;
-            background: linear-gradient(135deg, var(--brand-color), var(--brand-color), #ff8800, var(--brand-color), var(--brand-color));
+            background-color: #fafafa;
+            /* background: linear-gradient(135deg, var(--brand-color), var(--brand-color), #ff8800, var(--brand-color), var(--brand-color));
             background-size: 600% 600%;
             background-position: left;
-            animation: gradient 1s ease infinite;
+            animation: gradient 1s ease infinite; */
         }
 
-        @keyframes gradient {
+        /* @keyframes gradient {
             0% {
                 background-position: right;
             }
             100% {
                 background-position: left;
             }
-        }
+        } */
 
         .body-loading #loader img.logo {
-            width: 8rem;
+            max-width: calc(100vw / 3);
+            max-height: calc(100vh / 3);
         }
     </style>
     <script>
         // Show loader until page loads
         document.onreadystatechange = function () {
-            if (document.readyState !== "complete") {
+            if(document.readyState !== "complete") {
                 document.querySelector("body").classList.add("body-loading");
             } else {
                 document.querySelector("body").classList.remove("body-loading");
@@ -64,7 +66,7 @@
 
 <body>
     <div id="loader">
-        <img class="logo" src="./assets/images/logo_white.png" alt="MK">
+        <img class="logo" src="./assets/images/logo.gif" alt="MK">
     </div>
     <header id="header">
         <a href="#home">
@@ -138,11 +140,10 @@
         <section>
             <h1>About Me</h1>
             <p>
-                Hello World! My name is Mounish Kumar.<br><br>
+                Hello World! My name is Mounish Kumar.
                 I'm a Web Developer and UI/UX enthusiast based in Chennai, India.
-                I've a Bachelor of Engineering degree from Anna University.
-                I'm focussed on writing clean, elegant & efficient code.<br><br>
-                I've <b>6+ years of experience</b> in
+                I got a Bachelor of Engineering degree from Anna University.<br><br>
+                I've <b>6+ years of experience</b> in writing clean, elegant & efficient code.
             </p>
             <div class="horizontal-scroll-m">
                 <ul id="services">
@@ -331,7 +332,7 @@
                         <span>www.mounish.dev</span>
                     </li>
                     <li>
-                        <a href="https://api.whatsapp.com/send?phone=+919994444988" target="_blank">
+                        <a href="tel:+919994444988" target="_blank">
                             <i class="fa fa-phone-alt"></i>
                         </a>
                         <span>+91 999 4444 988</span>
