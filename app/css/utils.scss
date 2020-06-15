@@ -53,19 +53,46 @@ a {
 }
 
 
-@include tablet-desktop {
-    #typing:after {
-        content: "|";
-        color: color(brand);
-        font-size: 22px;
-        animation: animated-cursor 1s infinite;
-    }
+[tooltip] {
+    position: relative;
+}
 
-    @keyframes animated-cursor {
-        0% { opacity: 0; }
-        50% { opacity: 1; }
-        100% { opacity: 0; }
-    }
+[tooltip]:before {
+    $font-size: 0.8rem;
+    $padding-tb: 0.2rem;
+    content: attr(tooltip);
+    position: absolute;
+    top: calc(0rem - 0.8rem - 2 * 0.2rem - 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: $font-size;
+    white-space: nowrap;
+    padding: $padding-tb 0.4rem;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgba(#000, 0.8);
+}
+
+[tooltip]:after {
+    content: " ";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(#000, 0.8) transparent transparent transparent;
+}
+
+[tooltip]:before, [tooltip]:after {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+
+[tooltip]:hover:before, [tooltip]:hover:after {
+    opacity: 1;
+    visibility: visible;
 }
 
 

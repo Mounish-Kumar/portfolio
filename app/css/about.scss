@@ -47,6 +47,10 @@
             left: 0;
             opacity: 0.08;
         }
+
+        @include tablet-desktop {
+            border-radius: 12px;
+        }
     }
 
     section {

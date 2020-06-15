@@ -1,5 +1,13 @@
-var charDelay = 100;
-var textDelay = 1000;
+var isPageLoaded = false;
+var charDelay = 80;
+var textDelay = 800;
+
+// Hide loader when page is loaded
+document.onreadystatechange = function () {
+    if(document.readyState === "complete") {
+        isPageLoaded = true;
+    }
+};
 
 function addText(txt) {
     return new Promise((resolve, reject) => {
@@ -53,7 +61,10 @@ function addRemoveText() {
 
 function infiniteAddRemoveText() {
     addRemoveText()
-    .then(infiniteAddRemoveText);
+    .then(() => {
+        if(isPageLoaded) document.querySelector("body").classList.remove("body-loading");
+        else infiniteAddRemoveText();
+    });
 }
 
 infiniteAddRemoveText();

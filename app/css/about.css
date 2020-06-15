@@ -112,6 +112,12 @@
   }
 }
 
+@media (min-width: 768px) {
+  #about img {
+    border-radius: 12px;
+  }
+}
+
 #about section {
   grid-area: content;
   display: -ms-grid;

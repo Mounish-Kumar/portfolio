@@ -104,36 +104,33 @@ a {
   }
 }
 
-@media (min-width: 768px) {
-  #typing:after {
-    content: "|";
-    color: color(brand);
-    font-size: 22px;
-    -webkit-animation: animated-cursor 1s infinite;
-            animation: animated-cursor 1s infinite;
-  }
-  @-webkit-keyframes animated-cursor {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  @keyframes animated-cursor {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
+[tooltip]:hover:after {
+  opacity: 1;
+  -webkit-transition: all 0.1s ease 0.5s;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+
+[tooltip]:after {
+  content: attr(tooltip);
+  background-color: #00FF00;
+  color: #111;
+  font-size: 150%;
+  position: absolute;
+  padding: 1px 5px 2px 5px;
+  bottom: -1.6em;
+  left: 100%;
+  white-space: nowrap;
+  -webkit-box-shadow: 1px 1px 3px #222222;
+          box-shadow: 1px 1px 3px #222222;
+  opacity: 0;
+  border: 1px solid #111111;
+  z-index: 99999;
+  visibility: hidden;
+}
+
+[tooltip] {
+  position: relative;
 }
 
 @media (max-width: 767px) {
@@ -448,6 +445,14 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+}
+
+@media (min-width: 768px) {
+  #home picture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 #home picture img.primary {
@@ -769,6 +774,12 @@ a {
     top: 0;
     left: 0;
     opacity: 0.08;
+  }
+}
+
+@media (min-width: 768px) {
+  #about img {
+    border-radius: 12px;
   }
 }
 
@@ -1451,8 +1462,11 @@ a {
 }
 
 #contact .wrapper section:last-child form label span.label {
-  position: absolute;
-  border-radius: 5px;
+  display: block;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-bottom: 0;
   background-color: #eee;
 }
 
@@ -1468,22 +1482,23 @@ a {
   width: 100%;
   font-size: 1.25rem;
   padding: 0.5rem;
-  padding-top: 1.75rem;
   border: none;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   outline: none;
   background-color: #eee;
 }
 
 #contact .wrapper section:last-child form label input[type="text"] {
-  height: 3.5rem;
+  height: 2.25rem;
 }
 
 #contact .wrapper section:last-child form label textarea {
   display: block;
   resize: none;
-  min-height: 3.5rem;
+  min-height: calc(3 * 2.25rem);
   height: 100%;
+  max-height: calc(2.25rem + (7 * 1.25rem));
 }
 
 #contact .wrapper section:last-child form .response-message {
