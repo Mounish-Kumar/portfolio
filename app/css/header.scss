@@ -1,0 +1,124 @@
+@import "common.scss";
+
+#header {
+    --logo-height: calc(var(--header-height) - 2 * var(--header-margin-tb));
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    margin: 0;
+    padding: var(--header-margin-tb) var(--header-margin-lr);
+    background-color: transparent;
+    z-index: 100;
+    transition: box-shadow var(--header-transition-time), background-color var(--header-transition-time);
+
+    @include mobile {
+        height: var(--header-height);
+        background-color: #fff;
+        box-shadow: 0px 5px 5px 0px rgba(#000, 0.2);
+    }
+
+    &.scrolled {
+        background-color: rgba(#fff, 1);
+        box-shadow: 0px 5px 5px 0px rgba(#000, 0.2);
+
+        @include tablet-desktop {
+            img.logo {
+                height: calc(var(--logo-height) - 1rem);
+            }
+
+            nav ul li a .label {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    img.logo {
+        height: var(--logo-height);
+        transition: height var(--header-transition-time);
+    }
+
+    nav {
+        @include mobile {
+            position: fixed;
+            bottom: -1px;
+            left: 0;
+            width: 100vw;
+            background-color: #fff;
+            border-top:  1px solid rgba(#000, .2);
+        }
+
+        @include tablet-desktop {
+            display: flex;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+
+            @include mobile {
+                justify-content: space-around;
+                height: var(--nav-height);
+            }
+
+            @include tablet-desktop {
+                justify-content: space-between;
+            }
+
+            li {
+                text-align: center;
+
+                @include tablet-desktop {
+                    padding-left: 2rem;
+                }
+
+                a {
+                    color: color(primary-text);
+                    text-decoration: none;
+
+                    @include desktop {
+                        &:hover {
+                            @include desktop {
+                                i, .label {
+                                    color: color(brand);
+                                }
+                            }
+                        }
+                    }
+
+                    &.active {
+                        i, .label {
+                            font-weight: 700;
+                            color: color(brand);
+                        }
+                    }
+
+                    i {
+                        @include mobile {
+                            font-size: 1.5rem;
+                            padding-bottom: 0.4rem;
+                        }
+                        
+                        @include tablet-desktop {
+                            display: none;
+                        }
+                    }
+
+                    .label {
+                        @include mobile {
+                            font-size: 0.85rem;
+                            line-height: 1;
+                        }
+
+                        @include tablet-desktop {
+                            font-size: 1.5rem;
+                            transition: font-size var(--header-transition-time);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,212 @@
+@import "common.scss";
+
+#contact {
+    padding: 0 !important;
+
+    @include desktop {
+        // min-height: calc(100vh - var(--header-height) + 1rem);
+    }
+
+    .wrapper {
+        display: grid;
+
+        @include mobile {
+            grid-template-rows: repeat(2, auto);
+            width: 100vw;
+        }
+    
+        @include tablet-desktop {
+            grid-template-columns: repeat(2, 50%);
+        }
+
+        section {
+            display: grid;
+            padding: var(--container-margin-tb) var(--header-margin-lr);
+
+            h1 {
+                font-size: var(--page-heading-font-size);
+                // white-space: nowrap;
+            }
+
+            &:first-child {
+                grid-template-rows: var(--page-heading-size) auto auto;
+                background-color: color(brand);
+
+                @include wide-screen {
+                    padding-right: calc(var(--header-margin-lr) / 2);
+                }
+        
+                h1 {
+                    color: #fff;
+                }
+        
+                ul {        
+                    &.content {
+                        display: grid;
+                        grid-template-rows: auto;
+                        align-items: center;
+                        grid-gap: 2rem;
+        
+                        li {
+                            $icon-font-size: 2rem;
+                            display: grid;
+                            grid-template-columns: $icon-font-size auto;
+                            grid-gap: 1rem;
+                            align-items: center;
+        
+                            i.fa {
+                                font-size: $icon-font-size;
+                                color: #fff;
+                                opacity: 0.6;
+                            }
+        
+                            span {
+                                // white-space: nowrap;
+                                color: #fff;
+
+                                @include desktop {
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+        
+                    &.icons {
+                        $icon-size: 2rem;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 16rem;
+                        margin-top: calc(var(--page-heading-size) - #{$icon-size});
+        
+                        i.fa {
+                            font-size: $icon-size;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                grid-template-rows: var(--page-heading-size) auto;
+                background-color: #fff;
+
+                @include mobile {
+                    margin-bottom: var(--nav-height);
+                }
+
+                @include wide-screen {
+                    padding-left: calc(var(--header-margin-lr) / 2);
+                }
+
+                form {
+                    $grid-gap: 1rem;
+                    $label-font-size: 0.75rem;
+                    $font-size: 1.25rem;
+                    $padding: 0.5rem;
+                    $border-radius: 5px;
+                    $text-box-height: $padding + $font-size + $padding;
+                    $btn-padding-tb: 1rem;
+                    $btn-font-size: 1rem;
+                    $btn-height: $btn-padding-tb + $btn-font-size + $btn-padding-tb;
+                    display: grid;
+                    height: 100%;
+                    grid-row-gap: 1rem;
+
+                    label {
+                        &.error {
+                            span.label, input[type="text"], textarea {
+                                background-color: #ffcdd2;
+                            }
+                        }
+                        
+                        span {
+                            font-size: $label-font-size;
+                            padding: calc(#{$padding} / 2) $padding;
+    
+                            &.label {
+                                display: block;
+                                width: 100%;
+                                border-top-left-radius: $border-radius;
+                                border-top-right-radius: $border-radius;
+                                padding-bottom: 0;
+                                background-color: #eee;
+                            }
+    
+                            &.field-message {
+                                display: block;
+    
+                                &.error {
+                                    color: #ff4444;
+                                }
+                            }
+                        }
+
+                        input[type="text"], textarea {
+                            width: 100%;
+                            font-size: $font-size;
+                            padding: $padding;
+                            border: none;
+                            border-bottom-left-radius: $border-radius;
+                            border-bottom-right-radius: $border-radius;
+                            outline: none;
+                            background-color: #eee;
+                        }
+    
+                        input[type="text"] {
+                            height: $text-box-height;
+                        }
+    
+                        textarea {
+                            display: block;
+                            resize: none;
+                            min-height: calc(3 * #{$text-box-height});
+                            height: 100%;
+                            max-height: calc(#{$text-box-height} + (7 * #{$font-size}));
+                        }
+                    }
+
+                    .response-message {
+                        display: grid;
+                        grid-template-columns: max-content auto;
+                        align-items: center;
+                        border-radius: $border-radius;
+                        color: #fff;
+
+                        &.success {
+                            background-color: #00C851;
+                        }
+    
+                        &.error {
+                            background-color: #ff4444;
+                        }
+
+                        .fa, .far {
+                            font-size: 2rem;
+                            padding: $padding;
+                        }
+
+                        span {
+                            font-size: $label-font-size;
+                            padding: $padding $padding $padding 0;
+                        }
+                    }
+
+                    input[type="submit"], button {
+                        display: inline-block;
+                        height: $btn-height;
+                        max-width: 10rem;
+                        font-size: $btn-font-size;
+                        text-transform: uppercase;
+                        border: none;
+                        border-radius: 30px;
+                        color: #fff;
+                        background-color: color(brand);
+                        cursor: pointer;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}

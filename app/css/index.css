@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   scroll-behavior: smooth;
   --nav-height: 4rem;
@@ -61,7 +62,7 @@
 
 body {
   font-size: 1rem;
-  color: color(primary-text);
+  color: #212121;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   overflow-x: hidden;
@@ -107,7 +108,7 @@ a {
 @media (min-width: 768px) {
   #typing:after {
     content: "|";
-    color: color(brand);
+    color: var(--brand-color);
     font-size: 22px;
     -webkit-animation: animated-cursor 1s infinite;
             animation: animated-cursor 1s infinite;
@@ -308,19 +309,19 @@ a {
 }
 
 #header nav ul li a {
-  color: color(primary-text);
+  color: #212121;
   text-decoration: none;
 }
 
 @media (min-width: 1025px) and (min-width: 1025px) {
   #header nav ul li a:hover i, #header nav ul li a:hover .label {
-    color: color(brand);
+    color: var(--brand-color);
   }
 }
 
 #header nav ul li a.active i, #header nav ul li a.active .label {
   font-weight: 700;
-  color: color(brand);
+  color: var(--brand-color);
 }
 
 @media (max-width: 767px) {
@@ -448,6 +449,14 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+}
+
+@media (min-width: 768px) {
+  #home picture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 #home picture img.primary {
@@ -631,10 +640,10 @@ a {
   display: inline-block;
   text-decoration: none;
   white-space: nowrap;
-  border: 3px solid color(brand);
+  border: 3px solid var(--brand-color);
   border-radius: 6px;
   font-weight: 500;
-  color: color(brand);
+  color: var(--brand-color);
   cursor: pointer;
 }
 
@@ -655,7 +664,7 @@ a {
 
 #home .content .action a.primary {
   color: #fff;
-  background-color: color(brand);
+  background-color: var(--brand-color);
 }
 
 :root {
@@ -1053,7 +1062,7 @@ a {
   grid-area: progress-bar;
   width: 100%;
   height: 3px;
-  background-color: color(brand);
+  background-color: var(--brand-color);
 }
 
 #skills .wrapper section ul li img {
@@ -1346,7 +1355,7 @@ a {
 #contact .wrapper section:first-child {
   -ms-grid-rows: var(--page-heading-size) auto auto;
       grid-template-rows: var(--page-heading-size) auto auto;
-  background-color: color(brand);
+  background-color: var(--brand-color);
 }
 
 @media (min-width: 1280px) {
@@ -1451,8 +1460,11 @@ a {
 }
 
 #contact .wrapper section:last-child form label span.label {
-  position: absolute;
-  border-radius: 5px;
+  display: block;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-bottom: 0;
   background-color: #eee;
 }
 
@@ -1468,22 +1480,23 @@ a {
   width: 100%;
   font-size: 1.25rem;
   padding: 0.5rem;
-  padding-top: 1.75rem;
   border: none;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   outline: none;
   background-color: #eee;
 }
 
 #contact .wrapper section:last-child form label input[type="text"] {
-  height: 3.5rem;
+  height: 2.25rem;
 }
 
 #contact .wrapper section:last-child form label textarea {
   display: block;
   resize: none;
-  min-height: 3.5rem;
+  min-height: calc(3 * 2.25rem);
   height: 100%;
+  max-height: calc(2.25rem + (7 * 1.25rem));
 }
 
 #contact .wrapper section:last-child form .response-message {
@@ -1526,8 +1539,8 @@ a {
   border: none;
   border-radius: 30px;
   color: #fff;
-  background-color: color(brand);
+  background-color: var(--brand-color);
   cursor: pointer;
   outline: none;
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,225 @@
+:root {
+  scroll-behavior: smooth;
+  --nav-height: 4rem;
+  --header-margin-tb: 0.25rem;
+  --header-transition-time: 0.5s;
+  --page-heading-font-size: 2rem;
+  --page-heading-size: 4rem;
+  --container-margin-tb: 3rem;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 3rem;
+    --header-margin-lr: 1.5rem;
+  }
+  :root .hide-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --header-height: 4rem;
+    --header-margin-lr: 3rem;
+  }
+  :root .hide-md {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --header-height: 4rem;
+    --header-margin-lr: 4.5rem;
+  }
+  :root .hide-lg {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --header-margin-lr: 8rem;
+  }
+  :root .hide-xl {
+    display: none;
+  }
+}
+
+#about {
+  position: relative;
+  grid-gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  #about {
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "content";
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #about {
+    min-height: calc(100vh - var(--header-height));
+    -ms-grid-rows: max-content auto;
+        grid-template-rows: -webkit-max-content auto;
+        grid-template-rows: max-content auto;
+        grid-template-areas: "content" "image";
+  }
+}
+
+@media (min-width: 1025px) {
+  #about {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "content image";
+  }
+}
+
+@media (min-width: 768px) {
+  #about {
+    padding-left: var(--header-margin-lr);
+    padding-right: var(--header-margin-lr);
+  }
+}
+
+#about::after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  z-index: 0;
+}
+
+#about img {
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  #about img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.08;
+  }
+}
+
+#about section {
+  grid-area: content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: var(--page-heading-size) max-content max-content;
+      grid-template-rows: var(--page-heading-size) -webkit-max-content -webkit-max-content;
+      grid-template-rows: var(--page-heading-size) max-content max-content;
+  z-index: 2;
+}
+
+#about section h1 {
+  font-size: var(--page-heading-font-size);
+}
+
+@media (max-width: 767px) {
+  #about section h1 {
+    padding: 0 var(--header-margin-lr);
+  }
+}
+
+#about section p {
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  #about section p {
+    padding: 0 var(--header-margin-lr);
+  }
+}
+
+#about section ul {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 767px) {
+  #about section ul {
+    -ms-grid-columns: (14rem)[4];
+        grid-template-columns: repeat(4, 14rem);
+  }
+}
+
+@media (max-width: 767px) and (max-width: 767px) and (min-height: 800px) {
+  #about section ul {
+    -ms-grid-columns: (14rem)[2];
+        grid-template-columns: repeat(2, 14rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #about section ul {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  #about section ul {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#about section ul li {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  #about section ul li {
+    --icon-font-size: 2rem;
+    -ms-grid-columns: var(--icon-font-size) auto;
+        grid-template-columns: var(--icon-font-size) auto;
+    grid-gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #about section ul li {
+    --icon-font-size: 2.5rem;
+    text-align: center;
+    grid-gap: 1rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  #about section ul li {
+    --icon-font-size: 2.5rem;
+    -ms-grid-columns: var(--icon-font-size) auto;
+        grid-template-columns: var(--icon-font-size) auto;
+    grid-gap: 1.5rem;
+  }
+}
+
+#about section ul li i.fa {
+  font-size: var(--icon-font-size);
+}
+
+#about section ul li .label {
+  font-weight: 600;
+}
+/*# sourceMappingURL=about.css.map */

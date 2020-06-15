@@ -1,0 +1,131 @@
+@import "common.scss";
+
+#about {
+    position: relative;
+    grid-gap: 1rem;
+
+    @include mobile {
+        grid-template-rows: 100%;
+        grid-template-areas: "content";
+    }
+
+    @include tablet {
+        min-height: calc(100vh - var(--header-height));
+        grid-template-rows: max-content auto;
+        grid-template-areas: "content" "image";
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "content image";
+    }
+
+    @include tablet-desktop {
+        padding-left: var(--header-margin-lr);
+        padding-right: var(--header-margin-lr);
+    }
+
+    &::after {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #f5f5f5;
+        z-index: 0;
+    }
+
+    img {
+        grid-area: image;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+
+        @include mobile {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.08;
+        }
+    }
+
+    section {
+        grid-area: content;
+        display: grid;
+        grid-template-rows: var(--page-heading-size) max-content max-content;
+        z-index: 2;
+
+        h1 {
+            font-size: var(--page-heading-font-size);
+
+            @include mobile {
+                padding: 0 var(--header-margin-lr);
+            }
+        }
+
+        p {
+            line-height: 1.5;
+
+            @include mobile {
+                padding: 0 var(--header-margin-lr);
+            }
+        }
+
+        ul {
+            display: grid;
+            grid-gap: 1rem;
+            margin-top: 2rem;
+
+            @include mobile {
+                grid-template-columns: repeat(4, 14rem);
+
+                @include mobile-long {
+                    grid-template-columns: repeat(2, 14rem);
+                }
+            }
+
+            @include tablet {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            @include desktop {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            li {
+                display: grid;
+                align-items: center;
+                padding: 1rem;
+                border-radius: 6px;
+                border: 1px solid #000;
+                background-color: #fff;
+
+                @include mobile {
+                    --icon-font-size: 2rem;
+                    grid-template-columns: var(--icon-font-size) auto;
+                    grid-gap: 1.5rem;
+                }
+
+                @include tablet {
+                    --icon-font-size: 2.5rem;
+                    text-align: center;
+                    grid-gap: 1rem;
+                }
+
+                @include desktop {
+                    --icon-font-size: 2.5rem;
+                    grid-template-columns: var(--icon-font-size) auto;
+                    grid-gap: 1.5rem;
+                }
+
+                i.fa {
+                    font-size: var(--icon-font-size);
+                }
+
+                .label {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+@import "common.scss";
+
+#skills {
+    grid-template-rows: var(--page-heading-size) auto;
+    background-color: #eee;
+
+    .wrapper {
+        display: grid;
+        align-items: center; // Remove to expand
+
+        @include mobile {
+            grid-gap: calc(var(--page-heading-size) - var(--page-heading-font-size));
+        }
+        
+        @include tablet-desktop {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        section {
+            display: grid;
+            grid-template-rows: 3rem auto;
+            
+            &:first-of-type ul {
+                @include tablet-desktop {
+                    border-right: 1px solid rgba(#000, .2);
+                }
+
+                @include wide-screen {
+                    padding: 0 calc(var(--header-margin-lr) / 2) 0 var(--header-margin-lr) !important;
+                }
+            }
+
+            &:first-of-type > h1 {
+                @include wide-screen {
+                    padding: 0 calc(var(--header-margin-lr) / 2) 0 var(--header-margin-lr) !important;
+                }
+            }
+
+            &:last-of-type ul, &:last-of-type > h1 {
+                @include wide-screen {
+                    padding: 0 var(--header-margin-lr) 0 calc(var(--header-margin-lr) / 2) !important;
+                }
+            }
+
+            > h1 {
+                font-size: 1.5rem;
+                padding: 0 var(--header-margin-lr);
+            }
+
+            ul {
+                display: grid;
+
+                @include mobile {
+                    $box-size: 14rem;
+                    $grid-gap: 1rem;
+                    grid-template-columns: repeat(4, $box-size);
+                    grid-gap: $grid-gap;
+
+                    @include mobile-long {
+                        grid-template-columns: repeat(3, $box-size);
+                    }
+                }
+
+                @include tablet-desktop {
+                    grid-gap: 1.5rem;
+                    padding: 0 var(--header-margin-lr);
+                }
+
+                @include desktop {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                li {
+                    $tech-logo-padding: 0.7rem;
+                    $tech-logo-size: calc(2rem + 2 * #{$tech-logo-padding});
+                    $tech-progress-height: 3px;
+                    display: grid;
+                    grid-template-rows: $tech-progress-height auto;
+                    grid-template-columns: $tech-logo-size auto;
+                    grid-template-areas: "progress-bar progress-bar" "img span";
+                    align-items: center;
+                    max-height: calc(#{$tech-logo-size} + 2 * #{$tech-logo-padding});
+                    background-color: #fff;
+                    box-shadow: 0px 2px 10px 0px rgba(#000, 0.2);
+
+                    .progress-bar {
+                        grid-area: progress-bar;
+                        width: 100%;
+                        height: $tech-progress-height;
+                        background-color: color(brand);
+                    }
+
+                    img {
+                        grid-area: img;
+                        width: $tech-logo-size;
+                        height: $tech-logo-size;
+                        padding: $tech-logo-padding;
+                    }
+
+                    span {
+                        grid-area: span;
+                        font-weight: 500;
+                        padding: $tech-logo-padding $tech-logo-padding $tech-logo-padding 0;
+
+                        @include tablet {
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

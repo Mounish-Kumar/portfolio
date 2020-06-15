@@ -1,0 +1,275 @@
+:root {
+  scroll-behavior: smooth;
+  --nav-height: 4rem;
+  --header-margin-tb: 0.25rem;
+  --header-transition-time: 0.5s;
+  --page-heading-font-size: 2rem;
+  --page-heading-size: 4rem;
+  --container-margin-tb: 3rem;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 3rem;
+    --header-margin-lr: 1.5rem;
+  }
+  :root .hide-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --header-height: 4rem;
+    --header-margin-lr: 3rem;
+  }
+  :root .hide-md {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --header-height: 4rem;
+    --header-margin-lr: 4.5rem;
+  }
+  :root .hide-lg {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --header-margin-lr: 8rem;
+  }
+  :root .hide-xl {
+    display: none;
+  }
+}
+
+#contact {
+  padding: 0 !important;
+}
+
+#contact .wrapper {
+  display: -ms-grid;
+  display: grid;
+}
+
+@media (max-width: 767px) {
+  #contact .wrapper {
+    -ms-grid-rows: (auto)[2];
+        grid-template-rows: repeat(2, auto);
+    width: 100vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #contact .wrapper {
+    -ms-grid-columns: (50%)[2];
+        grid-template-columns: repeat(2, 50%);
+  }
+}
+
+#contact .wrapper section {
+  display: -ms-grid;
+  display: grid;
+  padding: var(--container-margin-tb) var(--header-margin-lr);
+}
+
+#contact .wrapper section h1 {
+  font-size: var(--page-heading-font-size);
+}
+
+#contact .wrapper section:first-child {
+  -ms-grid-rows: var(--page-heading-size) auto auto;
+      grid-template-rows: var(--page-heading-size) auto auto;
+  background-color: color(brand);
+}
+
+@media (min-width: 1280px) {
+  #contact .wrapper section:first-child {
+    padding-right: calc(var(--header-margin-lr) / 2);
+  }
+}
+
+#contact .wrapper section:first-child h1 {
+  color: #fff;
+}
+
+#contact .wrapper section:first-child ul.content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 2rem;
+}
+
+#contact .wrapper section:first-child ul.content li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2rem auto;
+      grid-template-columns: 2rem auto;
+  grid-gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact .wrapper section:first-child ul.content li i.fa {
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.6;
+}
+
+#contact .wrapper section:first-child ul.content li span {
+  color: #fff;
+}
+
+@media (min-width: 1025px) {
+  #contact .wrapper section:first-child ul.content li span {
+    font-size: 1.2rem;
+  }
+}
+
+#contact .wrapper section:first-child ul.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 16rem;
+  margin-top: calc(var(--page-heading-size) - 2rem);
+}
+
+#contact .wrapper section:first-child ul.icons i.fa {
+  font-size: 2rem;
+  color: #fff;
+}
+
+#contact .wrapper section:last-child {
+  -ms-grid-rows: var(--page-heading-size) auto;
+      grid-template-rows: var(--page-heading-size) auto;
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  #contact .wrapper section:last-child {
+    margin-bottom: var(--nav-height);
+  }
+}
+
+@media (min-width: 1280px) {
+  #contact .wrapper section:last-child {
+    padding-left: calc(var(--header-margin-lr) / 2);
+  }
+}
+
+#contact .wrapper section:last-child form {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  grid-row-gap: 1rem;
+}
+
+#contact .wrapper section:last-child form label.error span.label, #contact .wrapper section:last-child form label.error input[type="text"], #contact .wrapper section:last-child form label.error textarea {
+  background-color: #ffcdd2;
+}
+
+#contact .wrapper section:last-child form label span {
+  font-size: 0.75rem;
+  padding: calc(0.5rem / 2) 0.5rem;
+}
+
+#contact .wrapper section:last-child form label span.label {
+  display: block;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-bottom: 0;
+  background-color: #eee;
+}
+
+#contact .wrapper section:last-child form label span.field-message {
+  display: block;
+}
+
+#contact .wrapper section:last-child form label span.field-message.error {
+  color: #ff4444;
+}
+
+#contact .wrapper section:last-child form label input[type="text"], #contact .wrapper section:last-child form label textarea {
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: none;
+  background-color: #eee;
+}
+
+#contact .wrapper section:last-child form label input[type="text"] {
+  height: 2.25rem;
+}
+
+#contact .wrapper section:last-child form label textarea {
+  display: block;
+  resize: none;
+  min-height: calc(3 * 2.25rem);
+  height: 100%;
+  max-height: calc(2.25rem + (7 * 1.25rem));
+}
+
+#contact .wrapper section:last-child form .response-message {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content auto;
+      grid-template-columns: -webkit-max-content auto;
+      grid-template-columns: max-content auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#contact .wrapper section:last-child form .response-message.success {
+  background-color: #00C851;
+}
+
+#contact .wrapper section:last-child form .response-message.error {
+  background-color: #ff4444;
+}
+
+#contact .wrapper section:last-child form .response-message .fa, #contact .wrapper section:last-child form .response-message .far {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+#contact .wrapper section:last-child form .response-message span {
+  font-size: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+#contact .wrapper section:last-child form input[type="submit"], #contact .wrapper section:last-child form button {
+  display: inline-block;
+  height: 3rem;
+  max-width: 10rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  background-color: color(brand);
+  cursor: pointer;
+  outline: none;
+}
+/*# sourceMappingURL=contact.css.map */

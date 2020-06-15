@@ -32,4 +32,4 @@ build/
 
 ### App ###
 /app/assets/samples
-/app/css/main.css.map
+/app/css/*.css.map
