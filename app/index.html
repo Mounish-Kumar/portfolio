@@ -54,9 +54,15 @@
 
         #typing:after {
             content: "|";
-            font-size: 22px;
+            font-size: 1.4rem;
             font-weight: 100;
             animation: animated-cursor 0.5s infinite;
+        }
+
+        @keyframes animated-cursor {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
         }
 
         .light-theme #typing:after {
@@ -67,15 +73,19 @@
             color: #fafafa;
         }
 
-        @keyframes animated-cursor {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+        @media (min-width: 768px) {
+            #typing {
+                font-size: 1.4rem;
+            }
+
+            #typing:after {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 
-<body class="light-theme body-loading">
+<body class="light-theme">
     <div id="loader">
         <img class="logo" src="./assets/images/logo.png" alt="MK">
         <span id="typing" data="Full-stack Web Developer, UI/UX Enthusiast"></span>
@@ -129,19 +139,12 @@
             <img loading="lazy" class="primary" data-src="./assets/images/mounish.png" alt="Mounish Kumar" />
         </picture>
         <div class="content">
-            <h1>
-                Let's turn ideas into<br>
-                <b>REALITY</b>
-            </h1>
-            <h2>
-                <b>Mounish</b> Kumar
-                <div>
-                    <span>Full-stack Web Developer</span>
-                </div>
-            </h2>
+            <h2>Hey, I'm <span class="highlight">Mounish Kumar</span></h2>
+            <h1>Let's turn ideas<br> into reality</h1>
+            <h3>Full-stack Web Developer</h3>
             <div class="action">
                 <a href="#about">Know More</a>
-                <a class="primary" onclick="downloadResume()">Download CV</a>
+                <a class="primary" onclick="downloadResume()">Resume</a>
             </div>
         </div>
     </div>

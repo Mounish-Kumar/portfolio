@@ -93,7 +93,11 @@
   }
 }
 
-#header img.logo {
+#header > a {
+  line-height: 0;
+}
+
+#header > a img.logo {
   height: var(--logo-height);
   -webkit-transition: height var(--header-transition-time);
   transition: height var(--header-transition-time);

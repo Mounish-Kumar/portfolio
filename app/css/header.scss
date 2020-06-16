@@ -35,9 +35,13 @@
         }
     }
 
-    img.logo {
-        height: var(--logo-height);
-        transition: height var(--header-transition-time);
+    & > a {
+        line-height: 0;
+
+        img.logo {
+            height: var(--logo-height);
+            transition: height var(--header-transition-time);
+        }
     }
 
     nav {

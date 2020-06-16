@@ -49,7 +49,7 @@
 
 #about {
   position: relative;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 }
 
 @media (max-width: 767px) {
