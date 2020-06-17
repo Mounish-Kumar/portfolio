@@ -84,7 +84,8 @@
 #contact .wrapper section:first-child {
   -ms-grid-rows: var(--page-heading-size) auto auto;
       grid-template-rows: var(--page-heading-size) auto auto;
-  background-color: color(brand);
+  background-image: -webkit-gradient(linear, left bottom, right top, from(color(brand)), color-stop(color(brand)), to(#ff8800));
+  background-image: linear-gradient(to top right, color(brand), color(brand), #ff8800);
 }
 
 @media (min-width: 1280px) {
@@ -268,7 +269,8 @@
   border: none;
   border-radius: 30px;
   color: #fff;
-  background-color: color(brand);
+  background-image: -webkit-gradient(linear, left bottom, right top, from(color(brand)), color-stop(color(brand)), to(#ff8800));
+  background-image: linear-gradient(to top right, color(brand), color(brand), #ff8800);
   cursor: pointer;
   outline: none;
 }

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300;1,400;1,500;1,600;1,700&display=swap");
 :root {
   scroll-behavior: smooth;
   --nav-height: 4rem;
@@ -49,22 +47,27 @@
   }
 }
 
+#home .content .action a {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
 @media (max-width: 767px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 1025px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
     -webkit-transition: -webkit-box-shadow 0.2s ease-in;
@@ -72,7 +75,7 @@
     transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
   }
-  #home .content .action a:hover, #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
+  #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   }
@@ -249,22 +252,27 @@ a {
   }
 }
 
+#home .content .action a {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
 @media (max-width: 767px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 1025px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
     -webkit-transition: -webkit-box-shadow 0.2s ease-in;
@@ -272,7 +280,7 @@ a {
     transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
   }
-  #home .content .action a:hover, #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
+  #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   }
@@ -481,22 +489,27 @@ a {
   }
 }
 
+#home .content .action a {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
 @media (max-width: 767px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 1025px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
     -webkit-transition: -webkit-box-shadow 0.2s ease-in;
@@ -504,7 +517,7 @@ a {
     transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
   }
-  #home .content .action a:hover, #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
+  #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   }
@@ -707,18 +720,17 @@ a {
   display: inline-block;
   text-decoration: none;
   white-space: nowrap;
-  border: 3px solid var(--brand-color);
   border-radius: 6px;
   font-weight: 500;
   padding: 0.5rem 1rem;
   color: var(--brand-color);
+  background-color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
 }
 
 @media (max-width: 767px) {
   #home .content .action a {
     font-size: 0.8rem;
-    background-color: rgba(255, 255, 255, 0.9);
   }
 }
 
@@ -730,7 +742,8 @@ a {
 
 #home .content .action a.primary {
   color: #fff;
-  background-color: var(--brand-color);
+  background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(var(--brand-color)), to(#ff8800));
+  background-image: linear-gradient(to top right, var(--brand-color), var(--brand-color), #ff8800);
 }
 
 :root {
@@ -782,22 +795,27 @@ a {
   }
 }
 
+#home .content .action a {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
 @media (max-width: 767px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 1025px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
     -webkit-transition: -webkit-box-shadow 0.2s ease-in;
@@ -805,7 +823,7 @@ a {
     transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
   }
-  #home .content .action a:hover, #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
+  #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   }
@@ -814,31 +832,27 @@ a {
 #about {
   position: relative;
   grid-gap: 2rem;
+      grid-template-areas: "content";
 }
 
 @media (max-width: 767px) {
   #about {
     -ms-grid-rows: 100%;
         grid-template-rows: 100%;
-        grid-template-areas: "content";
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   #about {
-    min-height: calc(100vh - var(--header-height));
-    -ms-grid-rows: max-content auto;
-        grid-template-rows: -webkit-max-content auto;
-        grid-template-rows: max-content auto;
-        grid-template-areas: "content" "image";
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
   }
 }
 
 @media (min-width: 1025px) {
   #about {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "content image";
+    -ms-grid-columns: 60%;
+        grid-template-columns: 60%;
   }
 }
 
@@ -854,41 +868,39 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #f5f5f5;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(rgba(255, 23, 68, 0.9)), to(rgba(255, 136, 0, 0.7)));
+  background-image: linear-gradient(to top right, var(--brand-color), rgba(255, 23, 68, 0.9), rgba(255, 136, 0, 0.7));
   z-index: 0;
+}
+
+@media (min-width: 1025px) {
+  #about::after {
+    background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(rgba(255, 23, 68, 0.8)), to(rgba(255, 136, 0, 0.6)));
+    background-image: linear-gradient(to top right, var(--brand-color), rgba(255, 23, 68, 0.8), rgba(255, 136, 0, 0.6));
+  }
 }
 
 #about img {
   grid-area: image;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  z-index: 1;
-}
-
-@media (max-width: 767px) {
-  #about img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.08;
-  }
-}
-
-@media (min-width: 768px) {
-  #about img {
-    border-radius: 12px;
-  }
 }
 
 #about section {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: content;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: var(--page-heading-size) max-content max-content;
       grid-template-rows: var(--page-heading-size) -webkit-max-content -webkit-max-content;
       grid-template-rows: var(--page-heading-size) max-content max-content;
+  color: #fff;
   z-index: 2;
 }
 
@@ -955,6 +967,7 @@ a {
           align-items: center;
   padding: 1rem;
   border-radius: 8px;
+  color: #212121;
   background-color: #fff;
 }
 
@@ -986,10 +999,7 @@ a {
 
 #about section ul li i.fa {
   font-size: var(--icon-font-size);
-}
-
-#about section ul li .label {
-  font-weight: 600;
+  color: var(--brand-color);
 }
 
 :root {
@@ -1041,22 +1051,27 @@ a {
   }
 }
 
+#home .content .action a {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
 @media (max-width: 767px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 1025px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
     -webkit-transition: -webkit-box-shadow 0.2s ease-in;
@@ -1064,7 +1079,7 @@ a {
     transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
   }
-  #home .content .action a:hover, #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
+  #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   }
@@ -1179,7 +1194,6 @@ a {
       -ms-flex-align: center;
           align-items: center;
   max-height: calc(calc(2rem + 2 * 0.7rem) + 2 * 0.7rem);
-  border-radius: 8px;
   background-color: #fff;
 }
 
@@ -1265,22 +1279,27 @@ a {
   }
 }
 
+#home .content .action a {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
 @media (max-width: 767px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 1025px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
     -webkit-transition: -webkit-box-shadow 0.2s ease-in;
@@ -1288,7 +1307,7 @@ a {
     transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
   }
-  #home .content .action a:hover, #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
+  #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   }
@@ -1476,22 +1495,27 @@ a {
   }
 }
 
+#home .content .action a {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
 @media (max-width: 767px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 
 @media (min-width: 1025px) {
-  #home .content .action a, #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
+  #about section ul li, #skills .wrapper section ul li, #work .wrapper section {
     -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
             box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
     -webkit-transition: -webkit-box-shadow 0.2s ease-in;
@@ -1499,7 +1523,7 @@ a {
     transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
   }
-  #home .content .action a:hover, #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
+  #about section ul li:hover, #skills .wrapper section ul li:hover, #work .wrapper section:hover {
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   }
@@ -1542,7 +1566,8 @@ a {
 #contact .wrapper section:first-child {
   -ms-grid-rows: var(--page-heading-size) auto auto;
       grid-template-rows: var(--page-heading-size) auto auto;
-  background-color: var(--brand-color);
+  background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(var(--brand-color)), to(#ff8800));
+  background-image: linear-gradient(to top right, var(--brand-color), var(--brand-color), #ff8800);
 }
 
 @media (min-width: 1280px) {
@@ -1726,7 +1751,8 @@ a {
   border: none;
   border-radius: 30px;
   color: #fff;
-  background-color: var(--brand-color);
+  background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(var(--brand-color)), to(#ff8800));
+  background-image: linear-gradient(to top right, var(--brand-color), var(--brand-color), #ff8800);
   cursor: pointer;
   outline: none;
 }

@@ -30,7 +30,7 @@
 
             &:first-child {
                 grid-template-rows: var(--page-heading-size) auto auto;
-                background-color: color(brand);
+                background-image: linear-gradient(to top right, color(brand) , color(brand), #ff8800);
 
                 @include wide-screen {
                     padding-right: calc(var(--header-margin-lr) / 2);
@@ -201,7 +201,7 @@
                         border: none;
                         border-radius: 30px;
                         color: #fff;
-                        background-color: color(brand);
+                        background-image: linear-gradient(to top right, color(brand) , color(brand), #ff8800);
                         cursor: pointer;
                         outline: none;
                     }

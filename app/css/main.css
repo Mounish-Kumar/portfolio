@@ -1177,7 +1177,6 @@ a {
       -ms-flex-align: center;
           align-items: center;
   max-height: calc(calc(2rem + 2 * 0.7rem) + 2 * 0.7rem);
-  border-radius: 8px;
   background-color: #fff;
 }
 

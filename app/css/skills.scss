@@ -80,7 +80,6 @@
                     grid-template-areas: "progress-bar progress-bar" "img span";
                     align-items: center;
                     max-height: calc(#{$tech-logo-size} + 2 * #{$tech-logo-padding});
-                    border-radius: 8px;
                     background-color: #fff;
                     @extend %smooth-shadow;
 
