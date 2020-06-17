@@ -100,9 +100,9 @@
                 display: grid;
                 align-items: center;
                 padding: 1rem;
-                border-radius: 6px;
-                border: 1px solid #000;
+                border-radius: 8px;
                 background-color: #fff;
+                @extend %smooth-shadow;
 
                 @include mobile {
                     --icon-font-size: 2rem;

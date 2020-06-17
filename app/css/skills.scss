@@ -80,8 +80,9 @@
                     grid-template-areas: "progress-bar progress-bar" "img span";
                     align-items: center;
                     max-height: calc(#{$tech-logo-size} + 2 * #{$tech-logo-padding});
+                    border-radius: 8px;
                     background-color: #fff;
-                    box-shadow: 0px 2px 10px 0px rgba(#000, 0.2);
+                    @extend %smooth-shadow;
 
                     .progress-bar {
                         grid-area: progress-bar;

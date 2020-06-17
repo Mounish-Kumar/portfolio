@@ -4,7 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat';
+    // font-family: 'Montserrat';
+    font-family: 'Josefin Sans';
+    font-weight: 500;
     letter-spacing: 0.5px;
     line-height: 1.5;
     word-break: break-word;
@@ -50,6 +52,11 @@ a {
             text-align: center;
         }
     }
+}
+
+
+.highlight {
+    color: color(brand);
 }
 
 
@@ -101,6 +108,8 @@ a {
         display: grid;
         grid-template-columns: var(--header-margin-lr) auto var(--header-margin-lr);
         overflow-x: scroll;
+        padding-bottom: 180px;
+        margin-bottom: -180px;
 
         &::before, &::after {
             content: '';

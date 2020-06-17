@@ -94,7 +94,6 @@
             .highlight {
                 letter-spacing: 0;
                 line-height: 1;
-                color: color(brand);
             }
         }
 
@@ -159,6 +158,7 @@
                 font-weight: 500;
                 padding: 0.5rem 1rem;
                 color: color(brand);
+                @extend %smooth-shadow;
                 cursor: pointer;
 
                 @include mobile {

@@ -1,7 +1,7 @@
 :root {
   scroll-behavior: smooth;
   --nav-height: 4rem;
-  --header-margin-tb: 0.25rem;
+  --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
   --page-heading-size: 4rem;
@@ -47,6 +47,35 @@
   }
 }
 
+@media (max-width: 767px) {
+  #work .wrapper section {
+    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #work .wrapper section {
+    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+  }
+}
+
+@media (min-width: 1025px) {
+  #work .wrapper section {
+    -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
+    -webkit-transition: -webkit-box-shadow 0.2s ease-in;
+    transition: -webkit-box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+  }
+  #work .wrapper section:hover {
+    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  }
+}
+
 #work {
   -ms-grid-rows: var(--page-heading-size) auto;
       grid-template-rows: var(--page-heading-size) auto;
@@ -67,6 +96,8 @@
         grid-template-columns: 0.1px repeat(2, 80%) 0.1px;
     grid-gap: var(--header-margin-lr);
     overflow-x: scroll;
+    padding-bottom: 180px;
+    margin-bottom: -180px;
   }
   #work .wrapper::before, #work .wrapper::after {
     content: '';
@@ -109,9 +140,8 @@
   justify-items: center;
   text-align: center;
   padding: 1.25rem;
+  border-radius: 8px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 #work .wrapper section img.company-logo {
