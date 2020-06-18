@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 :root {
   scroll-behavior: smooth;
   --nav-height: 4rem;
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -86,8 +88,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Josefin Sans';
-  font-weight: 500;
+  font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.5px;
   line-height: 1.5;
   word-break: break-word;
@@ -130,6 +131,7 @@ a {
 
 .container > h1 {
   font-size: var(--page-heading-font-size);
+  font-weight: var(--page-heading-font-weight);
   padding: 0 var(--header-margin-lr);
 }
 
@@ -209,6 +211,7 @@ a {
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -328,7 +331,7 @@ a {
     height: calc(var(--logo-height) - 1rem);
   }
   #header.scrolled nav ul li a .label {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -425,6 +428,10 @@ a {
   }
 }
 
+#header nav ul li a .label {
+  font-family: 'Open Sans', sans-serif;
+}
+
 @media (max-width: 767px) {
   #header nav ul li a .label {
     font-size: 0.85rem;
@@ -434,7 +441,7 @@ a {
 
 @media (min-width: 768px) {
   #header nav ul li a .label {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     -webkit-transition: font-size var(--header-transition-time);
     transition: font-size var(--header-transition-time);
   }
@@ -446,6 +453,7 @@ a {
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -587,7 +595,7 @@ a {
 
 @media (max-width: 767px) {
   #home picture img.primary {
-    margin-bottom: -6px;
+    margin-bottom: -8px;
     margin-left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -673,6 +681,7 @@ a {
 
 #home .content h3 {
   margin-top: 1.5rem;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1;
@@ -752,6 +761,7 @@ a {
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -851,8 +861,8 @@ a {
 
 @media (min-width: 1025px) {
   #about {
-    -ms-grid-columns: 60%;
-        grid-template-columns: 60%;
+    -ms-grid-columns: 55%;
+        grid-template-columns: 55%;
   }
 }
 
@@ -906,6 +916,7 @@ a {
 
 #about section h1 {
   font-size: var(--page-heading-font-size);
+  font-weight: var(--page-heading-font-weight);
 }
 
 @media (max-width: 767px) {
@@ -915,13 +926,22 @@ a {
 }
 
 #about section p {
-  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 2;
 }
 
 @media (max-width: 767px) {
   #about section p {
     padding: 0 var(--header-margin-lr);
   }
+}
+
+#about section p .highlight {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffff00;
 }
 
 #about section ul {
@@ -967,8 +987,8 @@ a {
           align-items: center;
   padding: 1rem;
   border-radius: 8px;
-  color: #212121;
-  background-color: #fff;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 767px) {
@@ -1008,6 +1028,7 @@ a {
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -1145,6 +1166,7 @@ a {
 
 #skills .wrapper section > h1 {
   font-size: 1.5rem;
+  font-weight: var(--page-heading-font-weight);
   padding: 0 var(--header-margin-lr);
 }
 
@@ -1220,6 +1242,8 @@ a {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: span;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
   font-weight: 500;
   padding: 0.7rem 0.7rem 0.7rem 0;
 }
@@ -1236,6 +1260,7 @@ a {
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -1403,6 +1428,10 @@ a {
   }
 }
 
+#work .wrapper section h1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
 @media (max-width: 767px) {
   #work .wrapper section h1 {
     font-size: 1.2rem;
@@ -1416,6 +1445,8 @@ a {
 }
 
 #work .wrapper section p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
   color: #9e9e9e;
 }
 
@@ -1452,6 +1483,7 @@ a {
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -1561,6 +1593,7 @@ a {
 
 #contact .wrapper section h1 {
   font-size: var(--page-heading-font-size);
+  font-weight: var(--page-heading-font-weight);
 }
 
 #contact .wrapper section:first-child {
@@ -1609,7 +1642,14 @@ a {
 }
 
 #contact .wrapper section:first-child ul.content li span {
+  font-family: 'Open Sans', sans-serif;
   color: #fff;
+}
+
+@media (max-width: 767px) {
+  #contact .wrapper section:first-child ul.content li span {
+    font-size: 0.95rem;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -1674,6 +1714,7 @@ a {
 #contact .wrapper section:last-child form label span.label {
   display: block;
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding-bottom: 0;
@@ -1682,6 +1723,7 @@ a {
 
 #contact .wrapper section:last-child form label span.field-message {
   display: block;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #contact .wrapper section:last-child form label span.field-message.error {
@@ -1690,6 +1732,7 @@ a {
 
 #contact .wrapper section:last-child form label input[type="text"], #contact .wrapper section:last-child form label textarea {
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.25rem;
   padding: 0.5rem;
   border: none;

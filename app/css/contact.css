@@ -4,6 +4,7 @@
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -79,6 +80,7 @@
 
 #contact .wrapper section h1 {
   font-size: var(--page-heading-font-size);
+  font-weight: var(--page-heading-font-weight);
 }
 
 #contact .wrapper section:first-child {
@@ -127,7 +129,14 @@
 }
 
 #contact .wrapper section:first-child ul.content li span {
+  font-family: 'Open Sans', sans-serif;
   color: #fff;
+}
+
+@media (max-width: 767px) {
+  #contact .wrapper section:first-child ul.content li span {
+    font-size: 0.95rem;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -192,6 +201,7 @@
 #contact .wrapper section:last-child form label span.label {
   display: block;
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding-bottom: 0;
@@ -200,6 +210,7 @@
 
 #contact .wrapper section:last-child form label span.field-message {
   display: block;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #contact .wrapper section:last-child form label span.field-message.error {
@@ -208,6 +219,7 @@
 
 #contact .wrapper section:last-child form label input[type="text"], #contact .wrapper section:last-child form label textarea {
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.25rem;
   padding: 0.5rem;
   border: none;

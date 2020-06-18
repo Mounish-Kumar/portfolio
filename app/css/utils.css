@@ -52,8 +52,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Josefin Sans';
-  font-weight: 500;
+  font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.5px;
   line-height: 1.5;
   word-break: break-word;
@@ -96,6 +95,7 @@ a {
 
 .container > h1 {
   font-size: var(--page-heading-font-size);
+  font-weight: var(--page-heading-font-weight);
   padding: 0 var(--header-margin-lr);
 }
 

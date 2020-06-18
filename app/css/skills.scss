@@ -44,6 +44,7 @@
 
             > h1 {
                 font-size: 1.5rem;
+                font-weight: var(--page-heading-font-weight);
                 padding: 0 var(--header-margin-lr);
             }
 
@@ -99,6 +100,8 @@
 
                     span {
                         grid-area: span;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 0.95rem;
                         font-weight: 500;
                         padding: $tech-logo-padding $tech-logo-padding $tech-logo-padding 0;
 

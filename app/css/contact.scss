@@ -25,7 +25,7 @@
 
             h1 {
                 font-size: var(--page-heading-font-size);
-                // white-space: nowrap;
+                font-weight: var(--page-heading-font-weight);
             }
 
             &:first-child {
@@ -61,8 +61,12 @@
                             }
         
                             span {
-                                // white-space: nowrap;
+                                font-family: 'Open Sans', sans-serif;
                                 color: #fff;
+
+                                @include mobile {
+                                    font-size: 0.95rem;
+                                }
 
                                 @include desktop {
                                     font-size: 1.2rem;
@@ -127,6 +131,7 @@
                             &.label {
                                 display: block;
                                 width: 100%;
+                                font-family: 'Open Sans', sans-serif;
                                 border-top-left-radius: $border-radius;
                                 border-top-right-radius: $border-radius;
                                 padding-bottom: 0;
@@ -135,6 +140,7 @@
     
                             &.field-message {
                                 display: block;
+                                font-family: 'Open Sans', sans-serif;
     
                                 &.error {
                                     color: #ff4444;
@@ -144,6 +150,7 @@
 
                         input[type="text"], textarea {
                             width: 100%;
+                            font-family: 'Open Sans', sans-serif;
                             font-size: $font-size;
                             padding: $padding;
                             border: none;

@@ -14,7 +14,7 @@
     }
 
     @include desktop {
-        grid-template-columns: 60%;
+        grid-template-columns: 55%;
     }
 
     @include tablet-desktop {
@@ -54,6 +54,7 @@
 
         h1 {
             font-size: var(--page-heading-font-size);
+            font-weight: var(--page-heading-font-weight);
 
             @include mobile {
                 padding: 0 var(--header-margin-lr);
@@ -61,10 +62,19 @@
         }
 
         p {
-            line-height: 1.5;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            line-height: 2;
 
             @include mobile {
                 padding: 0 var(--header-margin-lr);
+            }
+
+            .highlight {
+                font-family: 'Open Sans', sans-serif;
+                font-size: 1rem;
+                font-weight: 600;
+                color: #ffff00;
             }
         }
 
@@ -94,8 +104,8 @@
                 align-items: center;
                 padding: 1rem;
                 border-radius: 8px;
-                color: color(primary-text);
-                background-color: #fff;
+                color: #fff;
+                background-color: rgba(#000, 0.5);
                 @extend %smooth-shadow;
 
                 @include mobile {

@@ -31,7 +31,7 @@
             }
 
             nav ul li a .label {
-                font-size: 1.2rem;
+                font-size: 1.125rem;
             }
         }
     }
@@ -112,13 +112,15 @@
                     }
 
                     .label {
+                        font-family: 'Open Sans', sans-serif;
+                        
                         @include mobile {
                             font-size: 0.85rem;
                             line-height: 1;
                         }
 
                         @include tablet-desktop {
-                            font-size: 1.5rem;
+                            font-size: 1.25rem;
                             transition: font-size var(--header-transition-time);
                         }
                     }

@@ -4,6 +4,7 @@
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -98,8 +99,8 @@
 
 @media (min-width: 1025px) {
   #about {
-    -ms-grid-columns: 60%;
-        grid-template-columns: 60%;
+    -ms-grid-columns: 55%;
+        grid-template-columns: 55%;
   }
 }
 
@@ -153,6 +154,7 @@
 
 #about section h1 {
   font-size: var(--page-heading-font-size);
+  font-weight: var(--page-heading-font-weight);
 }
 
 @media (max-width: 767px) {
@@ -162,13 +164,22 @@
 }
 
 #about section p {
-  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 2;
 }
 
 @media (max-width: 767px) {
   #about section p {
     padding: 0 var(--header-margin-lr);
   }
+}
+
+#about section p .highlight {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffff00;
 }
 
 #about section ul {
@@ -214,8 +225,8 @@
           align-items: center;
   padding: 1rem;
   border-radius: 8px;
-  color: color(primary-text);
-  background-color: #fff;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 767px) {

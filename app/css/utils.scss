@@ -4,9 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // font-family: 'Montserrat';
-    font-family: 'Josefin Sans';
-    font-weight: 500;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 0.5px;
     line-height: 1.5;
     word-break: break-word;
@@ -46,6 +45,7 @@ a {
 
     > h1 {
         font-size: var(--page-heading-font-size);
+        font-weight: var(--page-heading-font-weight);
         padding: 0 var(--header-margin-lr);
 
         @include tablet-desktop {

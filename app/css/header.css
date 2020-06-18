@@ -4,6 +4,7 @@
   --header-margin-tb: 0.5rem;
   --header-transition-time: 0.5s;
   --page-heading-font-size: 2rem;
+  --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
 }
@@ -89,7 +90,7 @@
     height: calc(var(--logo-height) - 1rem);
   }
   #header.scrolled nav ul li a .label {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -186,6 +187,10 @@
   }
 }
 
+#header nav ul li a .label {
+  font-family: 'Open Sans', sans-serif;
+}
+
 @media (max-width: 767px) {
   #header nav ul li a .label {
     font-size: 0.85rem;
@@ -195,7 +200,7 @@
 
 @media (min-width: 768px) {
   #header nav ul li a .label {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     -webkit-transition: font-size var(--header-transition-time);
     transition: font-size var(--header-transition-time);
   }

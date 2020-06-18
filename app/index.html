@@ -7,11 +7,7 @@
     <meta name="author" content="Mounish Kumar">
     <title>Mounish - Web Developer</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" />
-    <link rel="stylesheet" href="css/index.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300;1,400;1,500;1,600;1,700&display=swap');
-
         :root {
             --brand-color: #ff1744;
         }
@@ -50,22 +46,33 @@
         }
 
         #loader span {
+            font-size: 2rem;
+            font-family: monospace;
             text-transform: uppercase;
-            font-weight: 600;
+            letter-spacing: 0px;
             color: var(--brand-color);
         }
 
+        @media (max-width: 767px) {
+            #loader span {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #loader span {
+                font-size: 2rem;
+            }
+        }
+
         #typing:after {
-            content: "|";
-            font-size: 1.4rem;
-            font-weight: 100;
-            animation: animated-cursor 0.5s infinite;
+            content: "_";
+            animation: animated-cursor 0.3s infinite;
         }
 
         @keyframes animated-cursor {
             0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         .light-theme #typing:after {
@@ -75,17 +82,8 @@
         .dark-theme #typing:after {
             color: #fafafa;
         }
-
-        @media (min-width: 768px) {
-            #typing {
-                font-size: 1.4rem;
-            }
-
-            #typing:after {
-                font-size: 1.8rem;
-            }
-        }
     </style>
+    <link rel="stylesheet" href="css/index.css" />
 </head>
 
 <body class="body-loading light-theme">
@@ -161,7 +159,7 @@
                 Hello world! My name is Mounish Kumar.
                 I'm a Full-stack Web Developer and UI/UX Enthusiast based in Chennai, India.
                 I got a Bachelor of Engineering degree from Anna University.<br><br>
-                I've 6+ years of experience in writing clean, elegant & efficient code.
+                I've <span class="highlight">6+ years of experience</span> in writing clean, elegant & efficient code.
                 My areas of expertise include
             </p>
             <div class="horizontal-scroll-m">
@@ -225,8 +223,8 @@
                             <img loading="lazy" data-src="./assets/images/skills/sass.png" alt="Sass">
                             <span class="label">Sass</span>
                         </li>
-                        <li tooltip="60%">
-                            <div class="progress-bar" style="width: 60% !important"></div>
+                        <li tooltip="70%">
+                            <div class="progress-bar" style="width: 70% !important"></div>
                             <img loading="lazy" data-src="./assets/images/skills/bootstrap.png" alt="Bootstrap">
                             <span class="label">Bootstrap 4</span>
                         </li>
@@ -269,18 +267,18 @@
                         </li>
                         <li tooltip="50%">
                             <div class="progress-bar" style="width: 50% !important"></div>
+                            <img loading="lazy" data-src="./assets/images/skills/maven.png" alt="Maven">
+                            <span class="label">Maven</span>
+                        </li>
+                        <li tooltip="50%">
+                            <div class="progress-bar" style="width: 50% !important"></div>
                             <img loading="lazy" data-src="./assets/images/skills/git.png" alt="Git">
                             <span class="label">Git</span>
                         </li>
-                        <li tooltip="40%">
-                            <div class="progress-bar" style="width: 40% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/junit.png" alt="JUnit">
-                            <span class="label">JUnit</span>
-                        </li>
-                        <li tooltip="40%">
-                            <div class="progress-bar" style="width: 40% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/maven.png" alt="Maven">
-                            <span class="label">Maven</span>
+                        <li tooltip="50%">
+                            <div class="progress-bar" style="width: 50% !important"></div>
+                            <img loading="lazy" data-src="./assets/images/skills/svn.jpg" alt="SVN">
+                            <span class="label">SVN</span>
                         </li>
                     </ul>
                 </div>
