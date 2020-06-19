@@ -1,5 +1,3 @@
-@import "common.scss";
-
 #header {
     --logo-height: calc(var(--header-height) - 2 * var(--header-margin-tb));
     $header-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
@@ -85,10 +83,8 @@
 
                     @include desktop {
                         &:hover {
-                            @include desktop {
-                                i, .label {
-                                    color: color(brand);
-                                }
+                            i, .label {
+                                color: color(brand);
                             }
                         }
                     }
@@ -112,7 +108,7 @@
                     }
 
                     .label {
-                        font-family: 'Open Sans', sans-serif;
+                        font-family: var(--font-family-secondary);
                         
                         @include mobile {
                             font-size: 0.85rem;

@@ -86,7 +86,7 @@
     <link rel="stylesheet" href="css/index.css" />
 </head>
 
-<body class="body-loading light-theme">
+<body class="light-theme">
     <div id="loader">
         <img class="logo" src="./assets/images/logo.png" alt="MK">
         <span id="typing" data="Full-stack Web Developer, UI/UX Enthusiast"></span>
@@ -144,8 +144,8 @@
             <h1>Let's turn ideas<br> into reality</h1>
             <h3>Full-stack Web Developer</h3>
             <div class="action">
-                <a href="#about">Know More</a>
-                <a class="primary" onclick="downloadResume()">Resume</a>
+                <a href="#about" class="btn">Know More</a>
+                <a class="btn primary" onclick="downloadResume()">Resume</a>
             </div>
         </div>
     </div>
@@ -405,8 +405,8 @@
                         <i class="fa fa-times-circle"></i>
                         <span></span>
                     </span>
-                    <button type="button" onclick="sendMessage()">Send</button>
-                    <!-- <button class="g-recaptcha" data-sitekey="6Lco56IZAAAAAPF2gX710nPTRtwIzPmOqMucfaRB"
+                    <button name="send-message" class="btn primary" type="button" onclick="sendMessage()">Send</button>
+                    <!-- <button class="btn primary g-recaptcha" data-sitekey="6Lco56IZAAAAAPF2gX710nPTRtwIzPmOqMucfaRB"
                         data-callback='sendMessage' data-action='submit'>Send</button> -->
                 </form>
             </section>

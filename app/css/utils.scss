@@ -1,11 +1,94 @@
-@import "common.scss";
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin mobile-long {
+    @media (max-width: 767px) and (min-height: 800px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1025px) {
+        @content;
+    }
+}
+
+@mixin tablet-desktop {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin wide-screen {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+
+:root {
+    scroll-behavior: smooth;
+    --nav-height: 4rem;
+    --header-margin-tb: 0.5rem;
+    --header-transition-time: 0.5s;
+    --page-heading-font-size: 2rem;
+    --page-heading-font-weight: 500;
+    --page-heading-size: 4rem;
+    --container-margin-tb: 3rem;
+    --font-family-primary: 'Josefin Sans', sans-serif;
+    --font-family-secondary: 'Open Sans', sans-serif;
+
+    @include mobile {
+        --header-height: 3rem;
+        --header-margin-lr: 1.5rem;
+
+        .hide-sm {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        --header-height: 4rem;
+        --header-margin-lr: 3rem;
+
+        .hide-md {
+            display: none;
+        }
+    }
+
+    @include desktop {
+        --header-height: 4rem;
+        --header-margin-lr: 4.5rem;
+
+        .hide-lg {
+            display: none;
+        }
+    }
+
+    @include wide-screen {
+        --header-margin-lr: 8rem;
+
+        .hide-xl {
+            display: none;
+        }
+    }
+}
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // font-family: 'Open Sans', sans-serif;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--font-family-primary);
     letter-spacing: 0.5px;
     line-height: 1.5;
     word-break: break-word;
@@ -19,16 +102,6 @@ body {
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
     overflow-y: scroll;
-}
-
-
-a {
-    text-decoration: none;
-}
-
-
-.hide {
-    display: none !important;
 }
 
 
@@ -52,6 +125,16 @@ a {
             text-align: center;
         }
     }
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+.hide {
+    display: none !important;
 }
 
 
@@ -97,9 +180,11 @@ a {
     transition: opacity 0.5s ease;
 }
 
-[tooltip]:hover:before, [tooltip]:hover:after {
-    opacity: 1;
-    visibility: visible;
+@include tablet-desktop {
+    [tooltip]:hover:before, [tooltip]:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 
@@ -117,6 +202,105 @@ a {
 
         &::-webkit-scrollbar {
             display: none;
+        }
+    }
+}
+
+// When there is only 1 row
+@mixin horizontal-scroll($content) {
+    display: grid;
+    grid-template-columns: 0.1px $content 0.1px;
+    grid-gap: var(--header-margin-lr);
+    overflow-x: scroll;
+    padding-bottom: 180px;
+    margin-bottom: -180px;
+
+    &::before, &::after {
+        content: '';
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+.btn {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.6rem 1.6rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    color: color(brand);
+    background-image: linear-gradient(45deg, #fff , #fff, #eee, #fff, #fff);
+    background-size: 225%;
+    background-position: right;
+    transition: background-position 0.4s ease-out;
+    @extend %shadow;
+
+    @include desktop {
+        &:hover {
+            background-position: left;
+        }
+    }
+
+    &:disabled {
+        cursor: default;
+    }
+
+    &.primary {
+        color: #fff;
+        background-image: linear-gradient(45deg, color(brand), color(brand), #ff8800, color(brand), color(brand));
+    }
+}
+
+
+%shadow {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+                0 12.5px 10px rgba(0, 0, 0, 0.035),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+                0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+%smooth-shadow {
+    @include mobile {
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+                    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+                    0 12.5px 10px rgba(0, 0, 0, 0.035),
+                    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+                    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+                    0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+
+    @include tablet {
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+                    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+                    0 12.5px 10px rgba(0, 0, 0, 0.035),
+                    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+                    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+                    0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+
+    @include desktop {
+        box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02),
+                    0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028),
+                    0 12.5px 10px -20px rgba(0, 0, 0, 0.035),
+                    0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042),
+                    0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05),
+                    0 100px 80px -20px rgba(0, 0, 0, 0.07);
+        transition: box-shadow 0.2s ease-in;
+
+        &:hover {
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                        0 12.5px 10px rgba(0, 0, 0, 0.06),
+                        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                        0 100px 80px rgba(0, 0, 0, 0.12);
         }
     }
 }

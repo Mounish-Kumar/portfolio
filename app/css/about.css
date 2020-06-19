@@ -7,6 +7,8 @@
   --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
+  --font-family-primary: 'Josefin Sans', sans-serif;
+  --font-family-secondary: 'Open Sans', sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -164,7 +166,7 @@
 }
 
 #about section p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-secondary);
   font-size: 0.95rem;
   line-height: 2;
 }
@@ -176,7 +178,7 @@
 }
 
 #about section p .highlight {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-secondary);
   font-size: 1rem;
   font-weight: 600;
   color: #ffff00;

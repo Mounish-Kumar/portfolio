@@ -1,11 +1,5 @@
-@import "common.scss";
-
 #contact {
     padding: 0 !important;
-
-    @include desktop {
-        // min-height: calc(100vh - var(--header-height) + 1rem);
-    }
 
     .wrapper {
         display: grid;
@@ -61,7 +55,7 @@
                             }
         
                             span {
-                                font-family: 'Open Sans', sans-serif;
+                                font-family: var(--font-family-secondary);
                                 color: #fff;
 
                                 @include mobile {
@@ -131,7 +125,7 @@
                             &.label {
                                 display: block;
                                 width: 100%;
-                                font-family: 'Open Sans', sans-serif;
+                                font-family: var(--font-family-secondary);
                                 border-top-left-radius: $border-radius;
                                 border-top-right-radius: $border-radius;
                                 padding-bottom: 0;
@@ -140,7 +134,7 @@
     
                             &.field-message {
                                 display: block;
-                                font-family: 'Open Sans', sans-serif;
+                                font-family: var(--font-family-secondary);
     
                                 &.error {
                                     color: #ff4444;
@@ -150,7 +144,7 @@
 
                         input[type="text"], textarea {
                             width: 100%;
-                            font-family: 'Open Sans', sans-serif;
+                            font-family: var(--font-family-secondary);
                             font-size: $font-size;
                             padding: $padding;
                             border: none;
@@ -199,18 +193,10 @@
                         }
                     }
 
-                    input[type="submit"], button {
-                        display: inline-block;
-                        height: $btn-height;
-                        max-width: 10rem;
-                        font-size: $btn-font-size;
-                        text-transform: uppercase;
-                        border: none;
+                    .btn {
                         border-radius: 30px;
-                        color: #fff;
-                        background-image: linear-gradient(to top right, color(brand) , color(brand), #ff8800);
-                        cursor: pointer;
-                        outline: none;
+                        max-width: 10rem;
+                        text-transform: uppercase;
                     }
                 }
             }

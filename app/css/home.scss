@@ -1,5 +1,3 @@
-@import "common.scss";
-
 #home {
     --home-grid-gap: 1rem;
     padding-top: var(--header-height);
@@ -73,7 +71,7 @@
         
         @include mobile {
             align-items: center;
-            margin-top: var(--home-grid-gap);
+            margin-top: calc(1.5 * var(--home-grid-gap));
         }
 
         @include tablet-desktop {
@@ -102,11 +100,15 @@
             margin-top: 0.75rem;
             font-weight: 600;
             letter-spacing: 0;
-            line-height: 1.25;
 
             @include mobile {
                 font-size: 2rem;
                 margin-top: 0.5rem;
+                line-height: 1.15;
+            }
+
+            @include tablet-desktop {
+                line-height: 1.25;
             }
 
             @media (min-width: 975px) {
@@ -118,7 +120,7 @@
 
         h3 {
             margin-top: 1.5rem;
-            font-family: 'Open Sans', sans-serif;
+            font-family: var(--font-family-secondary);
             font-size: 1.25rem;
             font-weight: 400;
             line-height: 1;
@@ -149,31 +151,11 @@
                 margin-top: 3rem;
             }
 
-            a {
-                display: inline-block;
-                text-decoration: none;
-                white-space: nowrap;
-                border-radius: 6px;
-                font-weight: 500;
-                padding: 0.5rem 1rem;
-                color: color(brand);
-                background-color: rgba(#fff, 0.9);
-                @extend %shadow;
-                cursor: pointer;
-
+            .btn {
                 @include mobile {
-                    font-size: 0.8rem;
+                    padding: 0.5rem 1rem;
                 }
-
-                @include tablet-desktop {
-                    font-size: 1rem;
-                }
-
-                &.primary {
-                    color: #fff;
-                    background-image: linear-gradient(to top right, color(brand), color(brand), #ff8800)
-                }
-            } 
+            }
         }
     }
 }

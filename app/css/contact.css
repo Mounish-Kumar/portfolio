@@ -7,6 +7,8 @@
   --page-heading-font-weight: 500;
   --page-heading-size: 4rem;
   --container-margin-tb: 3rem;
+  --font-family-primary: 'Josefin Sans', sans-serif;
+  --font-family-secondary: 'Open Sans', sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -129,7 +131,7 @@
 }
 
 #contact .wrapper section:first-child ul.content li span {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-secondary);
   color: #fff;
 }
 
@@ -201,7 +203,7 @@
 #contact .wrapper section:last-child form label span.label {
   display: block;
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-secondary);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding-bottom: 0;
@@ -210,7 +212,7 @@
 
 #contact .wrapper section:last-child form label span.field-message {
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-secondary);
 }
 
 #contact .wrapper section:last-child form label span.field-message.error {
@@ -219,7 +221,7 @@
 
 #contact .wrapper section:last-child form label input[type="text"], #contact .wrapper section:last-child form label textarea {
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-secondary);
   font-size: 1.25rem;
   padding: 0.5rem;
   border: none;
