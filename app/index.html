@@ -67,10 +67,10 @@
 
         #typing:after {
             content: "_";
-            animation: animated-cursor 0.3s infinite;
+            animation: cursorBlink 0.3s infinite;
         }
 
-        @keyframes animated-cursor {
+        @keyframes cursorBlink {
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
@@ -86,7 +86,7 @@
     <link rel="stylesheet" href="css/index.css" />
 </head>
 
-<body class="light-theme">
+<body class="body-loading light-theme">
     <div id="loader">
         <img class="logo" src="./assets/images/logo.png" alt="MK">
         <span id="typing" data="Full-stack Web Developer, UI/UX Enthusiast"></span>
@@ -405,9 +405,15 @@
                         <i class="fa fa-times-circle"></i>
                         <span></span>
                     </span>
-                    <button name="send-message" class="btn primary" type="button" onclick="sendMessage()">Send</button>
+                    <button name="send-message" class="btn primary" type="button" onclick="sendMessage()">
+                        <span>SEND</span>
+                        <i class="fa fa-plane"></i>
+                    </button>
                     <!-- <button class="btn primary g-recaptcha" data-sitekey="6Lco56IZAAAAAPF2gX710nPTRtwIzPmOqMucfaRB"
-                        data-callback='sendMessage' data-action='submit'>Send</button> -->
+                        data-callback='sendMessage' data-action='submit'>
+                        <span>SEND</span>
+                        <i class="fa fa-plane"></i>
+                    </button> -->
                 </form>
             </section>
         </div>

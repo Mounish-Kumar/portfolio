@@ -1,10 +1,12 @@
+var animationDelay = 1000;
+
 function sendMessage() {
     hideAllMessages();
     const requestBody = prepareRequestBody();
 
     if(validateMessage(requestBody)) {
         requestBody['ipAddress'] = localStorage.getItem("IP_ADDRESS");
-        formLoading(true);
+        formLoading(true, null);
         
         $.ajax({
             url: "http://localhost:8080/api/v1/message/send",
@@ -15,19 +17,25 @@ function sendMessage() {
                 "Content-Type": "application/json"
             },
             success: function (data, textStatus, jqXHR) {
-                formLoading(false);
                 if(jqXHR.status === 200 && data && data.status === "SENT") {
-                    setSuccessMessage("Thanks for your message! I'll get back to you in 48 hours.");
-                    resetFields();
+                    formLoading(false, 'success');
+                    setTimeout(() => {
+                        setSuccessMessage("Thanks for your message! I'll get back to you in 48 hours.");
+                        resetFields();
+                    }, animationDelay);
+                } else {
+                    formLoading(false, 'error');
                 }
             },
             error: function (error) {
-                formLoading(false);
-                const data = error && error.responseJSON;
-                if(data) {
-                    setErrorMessage(data.message)
-                    setFieldErrorMessages(data.fieldErrorMessages);
-                } else setErrorMessage(error.statusText);
+                formLoading(false, 'error');
+                setTimeout(() => {
+                    const data = error && error.responseJSON;
+                    if(data) {
+                        setErrorMessage(data.message)
+                        setFieldErrorMessages(data.fieldErrorMessages);
+                    } else setErrorMessage(error.statusText);
+                }, animationDelay);
             }
         });
     }
@@ -77,15 +85,31 @@ function validateMessage(requestBody) {
     }
 }
 
-function formLoading(readonly) {
+function formLoading(isLoading, result) {
     // Make fields readonly
-    $('[name="name"] > input').prop('readonly', readonly);
-    $('[name="email"] > input').prop('readonly', readonly);
-    $('[name="mobile"] > input').prop('readonly', readonly);
-    $('[name="message"] > textarea').prop('readonly', readonly);
-    $('[name="send-message"]').prop('disabled', readonly);
+    $('[name="name"] > input').prop('readonly', isLoading);
+    $('[name="email"] > input').prop('readonly', isLoading);
+    $('[name="mobile"] > input').prop('readonly', isLoading);
+    $('[name="message"] > textarea').prop('readonly', isLoading);
+    $('[name="send-message"]').prop('disabled', isLoading);
 
     // Animate send button
+    if(isLoading) { // Sending animation
+        $('[name="send-message"] > span').text('Sending');
+        $('[name="send-message"]').addClass('sending');
+    } else {
+        if(result === 'success') { // Sent animation
+            $('[name="send-message"] > span').text('SENT');
+            $('[name="send-message"]').addClass('sent');
+        } else if(result === 'error') { // Failed animation
+            $('[name="send-message"] > span').text('FAILED');
+            $('[name="send-message"]').addClass('failed');
+        }
+        setTimeout(function() { // Remove animation
+            $('[name="send-message"] > span').text('SEND');
+            $('[name="send-message"]').removeClass('sending sent failed');
+        }, animationDelay + 3000);
+    }
 }
 
 function setSuccessMessage(message) {

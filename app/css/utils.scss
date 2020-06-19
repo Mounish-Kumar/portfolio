@@ -257,6 +257,85 @@ a {
 }
 
 
+[name="send-message"] {
+    position: relative;
+    background-image: none !important;
+    background-color: color(brand);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    i {
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+    }
+
+    &.sending {
+        background-color: #ff8800;
+        box-shadow: 0px 16px 16px -6px #ffd54f;
+
+        i {
+            transform: translateY(-50%) rotateZ(-90deg);
+            animation: shake 0.3s ease 0.5s infinite;
+        }
+
+        @keyframes shake {
+            10%, 30%, 50%, 70%, 90% {
+                transform: translateY(-50%) translate3d(-1px, 0, 0) rotateZ(-90deg);
+            }
+            20%, 40%, 60%, 80% {
+                transform: translateY(-50%) translate3d(1px, 0, 0) rotateZ(-90deg);
+            }
+        }
+    }
+
+    &.sent {
+        background-color: #00C851;
+        box-shadow: 0px 16px 16px -6px #69f0ae;
+
+        i {
+            transform: translateY(-50%) rotateZ(-90deg);
+            animation: moveUp 1s ease 0s forwards;
+        }
+
+        @keyframes moveUp {
+            0% {
+                margin-top: 0;
+                transform: translateY(-50%) scale(1) rotateZ(-90deg);
+            }
+            100% {
+                color: #00C851;
+                margin-top: -100px;
+                transform: translateY(-50%) scale(0) rotateZ(-90deg);
+            }
+        }
+    }
+
+    &.failed {
+        background-color: #ff0000;
+        box-shadow: 0px 16px 16px -6px #ff9e9f;
+
+        i {
+            transform: translateY(-50%) rotateZ(-90deg);
+            animation: moveDown 1s ease 0s forwards;
+        }
+
+        @keyframes moveDown {
+            0% {
+                margin-top: 0;
+                transform: translateY(-50%) scale(1) rotateZ(-90deg);
+            }
+            100% {
+                color: #ff0000;
+                margin-top: var(--container-margin-tb);
+                transform: translateY(-50%) scale(0) rotateZ(-90deg);
+            }
+        }
+    }
+}
+
+
 %shadow {
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
                 0 6.7px 5.3px rgba(0, 0, 0, 0.028),

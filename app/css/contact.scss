@@ -188,7 +188,8 @@
                         }
 
                         span {
-                            font-size: $label-font-size;
+                            font-family: var(--font-family-secondary);
+                            font-size: 0.9rem;
                             padding: $padding $padding $padding 0;
                         }
                     }
@@ -196,7 +197,6 @@
                     .btn {
                         border-radius: 30px;
                         max-width: 10rem;
-                        text-transform: uppercase;
                     }
                 }
             }

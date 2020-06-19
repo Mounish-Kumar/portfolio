@@ -206,6 +206,145 @@ a {
   background-image: linear-gradient(45deg, var(--brand-color), var(--brand-color), #ff8800, var(--brand-color), var(--brand-color));
 }
 
+[name="send-message"] {
+  position: relative;
+  background-image: none !important;
+  background-color: var(--brand-color);
+  -webkit-transition: background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+
+[name="send-message"] i {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+[name="send-message"].sending {
+  background-color: #ff8800;
+  -webkit-box-shadow: 0px 16px 16px -6px #ffd54f;
+          box-shadow: 0px 16px 16px -6px #ffd54f;
+}
+
+[name="send-message"].sending i {
+  -webkit-transform: translateY(-50%) rotateZ(-90deg);
+          transform: translateY(-50%) rotateZ(-90deg);
+  -webkit-animation: shake 0.3s ease 0.5s infinite;
+          animation: shake 0.3s ease 0.5s infinite;
+}
+
+@-webkit-keyframes shake {
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateY(-50%) translate3d(-1px, 0, 0) rotateZ(-90deg);
+            transform: translateY(-50%) translate3d(-1px, 0, 0) rotateZ(-90deg);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateY(-50%) translate3d(1px, 0, 0) rotateZ(-90deg);
+            transform: translateY(-50%) translate3d(1px, 0, 0) rotateZ(-90deg);
+  }
+}
+
+@keyframes shake {
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateY(-50%) translate3d(-1px, 0, 0) rotateZ(-90deg);
+            transform: translateY(-50%) translate3d(-1px, 0, 0) rotateZ(-90deg);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateY(-50%) translate3d(1px, 0, 0) rotateZ(-90deg);
+            transform: translateY(-50%) translate3d(1px, 0, 0) rotateZ(-90deg);
+  }
+}
+
+[name="send-message"].sent {
+  background-color: #00C851;
+  -webkit-box-shadow: 0px 16px 16px -6px #69f0ae;
+          box-shadow: 0px 16px 16px -6px #69f0ae;
+}
+
+[name="send-message"].sent i {
+  -webkit-transform: translateY(-50%) rotateZ(-90deg);
+          transform: translateY(-50%) rotateZ(-90deg);
+  -webkit-animation: moveUp 1s ease 0s forwards;
+          animation: moveUp 1s ease 0s forwards;
+}
+
+@-webkit-keyframes moveUp {
+  0% {
+    margin-top: 0;
+    -webkit-transform: translateY(-50%) scale(1) rotateZ(-90deg);
+            transform: translateY(-50%) scale(1) rotateZ(-90deg);
+  }
+  100% {
+    color: #00C851;
+    margin-top: -100px;
+    -webkit-transform: translateY(-50%) scale(0) rotateZ(-90deg);
+            transform: translateY(-50%) scale(0) rotateZ(-90deg);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    margin-top: 0;
+    -webkit-transform: translateY(-50%) scale(1) rotateZ(-90deg);
+            transform: translateY(-50%) scale(1) rotateZ(-90deg);
+  }
+  100% {
+    color: #00C851;
+    margin-top: -100px;
+    -webkit-transform: translateY(-50%) scale(0) rotateZ(-90deg);
+            transform: translateY(-50%) scale(0) rotateZ(-90deg);
+  }
+}
+
+[name="send-message"].failed {
+  background-color: #ff0000;
+  -webkit-box-shadow: 0px 16px 16px -6px #ff9e9f;
+          box-shadow: 0px 16px 16px -6px #ff9e9f;
+}
+
+[name="send-message"].failed i {
+  -webkit-transform: translateY(-50%) rotateZ(-90deg);
+          transform: translateY(-50%) rotateZ(-90deg);
+  -webkit-animation: moveDown 1s ease 0s forwards;
+          animation: moveDown 1s ease 0s forwards;
+}
+
+@-webkit-keyframes moveDown {
+  0% {
+    margin-top: 0;
+    -webkit-transform: translateY(-50%) scale(1) rotateZ(-90deg);
+            transform: translateY(-50%) scale(1) rotateZ(-90deg);
+  }
+  100% {
+    color: #ff0000;
+    margin-top: var(--container-margin-tb);
+    -webkit-transform: translateY(-50%) scale(0) rotateZ(-90deg);
+            transform: translateY(-50%) scale(0) rotateZ(-90deg);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    margin-top: 0;
+    -webkit-transform: translateY(-50%) scale(1) rotateZ(-90deg);
+            transform: translateY(-50%) scale(1) rotateZ(-90deg);
+  }
+  100% {
+    color: #ff0000;
+    margin-top: var(--container-margin-tb);
+    -webkit-transform: translateY(-50%) scale(0) rotateZ(-90deg);
+            transform: translateY(-50%) scale(0) rotateZ(-90deg);
+  }
+}
+
 .btn, #about section ul li {
   -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
           box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
@@ -1294,13 +1433,13 @@ a {
 }
 
 #contact .wrapper section:last-child form .response-message span {
-  font-size: 0.75rem;
+  font-family: var(--font-family-secondary);
+  font-size: 0.9rem;
   padding: 0.5rem 0.5rem 0.5rem 0;
 }
 
 #contact .wrapper section:last-child form .btn {
   border-radius: 30px;
   max-width: 10rem;
-  text-transform: uppercase;
 }
 /*# sourceMappingURL=index.css.map */
