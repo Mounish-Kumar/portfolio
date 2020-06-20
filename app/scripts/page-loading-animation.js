@@ -9,6 +9,10 @@ document.onreadystatechange = function () {
     }
 };
 
+function stopPageLoading() {
+    if(isPageLoaded) document.querySelector("body").classList.remove("body-loading");
+}
+
 function addText(txt) {
     return new Promise((resolve, reject) => {
         let i = 0;
@@ -53,7 +57,10 @@ function addRemoveText() {
         if(text) {
             if(promise) promise = promise.then(() => addText(text));
             else promise = addText(text);
-            promise = promise.then(() => delay(textDelay)).then(removeText);
+            promise = promise.then(() => delay(textDelay))
+                                .then(stopPageLoading)
+                                .then(removeText)
+                                .then(stopPageLoading);
         }
     }
     return promise;
@@ -62,8 +69,7 @@ function addRemoveText() {
 function infiniteAddRemoveText() {
     addRemoveText()
     .then(() => {
-        if(isPageLoaded) document.querySelector("body").classList.remove("body-loading");
-        else infiniteAddRemoveText();
+        if(!isPageLoaded) infiniteAddRemoveText();
     });
 }
 
