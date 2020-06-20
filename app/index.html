@@ -7,6 +7,7 @@
     <meta name="author" content="Mounish Kumar">
     <title>Mounish - Web Developer</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-color: #ff1744;
@@ -47,8 +48,7 @@
 
         #loader span {
             font-size: 2rem;
-            font-family: monospace;
-            text-transform: uppercase;
+            font-family: 'Cutive Mono', monospace;
             letter-spacing: 0px;
             color: var(--brand-color);
         }
@@ -89,10 +89,10 @@
 <body class="body-loading light-theme">
     <div id="loader">
         <img class="logo" src="./assets/images/logo.png" alt="MK">
-        <span id="typing" data="Full-stack Web Developer, UI/UX Enthusiast"></span>
+        <span id="typing" data="mounish.dev, Web Developer, UI/UX Enthusiast"></span>
     </div>
 
-    
+
     <header id="header">
         <a href="#home">
             <img loading="lazy" class="logo" data-src="./assets/images/logo.png" alt="MK">
@@ -112,15 +112,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#skills">
-                        <i class="fa fa-gears"></i>
-                        <div class="label">Skills</div>
-                    </a>
-                </li>
-                <li>
                     <a href="#work">
                         <i class="fa fa-briefcase"></i>
                         <div class="label">Work</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills">
+                        <i class="fa fa-gears"></i>
+                        <div class="label">Skills</div>
                     </a>
                 </li>
                 <li>
@@ -135,7 +135,6 @@
 
 
     <div id="home" class="container">
-        <img loading="lazy" class="background" data-src="./assets/images/code.jpg" alt="Code">
         <picture>
             <img loading="lazy" class="primary" data-src="./assets/images/mounish.png" alt="Mounish Kumar" />
         </picture>
@@ -152,7 +151,6 @@
 
 
     <div id="about" class="container">
-        <img loading="lazy" data-src="./assets/images/about_me.jpg" alt="Mounish Kumar">
         <section>
             <h1>About Me</h1>
             <p>
@@ -183,6 +181,50 @@
                 </ul>
             </div>
         </section>
+    </div>
+
+
+    <div id="work" class="container">
+        <h1>My <span class="highlight">Work</span></h1>
+        <div class="wrapper horizontal-scroll-m">
+            <section>
+                <p>August 2016 - Present</p>
+                <a href="https://www.centrico.tech" target="_blank">
+                    <img loading="lazy" data-src="./assets/images/centrico.png" alt="Centrico" class="company-logo">
+                </a>
+                <h1>Associate Developer</h1>
+                <div class="clients">
+                    <p>Clients I worked for</p>
+                    <ul>
+                        <a href="https://www.sella.it" target="_blank">
+                            <img loading="lazy" data-src="./assets/images/sella.jpg" alt="Sella">
+                        </a>
+                        <a href="https://www.hype.it" target="_blank">
+                            <img loading="lazy" data-src="./assets/images/hype.jpg" alt="Hype">
+                        </a>
+                        <a href="https://www.axerve.com/en" target="_blank">
+                            <img loading="lazy" data-src="./assets/images/axerve.jpg" alt="Axerve">
+                        </a>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <p>April 2014 - July 2016</p>
+                <a href="https://www.wipro.com/en-IN" target="_blank">
+                    <img loading="lazy" data-src="./assets/images/wipro.png" alt="Wipro Technologies"
+                        class="company-logo">
+                </a>
+                <h1>Project Engineer</h1>
+                <div class="clients">
+                    <p>Clients I worked for</p>
+                    <ul>
+                        <a href="https://www.standardbank.co.za" target="_blank">
+                            <img loading="lazy" data-src="./assets/images/standard_bank.jpg" alt="Standard Bank">
+                        </a>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </div>
 
 
@@ -280,50 +322,6 @@
                             <img loading="lazy" data-src="./assets/images/skills/svn.jpg" alt="SVN">
                             <span class="label">SVN</span>
                         </li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </div>
-
-
-    <div id="work" class="container">
-        <h1>My <span class="highlight">Work</span></h1>
-        <div class="wrapper horizontal-scroll-m">
-            <section>
-                <p>August 2016 - Present</p>
-                <a href="https://www.centrico.tech" target="_blank">
-                    <img loading="lazy" data-src="./assets/images/centrico.png" alt="Centrico" class="company-logo">
-                </a>
-                <h1>Associate Developer</h1>
-                <div class="clients">
-                    <p>Clients I worked for</p>
-                    <ul>
-                        <a href="https://www.sella.it" target="_blank">
-                            <img loading="lazy" data-src="./assets/images/sella.jpg" alt="Sella">
-                        </a>
-                        <a href="https://www.hype.it" target="_blank">
-                            <img loading="lazy" data-src="./assets/images/hype.jpg" alt="Hype">
-                        </a>
-                        <a href="https://www.axerve.com/en" target="_blank">
-                            <img loading="lazy" data-src="./assets/images/axerve.jpg" alt="Axerve">
-                        </a>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <p>April 2014 - July 2016</p>
-                <a href="https://www.wipro.com/en-IN" target="_blank">
-                    <img loading="lazy" data-src="./assets/images/wipro.png" alt="Wipro Technologies"
-                        class="company-logo">
-                </a>
-                <h1>Project Engineer</h1>
-                <div class="clients">
-                    <p>Clients I worked for</p>
-                    <ul>
-                        <a href="https://www.standardbank.co.za" target="_blank">
-                            <img loading="lazy" data-src="./assets/images/standard_bank.jpg" alt="Standard Bank">
-                        </a>
                     </ul>
                 </div>
             </section>

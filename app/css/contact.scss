@@ -24,17 +24,31 @@
 
             &:first-child {
                 grid-template-rows: var(--page-heading-size) auto auto;
-                background-image: linear-gradient(to top right, color(brand) , color(brand), #ff8800);
+                position: relative;
+                background-image: url(/assets/images/contact.jpg);
+                background-attachment: fixed !important;
+                background-size: cover !important;
 
                 @include wide-screen {
                     padding-right: calc(var(--header-margin-lr) / 2);
                 }
+
+                &:after {
+                    content: " ";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-image: linear-gradient(to top right, color(brand), rgba(#ff1744, 0.95), rgba(#ff8800, 0.8));
+                }
         
                 h1 {
                     color: #fff;
+                    z-index: 1;
                 }
         
-                ul {        
+                ul {
+                    z-index: 1;
+
                     &.content {
                         display: grid;
                         grid-template-rows: auto;
@@ -162,7 +176,6 @@
                             display: block;
                             resize: none;
                             min-height: calc(3 * #{$text-box-height});
-                            height: 100%;
                             max-height: calc(#{$text-box-height} + (7 * #{$font-size}));
                         }
                     }

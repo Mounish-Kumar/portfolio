@@ -109,6 +109,9 @@ body {
     display: grid;
     min-height: max-content;
     padding: var(--container-margin-tb) 0;
+    background-blend-mode: overlay;
+    background-size: cover !important;
+    background-position: center !important;
     scroll-snap-align: start !important;
     scroll-margin-top: var(--header-height);
 
