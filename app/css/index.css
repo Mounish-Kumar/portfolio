@@ -211,12 +211,11 @@ a {
 
 [name="send-message"] {
   position: relative;
-  background-image: none !important;
   background-color: var(--brand-color);
-  -webkit-transition: background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
-  transition: background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  -webkit-transition: background-position 0.4s ease-out, background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-position 0.4s ease-out, background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-position 0.4s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-position 0.4s ease-out, background-color 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 [name="send-message"] i {
@@ -232,6 +231,7 @@ a {
 }
 
 [name="send-message"].sending {
+  background-image: none !important;
   background-color: #ff8800;
   -webkit-box-shadow: 0px 16px 16px -6px #ffd54f;
           box-shadow: 0px 16px 16px -6px #ffd54f;
@@ -267,6 +267,7 @@ a {
 }
 
 [name="send-message"].sent {
+  background-image: none !important;
   background-color: #00C851;
   -webkit-box-shadow: 0px 16px 16px -6px #69f0ae;
           box-shadow: 0px 16px 16px -6px #69f0ae;
@@ -308,6 +309,7 @@ a {
 }
 
 [name="send-message"].failed {
+  background-image: none !important;
   background-color: #ff0000;
   -webkit-box-shadow: 0px 16px 16px -6px #ff9e9f;
           box-shadow: 0px 16px 16px -6px #ff9e9f;
@@ -348,38 +350,21 @@ a {
   }
 }
 
-.btn, #about section ul li {
+[data-tilt] {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(1000px);
+          transform: perspective(1000px);
+}
+
+.btn, #about section ul li, #skills .wrapper section ul li {
   -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
           box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
-@media (max-width: 767px) {
-  #work .wrapper section, #skills .wrapper section ul li {
-    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  #work .wrapper section, #skills .wrapper section ul li {
-    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
-  }
-}
-
-@media (min-width: 1025px) {
-  #work .wrapper section, #skills .wrapper section ul li {
-    -webkit-box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
-            box-shadow: 0 2.8px 2.2px -20px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px -20px rgba(0, 0, 0, 0.028), 0 12.5px 10px -20px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px -20px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px -20px rgba(0, 0, 0, 0.05), 0 100px 80px -20px rgba(0, 0, 0, 0.07);
-    -webkit-transition: -webkit-box-shadow 0.2s ease-in;
-    transition: -webkit-box-shadow 0.2s ease-in;
-    transition: box-shadow 0.2s ease-in;
-    transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  }
-  #work .wrapper section:hover, #skills .wrapper section ul li:hover {
-    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-  }
+#work .wrapper section {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 #header {
@@ -899,11 +884,20 @@ a {
         grid-template-columns: var(--icon-font-size) auto;
     grid-gap: 1.5rem;
   }
+  #about section ul li:hover i.fa {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  }
 }
 
 #about section ul li i.fa {
   font-size: var(--icon-font-size);
   color: var(--brand-color);
+  -webkit-transition: text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  transition: text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, text-shadow 0.2s ease-in;
+  transition: transform 0.2s ease-in, text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 
 #work {
@@ -977,6 +971,8 @@ a {
 
 #work .wrapper section img.company-logo {
   max-width: 100%;
+  -webkit-transform: translateZ(45px);
+          transform: translateZ(45px);
 }
 
 @media (max-width: 767px) {
@@ -1033,17 +1029,8 @@ a {
   padding: 0 0.5rem;
   border-radius: 8px;
   background-color: #fff;
-  -webkit-transition: -webkit-box-shadow 0.2s ease-in;
-  transition: -webkit-box-shadow 0.2s ease-in;
-  transition: box-shadow 0.2s ease-in;
-  transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-}
-
-@media (min-width: 1025px) {
-  #work .wrapper section .clients ul img:hover {
-    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-  }
+  -webkit-transform: translateZ(30px);
+          transform: translateZ(30px);
 }
 
 #skills {
@@ -1159,6 +1146,13 @@ a {
   background-color: #fff;
 }
 
+@media (min-width: 1025px) {
+  #skills .wrapper section ul li:hover img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
 #skills .wrapper section ul li .progress-bar {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -1176,6 +1170,10 @@ a {
   width: calc(2rem + 2 * 0.7rem);
   height: calc(2rem + 2 * 0.7rem);
   padding: 0.7rem;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 
 #skills .wrapper section ul li span {
@@ -1249,8 +1247,8 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(rgba(255, 23, 68, 0.95)), to(rgba(255, 136, 0, 0.8)));
-  background-image: linear-gradient(to top right, var(--brand-color), rgba(255, 23, 68, 0.95), rgba(255, 136, 0, 0.8));
+  background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(rgba(255, 23, 68, 0.9)), to(rgba(255, 136, 0, 0.8)));
+  background-image: linear-gradient(to top right, var(--brand-color), rgba(255, 23, 68, 0.9), rgba(255, 136, 0, 0.8));
 }
 
 #contact .wrapper section:first-child h1 {
@@ -1284,9 +1282,15 @@ a {
           align-items: center;
 }
 
+@media (min-width: 1025px) {
+  #contact .wrapper section:first-child ul.content li:hover i.fa {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
 #contact .wrapper section:first-child ul.content li i.fa {
-  font-size: 2rem;
-  color: #fff;
   opacity: 0.6;
 }
 
@@ -1321,9 +1325,21 @@ a {
   margin-top: calc(var(--page-heading-size) - 2rem);
 }
 
-#contact .wrapper section:first-child ul.icons i.fa {
+#contact .wrapper section:first-child ul i.fa {
   font-size: 2rem;
   color: #fff;
+  -webkit-transition: text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  transition: text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, text-shadow 0.2s ease-in;
+  transition: transform 0.2s ease-in, text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+
+@media (min-width: 1025px) {
+  #contact .wrapper section:first-child ul i.fa:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  }
 }
 
 #contact .wrapper section:last-child {

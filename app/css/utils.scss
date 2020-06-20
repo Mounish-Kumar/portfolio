@@ -262,9 +262,8 @@ a {
 
 [name="send-message"] {
     position: relative;
-    background-image: none !important;
     background-color: color(brand);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-position 0.4s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
 
     i {
         position: absolute;
@@ -275,6 +274,7 @@ a {
     }
 
     &.sending {
+        background-image: none !important;
         background-color: #ff8800;
         box-shadow: 0px 16px 16px -6px #ffd54f;
 
@@ -294,6 +294,7 @@ a {
     }
 
     &.sent {
+        background-image: none !important;
         background-color: #00C851;
         box-shadow: 0px 16px 16px -6px #69f0ae;
 
@@ -316,6 +317,7 @@ a {
     }
 
     &.failed {
+        background-image: none !important;
         background-color: #ff0000;
         box-shadow: 0px 16px 16px -6px #ff9e9f;
 
@@ -339,6 +341,12 @@ a {
 }
 
 
+[data-tilt] {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+
 %shadow {
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
                 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
@@ -346,6 +354,15 @@ a {
                 0 22.3px 17.9px rgba(0, 0, 0, 0.042),
                 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
                 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+%dark-shadow {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                0 12.5px 10px rgba(0, 0, 0, 0.06),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 %smooth-shadow {

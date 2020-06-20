@@ -80,7 +80,15 @@
                     align-items: center;
                     max-height: calc(#{$tech-logo-size} + 2 * #{$tech-logo-padding});
                     background-color: #fff;
-                    @extend %smooth-shadow;
+                    @extend %shadow;
+
+                    @include desktop {
+                        &:hover {
+                            img {
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
 
                     .progress-bar {
                         grid-area: progress-bar;
@@ -94,6 +102,7 @@
                         width: $tech-logo-size;
                         height: $tech-logo-size;
                         padding: $tech-logo-padding;
+                        transition: transform 0.2s ease-in;
                     }
 
                     span {

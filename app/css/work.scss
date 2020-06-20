@@ -35,10 +35,11 @@
             padding: 1.25rem;
             border-radius: 8px;
             background-color: #fff;
-            @extend %smooth-shadow;
+            @extend %dark-shadow;
 
             img.company-logo {
                 max-width: 100%;
+                transform: translateZ(45px);
 
                 @include mobile {
                     height: 4rem;
@@ -84,13 +85,7 @@
                         padding: 0 0.5rem;
                         border-radius: 8px;
                         background-color: #fff;
-                        transition: box-shadow 0.2s ease-in;
-
-                        @include desktop {
-                            &:hover {
-                                box-shadow: 0px 2px 4px 0px rgba(#000, 0.2);
-                            }
-                        }
+                        transform: translateZ(30px);
                     }
                 }
             }
