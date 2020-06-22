@@ -61,28 +61,44 @@ function prepareRequestBody() {
 function validateMessage(requestBody) {
     let fieldErrorMessages = [];
     for(let key in requestBody) {
-        if(!requestBody[key]) fieldErrorMessages.push({ field: key, message: 'Mandatory' });
-        else {
-            switch(key) {
-                case 'email':
-                    const emailRegex = /\S+@\S+\.\S+/;
-                    if(!emailRegex.test(requestBody[key]))
-                        fieldErrorMessages.push({ field: key, message: 'Invalid' });
-                    break;
-                case 'message':
-                    if(requestBody[key].length < 10 || requestBody[key].length > 2000)
-                        fieldErrorMessages.push({ field: key, message: 'Must be between 10 and 2000 characters' });
-                    break;
-            }
-        }
+        let fieldErrorMessage = validateField(key);
+        if(fieldErrorMessage) fieldErrorMessages.push(fieldErrorMessage);
     }
 
     if(fieldErrorMessages.length > 0) {
-        setFieldErrorMessages(fieldErrorMessages);
         return false;
     } else {
         return true;
     }
+}
+
+function validateField(key) {
+    let fieldErrorMessage = null;
+    let value = $('[name="'+ key +'"] > input').val();
+    if(key === 'message') value = $('[name="'+ key +'"] > textarea').val();
+
+    if(!value) fieldErrorMessage = { field: key, message: 'Mandatory' };
+    else {
+        switch(key) {
+            case 'email':
+                const emailRegex = /\S+@\S+\.\S+/;
+                if(!emailRegex.test(value))
+                fieldErrorMessage = { field: key, message: 'Invalid' };
+                break;
+            case 'message':
+                if(value.length < 10 || value.length > 2000)
+                fieldErrorMessage = { field: key, message: 'Must be between 10 and 2000 characters' };
+                break;
+        }
+    }
+
+    if(fieldErrorMessage) setFieldErrorMessages([ fieldErrorMessage ]);
+    else {
+        $('[name="'+ key +'"] > .field-message').addClass("hide"); // Hide field message
+        $('[name="'+ key +'"] > .field-message').html(""); // Empty field message
+        $('[name="'+ key +'"]').removeClass("error"); // Remove field error class
+    }
+    return fieldErrorMessage;
 }
 
 function formLoading(isLoading, result) {

@@ -47,6 +47,7 @@
     @include tablet-desktop {
         grid-template-columns: auto max-content;
         grid-template-areas: "home-image home-title";
+        align-items: center;
     }
     
     picture {
@@ -74,7 +75,8 @@
                 margin-bottom: calc(0px - var(--container-margin-tb));
                 max-width: 100%;
                 // max-height: calc(100% + var(--container-margin-tb));
-                max-height: 75vh;
+                max-height: calc(100vh - var(--header-height));
+                height: 32rem;
             }
         }
     }

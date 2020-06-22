@@ -599,6 +599,9 @@ a {
         grid-template-columns: auto -webkit-max-content;
         grid-template-columns: auto max-content;
         grid-template-areas: "home-image home-title";
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -636,7 +639,8 @@ a {
     margin-top: auto;
     margin-bottom: calc(0px - var(--container-margin-tb));
     max-width: 100%;
-    max-height: 75vh;
+    max-height: calc(100vh - var(--header-height));
+    height: 32rem;
   }
 }
 
@@ -1355,7 +1359,7 @@ a {
 }
 
 #contact .wrapper section:first-child ul.content li i.fa {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 #contact .wrapper section:first-child ul.content li span {

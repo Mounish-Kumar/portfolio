@@ -377,22 +377,22 @@
                 <form>
                     <label name="name">
                         <span class="label">Name</span>
-                        <input type="text">
+                        <input type="text" onkeyup="validateField('name')">
                         <span class="field-message error hide"></span>
                     </label>
                     <label name="email">
                         <span class="label">Email</span>
-                        <input type="text">
+                        <input type="text" onkeyup="validateField('email')">
                         <span class="field-message error hide"></span>
                     </label>
                     <label name="mobile">
                         <span class="label">Phone Number</span>
-                        <input type="text">
+                        <input type="text" onkeyup="validateField('mobile')">
                         <span class="field-message error hide"></span>
                     </label>
                     <label name="message">
                         <span class="label">Message</span>
-                        <textarea></textarea>
+                        <textarea onkeyup="validateField('message')"></textarea>
                         <span class="field-message error hide"></span>
                     </label>
                     <span class="response-message success hide">
