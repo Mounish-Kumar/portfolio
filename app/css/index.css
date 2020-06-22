@@ -529,17 +529,54 @@ a {
   --home-grid-gap: 1rem;
   min-height: auto;
   grid-gap: var(--home-grid-gap);
+  position: relative;
   padding-top: var(--header-height);
   padding-left: var(--header-margin-lr);
   padding-right: var(--header-margin-lr);
-  background: url(/assets/images/home.jpg), rgba(255, 255, 255, 0.9);
-  background-attachment: fixed !important;
+  background-color: rgba(255, 255, 255, 0.85);
   overflow: hidden;
 }
 
 @media (max-width: 767px) and (min-height: 800px) {
   #home {
     --home-grid-gap: 2rem;
+  }
+}
+
+#home:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/images/home.jpg);
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  z-index: -1;
+  -webkit-animation: zoomInOut 20s linear infinite;
+          animation: zoomInOut 20s linear infinite;
+}
+
+@-webkit-keyframes zoomInOut {
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoomInOut {
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -858,6 +895,10 @@ a {
   border-radius: 8px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 
 @media (max-width: 767px) {
@@ -884,9 +925,13 @@ a {
         grid-template-columns: var(--icon-font-size) auto;
     grid-gap: 1.5rem;
   }
+  #about section ul li:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
   #about section ul li:hover i.fa {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
   }
 }
@@ -1144,12 +1189,20 @@ a {
           align-items: center;
   max-height: calc(calc(2rem + 2 * 0.7rem) + 2 * 0.7rem);
   background-color: #fff;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 
 @media (min-width: 1025px) {
+  #skills .wrapper section ul li:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
   #skills .wrapper section ul li:hover img {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
   }
 }
 
@@ -1232,8 +1285,19 @@ a {
       grid-template-rows: var(--page-heading-size) auto auto;
   position: relative;
   background-image: url(/assets/images/contact.jpg);
-  background-attachment: fixed !important;
-  background-size: cover !important;
+  background-attachment: fixed;
+}
+
+@media (max-width: 767px) {
+  #contact .wrapper section:first-child {
+    background-size: contain;
+  }
+}
+
+@media (min-width: 768px) {
+  #contact .wrapper section:first-child {
+    background-size: 50% auto;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -1247,8 +1311,8 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(rgba(255, 23, 68, 0.9)), to(rgba(255, 136, 0, 0.8)));
-  background-image: linear-gradient(to top right, var(--brand-color), rgba(255, 23, 68, 0.9), rgba(255, 136, 0, 0.8));
+  background-image: -webkit-gradient(linear, left bottom, right top, from(var(--brand-color)), color-stop(rgba(255, 23, 68, 0.9)), to(rgba(255, 136, 0, 0.9)));
+  background-image: linear-gradient(to top right, var(--brand-color), rgba(255, 23, 68, 0.9), rgba(255, 136, 0, 0.9));
 }
 
 #contact .wrapper section:first-child h1 {
@@ -1286,7 +1350,7 @@ a {
   #contact .wrapper section:first-child ul.content li:hover i.fa {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 11px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -1338,7 +1402,7 @@ a {
   #contact .wrapper section:first-child ul i.fa:hover {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 11px rgba(0, 0, 0, 0.25);
   }
 }
 

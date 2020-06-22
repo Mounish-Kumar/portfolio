@@ -95,6 +95,7 @@
                 color: #fff;
                 background-color: rgba(#000, 0.5);
                 @extend %shadow;
+                transition: transform 0.2s ease-in;
 
                 @include mobile {
                     --icon-font-size: 2rem;
@@ -114,8 +115,10 @@
                     grid-gap: 1.5rem;
 
                     &:hover {
+                        transform: scale(1.05);
+
                         i.fa {
-                            transform: scale(1.2);
+                            transform: scale(1.25);
                             text-shadow: 3px 3px 8px rgba(#000, 0.5);
                         }
                     }

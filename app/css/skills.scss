@@ -81,11 +81,14 @@
                     max-height: calc(#{$tech-logo-size} + 2 * #{$tech-logo-padding});
                     background-color: #fff;
                     @extend %shadow;
+                    transition: transform 0.2s ease-in;
 
                     @include desktop {
                         &:hover {
+                            transform: scale(1.1);
+
                             img {
-                                transform: scale(1.2);
+                                transform: scale(1.3);
                             }
                         }
                     }
