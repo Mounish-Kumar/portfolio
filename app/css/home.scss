@@ -73,7 +73,8 @@
                 margin-top: auto;
                 margin-bottom: calc(0px - var(--container-margin-tb));
                 max-width: 100%;
-                max-height: calc(100% + var(--container-margin-tb));
+                // max-height: calc(100% + var(--container-margin-tb));
+                max-height: 75vh;
             }
         }
     }

@@ -636,7 +636,7 @@ a {
     margin-top: auto;
     margin-bottom: calc(0px - var(--container-margin-tb));
     max-width: 100%;
-    max-height: calc(100% + var(--container-margin-tb));
+    max-height: 75vh;
   }
 }
 
@@ -1348,8 +1348,8 @@ a {
 
 @media (min-width: 1025px) {
   #contact .wrapper section:first-child ul.content li:hover i.fa {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
     text-shadow: 3px 3px 11px rgba(0, 0, 0, 0.5);
   }
 }
@@ -1400,8 +1400,8 @@ a {
 
 @media (min-width: 1025px) {
   #contact .wrapper section:first-child ul i.fa:hover {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
     text-shadow: 3px 3px 11px rgba(0, 0, 0, 0.25);
   }
 }
