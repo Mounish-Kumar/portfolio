@@ -1,17 +1,18 @@
 #home {
-    --home-grid-gap: 1rem;
-    @include mobile-long {
-        --home-grid-gap: 2rem;
-    }
-
-    min-height: auto;
-    grid-gap: var(--home-grid-gap);
+    $content-height: 25%;
+    display: block;
     position: relative;
-    padding-top: var(--header-height);
-    padding-left: var(--header-margin-lr);
-    padding-right: var(--header-margin-lr);
+    padding: var(--header-height) var(--header-margin-lr) 0 var(--header-margin-lr);
     background-color: rgba(#fff, 0.85);
     overflow: hidden;
+
+    @include mobile {
+        height: 100vh;
+    }
+
+    @include tablet-desktop {
+        height: 32rem;
+    }
 
     &:before {
         content: " ";
@@ -35,95 +36,74 @@
             transform: scale(1);
         }
     }
-
-    @include mobile {
-        grid-template-rows: auto auto;
-        grid-template-areas: "home-title" "home-image";
-        align-items: center;
-        text-align: center;
-        padding-bottom: 0;
-    }
-
-    @include tablet-desktop {
-        grid-template-columns: auto max-content;
-        grid-template-areas: "home-image home-title";
-        align-items: center;
-    }
     
-    picture {
-        @include tablet-desktop {
-            display: flex;
+    img {
+        position: absolute;
+        bottom: 0;
+
+        @include mobile {
+            left: 50%;
+            transform: translateX(-50%);
+            height: calc(100% - #{$content-height} - var(--header-height));
         }
-        
-        img.primary {
-            grid-area: home-image;
 
-            @include mobile {
-                margin-bottom: -8px;
-                margin-left: 50%;
-                transform: translateX(-50%);
-                max-width: 100%;
-                max-height: 100%;
-            }
-
-            @include mobile-long {
-                max-width: 125%;
-            }
-
-            @include tablet-desktop {
-                margin-top: auto;
-                margin-bottom: calc(0px - var(--container-margin-tb));
-                max-width: 100%;
-                // max-height: calc(100% + var(--container-margin-tb));
-                max-height: calc(100vh - var(--header-height));
-                height: 32rem;
-            }
+        @include tablet-desktop {
+            left: var(--header-margin-lr);
+            height: calc(100% - var(--header-height));
         }
     }
     
     .content {
-        grid-area: home-title;
-        
+        position: absolute;
+        display: grid;
+        align-content: center;
+
         @include mobile {
-            align-items: center;
-            margin-top: calc(1.5 * var(--home-grid-gap));
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            height: $content-height;
+            text-align: center;
         }
 
         @include tablet-desktop {
+            position: absolute;
+            bottom: 0;
+            right: var(--header-margin-lr);
+            height: 100%;
             text-align: right;
-            padding: calc(2 * var(--container-margin-tb)) 0;
         }
 
         h2 {
-            font-size: 1.5rem;
             font-weight: 500;
             letter-spacing: 0;
-            line-height: 1;
+            line-height: 2;
 
             @include mobile {
-                font-size: 1rem;
+                font-size: 1.25rem;
+            }
+
+            @include tablet-desktop {
+                font-size: 1.5rem;
             }
 
             .highlight {
                 letter-spacing: 0;
-                line-height: 1;
             }
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-top: 0.75rem;
             font-weight: 600;
             letter-spacing: 0;
 
             @include mobile {
-                font-size: 2rem;
-                margin-top: 0.5rem;
-                line-height: 1.15;
+                font-size: 2.25rem;
+                line-height: 1.1;
             }
 
             @include tablet-desktop {
-                line-height: 1.25;
+                font-size: 2.5rem;
+                line-height: 1.2;
             }
 
             @media (min-width: 975px) {
@@ -154,9 +134,11 @@
             @include mobile {
                 grid-template-columns: repeat(2, 125px);
                 position: absolute;
-                bottom: calc(var(--nav-height) + 2rem);
-                left: 50%;
-                transform: translateX(-50%);
+                top: 0;
+                width: 100%;
+                height: calc(100vh - var(--header-height) - var(--nav-height) - 2rem);
+                justify-content: center;
+                align-items: end;
             }
 
             @include tablet-desktop {
