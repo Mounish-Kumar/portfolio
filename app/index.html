@@ -13,17 +13,11 @@
             --brand-color: #ff1744;
         }
 
-        body #loader {
-            display: none;
+        .display-none {
+            display: none !important;
         }
 
-        .body-loading {
-            visibility: hidden;
-            overflow: hidden;
-        }
-
-        .body-loading #loader {
-            visibility: visible;
+        #loader {
             display: grid;
             grid-gap: 1rem;
             position: fixed;
@@ -33,15 +27,7 @@
             justify-items: center;
         }
 
-        .light-theme #loader {
-            background-color: #fafafa;
-        }
-
-        .dark-theme #loader {
-            background-color: #212121;
-        }
-
-        .body-loading #loader img.logo {
+        #loader img.logo {
             max-width: calc(100vw / 3);
             max-height: calc(100vh / 3);
         }
@@ -67,6 +53,7 @@
 
         #typing:after {
             content: "_";
+            color: #212121;
             animation: cursorBlink 0.3s infinite;
         }
 
@@ -74,388 +61,26 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-
-        .light-theme #typing:after {
-            color: #212121;
-        }
-
-        .dark-theme #typing:after {
-            color: #fafafa;
-        }
     </style>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 
-<body class="body-loading light-theme">
+<body>
     <div id="loader">
         <img class="logo" src="./assets/images/logo.png" alt="MK">
         <span id="typing" data="mounish.dev, Web Developer, UI/UX Enthusiast"></span>
     </div>
 
-
-    <header id="header">
-        <a href="#home">
-            <img loading="lazy" class="logo" data-src="./assets/images/logo.png" alt="MK">
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#home" class="active">
-                        <i class="fa fa-home"></i>
-                        <div class="label">Home</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#about">
-                        <i class="fa fa-user"></i>
-                        <div class="label">About</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#work">
-                        <i class="fa fa-briefcase"></i>
-                        <div class="label">Work</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#skills">
-                        <i class="fa fa-gears"></i>
-                        <div class="label">Skills</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#contact">
-                        <i class="fa fa-comment"></i>
-                        <div class="label">Contact</div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-
-    <div id="home" class="container">
-        <picture>
-            <img loading="lazy" class="primary" data-src="./assets/images/mounish.png" alt="Mounish Kumar" />
-        </picture>
-        <div class="content">
-            <h2>Hey, I'm <span class="highlight">Mounish Kumar</span></h2>
-            <h1>Let's turn ideas<br> into reality</h1>
-            <h3>Full-stack Web Developer</h3>
-            <div class="action">
-                <a href="#about" class="btn">Know More</a>
-                <a class="btn primary" onclick="downloadResume()">Resume</a>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="about" class="container">
-        <section>
-            <h1>About Me</h1>
-            <p>
-                Hello world! My name is Mounish Kumar.
-                I'm a Full-stack Web Developer and UI/UX Enthusiast based in Chennai, India.
-                I got a Bachelor of Engineering degree from Anna University.<br><br>
-                I've <span class="highlight">6+ years of experience</span> in writing clean, elegant & efficient code.
-                My areas of expertise include
-            </p>
-            <div class="horizontal-scroll-m">
-                <ul id="services">
-                    <li>
-                        <i class="fa fa-code"></i>
-                        <span class="label">Full-stack Web Development</span>
-                    </li>
-                    <li>
-                        <i class="fa fa-columns"></i>
-                        <span class="label">Responsive Web Design</span>
-                    </li>
-                    <li>
-                        <i class="fa fa-mobile"></i>
-                        <span class="label">Progressive Web App</span>
-                    </li>
-                    <li>
-                        <i class="fa fa-palette"></i>
-                        <span class="label">Graphic Design</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </div>
-
-
-    <div id="work" class="container">
-        <h1>My <span class="highlight">Work</span></h1>
-        <div class="wrapper horizontal-scroll-m">
-            <section data-tilt>
-                <p>August 2016 - Present</p>
-                <a href="https://www.centrico.tech" target="_blank">
-                    <img loading="lazy" data-src="./assets/images/centrico.png" alt="Centrico" class="company-logo">
-                </a>
-                <h1>Associate Developer</h1>
-                <div class="clients">
-                    <p>Clients I worked for</p>
-                    <ul>
-                        <a href="https://www.sella.it" target="_blank">
-                            <img loading="lazy" data-src="./assets/images/sella.jpg" alt="Sella">
-                        </a>
-                        <a href="https://www.hype.it" target="_blank">
-                            <img loading="lazy" data-src="./assets/images/hype.jpg" alt="Hype">
-                        </a>
-                        <a href="https://www.axerve.com/en" target="_blank">
-                            <img loading="lazy" data-src="./assets/images/axerve.jpg" alt="Axerve">
-                        </a>
-                    </ul>
-                </div>
-            </section>
-            <section data-tilt>
-                <p>April 2014 - July 2016</p>
-                <a href="https://www.wipro.com/en-IN" target="_blank">
-                    <img loading="lazy" data-src="./assets/images/wipro.png" alt="Wipro Technologies"
-                        class="company-logo">
-                </a>
-                <h1>Project Engineer</h1>
-                <div class="clients">
-                    <p>Clients I worked for</p>
-                    <ul>
-                        <a href="https://www.standardbank.co.za" target="_blank">
-                            <img loading="lazy" data-src="./assets/images/standard_bank.jpg" alt="Standard Bank">
-                        </a>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </div>
-
-
-    <div id="skills" class="container">
-        <h1>My <span class="highlight">Skills</span></h1>
-        <div class="wrapper">
-            <section>
-                <h1>Frontend</h1>
-                <div class="horizontal-scroll-m">
-                    <ul>
-                        <li tooltip="80%">
-                            <div class="progress-bar" style="width: 80% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/angular.png" alt="Angular">
-                            <span class="label">Angular</span>
-                        </li>
-                        <li tooltip="60%">
-                            <div class="progress-bar" style="width: 60% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/react.png" alt="React">
-                            <span class="label">React</span>
-                        </li>
-                        <li tooltip="70%">
-                            <div class="progress-bar" style="width: 70% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/js.png" alt="JavaScript">
-                            <span class="label">JavaScript ES6</span>
-                        </li>
-                        <li tooltip="80%">
-                            <div class="progress-bar" style="width: 80% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/html.png" alt="HTML">
-                            <span class="label">HTML 5</span>
-                        </li>
-                        <li tooltip="80%">
-                            <div class="progress-bar" style="width: 80% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/css.png" alt="CSS">
-                            <span class="label">CSS 3</span>
-                        </li>
-                        <li tooltip="80%">
-                            <div class="progress-bar" style="width: 80% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/sass.png" alt="Sass">
-                            <span class="label">Sass</span>
-                        </li>
-                        <li tooltip="70%">
-                            <div class="progress-bar" style="width: 70% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/bootstrap.png" alt="Bootstrap">
-                            <span class="label">Bootstrap 4</span>
-                        </li>
-                        <li tooltip="50%">
-                            <div class="progress-bar" style="width: 50% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/photoshop.png" alt="Adobe Photoshop">
-                            <span class="label">Photoshop</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <h1>Backend</h1>
-                <div class="horizontal-scroll-m">
-                    <ul>
-                        <li tooltip="70%">
-                            <div class="progress-bar" style="width: 70% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/java.png" alt="Java">
-                            <span class="label">Java 8</span>
-                        </li>
-                        <li tooltip="60%">
-                            <div class="progress-bar" style="width: 60% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/spring_boot.png" alt="Spring Boot">
-                            <span class="label">Spring Boot</span>
-                        </li>
-                        <li tooltip="70%">
-                            <div class="progress-bar" style="width: 70% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/spring.png" alt="Spring">
-                            <span class="label">Spring Data JPA</span>
-                        </li>
-                        <li tooltip="70%">
-                            <div class="progress-bar" style="width: 70% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/rest.png" alt="RESTful WS">
-                            <span class="label">RESTful WS</span>
-                        </li>
-                        <li tooltip="50%">
-                            <div class="progress-bar" style="width: 50% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/sql.png" alt="SQL">
-                            <span class="label">Oracle SQL</span>
-                        </li>
-                        <li tooltip="50%">
-                            <div class="progress-bar" style="width: 50% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/maven.png" alt="Maven">
-                            <span class="label">Maven</span>
-                        </li>
-                        <li tooltip="50%">
-                            <div class="progress-bar" style="width: 50% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/git.png" alt="Git">
-                            <span class="label">Git</span>
-                        </li>
-                        <li tooltip="50%">
-                            <div class="progress-bar" style="width: 50% !important"></div>
-                            <img loading="lazy" data-src="./assets/images/skills/svn.jpg" alt="SVN">
-                            <span class="label">SVN</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </div>
-
-
-    <div id="contact" class="container">
-        <div class="wrapper">
-            <section>
-                <h1>Contact Info</h1>
-                <ul class="content">
-                    <li>
-                        <a href="mailto:vmounishkumar@gmail.com" target="_blank">
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                        <span>vmounishkumar@gmail.com</span>
-                    </li>
-                    <li>
-                        <a href="https://www.mounish.dev" target="_blank">
-                            <i class="fa fa-globe-asia"></i>
-                        </a>
-                        <span>www.mounish.dev</span>
-                    </li>
-                    <li>
-                        <a href="tel:+919994444988" target="_blank">
-                            <i class="fa fa-phone-alt"></i>
-                        </a>
-                        <span>+91 999 4444 988</span>
-                    </li>
-                    <li>
-                        <a href="https://goo.gl/maps/JLvnPFKH7LFKa5LC7" target="_blank">
-                            <i class="fa fa-map-marker-alt"></i>
-                        </a>
-                        <span>
-                            247, Rice Mill Road<br>
-                            Vinayagar Kovil Street 7<br>
-                            Moolapalayam, Erode<br>
-                            Tamilnadu, India 638002
-                        </span>
-                    </li>
-                </ul>
-                <ul class="icons">
-                    <li><a href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=+919994444988" target="_blank"><i
-                        class="fa fa-whatsapp"></i></a></li>
-                    <li><a href="mailto:vmounishkumar@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-                    <li><a href="https://github.com/Mounish-Kumar" target="_blank"><i class="fa fa-github"></i></a></li>
-                </ul>
-            </section>
-            <section>
-                <h1>Let's Connect</h1>
-                <form>
-                    <label name="name">
-                        <span class="label">Name</span>
-                        <input type="text" onkeyup="validateField('name')">
-                        <span class="field-message error hide"></span>
-                    </label>
-                    <label name="email">
-                        <span class="label">Email</span>
-                        <input type="text" onkeyup="validateField('email')">
-                        <span class="field-message error hide"></span>
-                    </label>
-                    <label name="mobile">
-                        <span class="label">Phone Number</span>
-                        <input type="text" onkeyup="validateField('mobile')">
-                        <span class="field-message error hide"></span>
-                    </label>
-                    <label name="message">
-                        <span class="label">Message</span>
-                        <textarea onkeyup="validateField('message')"></textarea>
-                        <span class="field-message error hide"></span>
-                    </label>
-                    <span class="response-message success hide">
-                        <i class="fa fa-check-circle"></i>
-                        <span></span>
-                    </span>
-                    <span class="response-message error hide">
-                        <i class="fa fa-times-circle"></i>
-                        <span></span>
-                    </span>
-                    <button name="send-message" class="btn primary" type="button" onclick="sendMessage()">
-                        <span>SEND</span>
-                        <i class="fa fa-plane"></i>
-                    </button>
-                    <!-- <button class="btn primary g-recaptcha" data-sitekey="6Lco56IZAAAAAPF2gX710nPTRtwIzPmOqMucfaRB"
-                        data-callback='sendMessage' data-action='submit'>
-                        <span>SEND</span>
-                        <i class="fa fa-plane"></i>
-                    </button> -->
-                </form>
-            </section>
-        </div>
-    </div>
-
+    <div id="app" class="display-none"></div>
 
     <script src="./scripts/page-loading-animation.js"></script>
-    <script src="./scripts/font-awesome.js"></script>
     <script src="./scripts/jquery-3.5.1.min.js"></script>
+    <script src="./scripts/app.js"></script>
     <script src="./scripts/download-document.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="./scripts/send-message.js"></script>
     <script src="./scripts/upload-document.js"></script>
-    <script src="./scripts/vanilla-tilt.min.js"></script>
-    <script>
-        // Lazy load images
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            })
-        } else {
-            const script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
-            document.body.appendChild(script);
-        }
-
-        // Make header small on scroll
-        window.addEventListener("scroll", function () {
-            let menu = document.getElementById('header');
-            if (window.pageYOffset > 0) {
-                menu.classList.add("scrolled");
-            } else {
-                menu.classList.remove("scrolled");
-            }
-        });
-
-        // Save IP address
-        if (!localStorage.getItem("IP_ADDRESS")) {
-            $.getJSON("https://ipapi.co/json", function (data) {
-                localStorage.setItem("IP_ADDRESS", data.ip);
-            });
-        }
-    </script>
 </body>
 
 </html>

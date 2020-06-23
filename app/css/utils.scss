@@ -262,14 +262,24 @@ a {
 
 [name="send-message"] {
     position: relative;
+    padding: 0.8rem 2rem;
     background-color: color(brand);
     transition: background-position 0.4s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
+
+    @include desktop {
+        &:hover {
+            i {
+                transform: translateY(-50%) rotateZ(-45deg);
+            }
+        }
+    }
 
     i {
         position: absolute;
         right: 0.75rem;
         top: 50%;
         transform: translateY(-50%);
+        font-size: 2rem;
         transition: transform 0.3s ease;
     }
 
@@ -279,16 +289,16 @@ a {
         box-shadow: 0px 16px 16px -6px #ffd54f;
 
         i {
-            transform: translateY(-50%) rotateZ(-90deg);
+            transform: translateY(-50%) rotateZ(-45deg);
             animation: shake 0.3s ease 0.5s infinite;
         }
 
         @keyframes shake {
             10%, 30%, 50%, 70%, 90% {
-                transform: translateY(-50%) translate3d(-1px, 0, 0) rotateZ(-90deg);
+                transform: translateY(-50%) translate3d(-1.2px, 0, 0) rotateZ(-45deg);
             }
             20%, 40%, 60%, 80% {
-                transform: translateY(-50%) translate3d(1px, 0, 0) rotateZ(-90deg);
+                transform: translateY(-50%) translate3d(1.2px, 0, 0) rotateZ(-45deg);
             }
         }
     }
@@ -299,19 +309,19 @@ a {
         box-shadow: 0px 16px 16px -6px #69f0ae;
 
         i {
-            transform: translateY(-50%) rotateZ(-90deg);
+            transform: translateY(-50%) rotateZ(-45deg);
             animation: moveUp 1s ease 0s forwards;
         }
 
         @keyframes moveUp {
             0% {
                 margin-top: 0;
-                transform: translateY(-50%) scale(1) rotateZ(-90deg);
+                transform: translateY(-50%) scale(1) rotateZ(-45deg);
             }
             100% {
                 color: #00C851;
                 margin-top: -100px;
-                transform: translateY(-50%) scale(0) rotateZ(-90deg);
+                transform: translateY(-50%) scale(0) rotateZ(-45deg);
             }
         }
     }
@@ -322,19 +332,19 @@ a {
         box-shadow: 0px 16px 16px -6px #ff9e9f;
 
         i {
-            transform: translateY(-50%) rotateZ(-90deg);
+            transform: translateY(-50%) rotateZ(-45deg);
             animation: moveDown 1s ease 0s forwards;
         }
 
         @keyframes moveDown {
             0% {
                 margin-top: 0;
-                transform: translateY(-50%) scale(1) rotateZ(-90deg);
+                transform: translateY(-50%) scale(1) rotateZ(-45deg);
             }
             100% {
                 color: #ff0000;
                 margin-top: var(--container-margin-tb);
-                transform: translateY(-50%) scale(0) rotateZ(-90deg);
+                transform: translateY(-50%) scale(0) rotateZ(-45deg);
             }
         }
     }

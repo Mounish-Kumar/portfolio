@@ -2,16 +2,9 @@ var isPageLoaded = false;
 var charDelay = 80;
 var textDelay = 800;
 
-// Hide loader when page is loaded
 document.onreadystatechange = function () {
-    if(document.readyState === "complete") {
-        isPageLoaded = true;
-    }
+    if(document.readyState === "complete") isPageLoaded = true;
 };
-
-function stopPageLoading() {
-    if(isPageLoaded) document.querySelector("body").classList.remove("body-loading");
-}
 
 function addText(txt) {
     return new Promise((resolve, reject) => {
@@ -44,7 +37,17 @@ function removeText() {
 
 function delay(time) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(), time)
+        setTimeout(() => resolve(), time);
+    });
+}
+
+function stopPageLoading() {
+    return new Promise((resolve, reject) => {
+        if(isPageLoaded) {
+            document.getElementById("app").classList.remove("display-none");
+            document.getElementById("loader").classList.add("display-none");
+            reject();
+        } else resolve();
     });
 }
 
@@ -67,10 +70,7 @@ function addRemoveText() {
 }
 
 function infiniteAddRemoveText() {
-    addRemoveText()
-    .then(() => {
-        if(!isPageLoaded) infiniteAddRemoveText();
-    });
+    addRemoveText().then(infiniteAddRemoveText);
 }
 
 infiniteAddRemoveText();

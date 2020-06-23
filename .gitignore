@@ -32,6 +32,7 @@ build/
 
 ### App ###
 /app/assets/samples
+/app/assets/animated-icons
 /app/css/*.css.map
 /app/css/*.css
 !/app/css/index.css

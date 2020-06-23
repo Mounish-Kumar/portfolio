@@ -117,14 +117,14 @@
                     &:hover {
                         transform: scale(1.05);
 
-                        i.fa {
+                        i {
                             transform: scale(1.25);
                             text-shadow: 3px 3px 8px rgba(#000, 0.5);
                         }
                     }
                 }
 
-                i.fa {
+                i {
                     font-size: var(--icon-font-size);
                     color: color(brand);
                     transition: transform 0.2s ease-in, text-shadow 0.2s ease-in;

@@ -71,14 +71,14 @@
 
                             @include desktop {
                                 &:hover {
-                                    i.fa {
+                                    i {
                                         transform: scale(1.3);
                                         text-shadow: 3px 3px 11px rgba(#000, 0.5);
                                     }
                                 }
                             }
         
-                            i.fa {
+                            i {
                                 opacity: 0.7;
                             }
         
@@ -106,7 +106,7 @@
                         margin-top: calc(var(--page-heading-size) - #{$icon-font-size});
                     }
 
-                    i.fa {
+                    i {
                         font-size: $icon-font-size;
                         color: #fff;
                         transition: transform 0.2s ease-in, text-shadow 0.2s ease-in;
@@ -217,7 +217,7 @@
                             background-color: #ff4444;
                         }
 
-                        .fa, .far {
+                        i {
                             font-size: 2rem;
                             padding: $padding;
                         }
