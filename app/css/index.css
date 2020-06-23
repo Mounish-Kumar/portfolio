@@ -504,8 +504,8 @@ a {
 
 @media (max-width: 767px) {
   #header nav ul li a i {
-    font-size: 1.5rem;
-    padding-bottom: 0.4rem;
+    font-size: 2.3rem;
+    line-height: 0.75;
   }
 }
 
@@ -522,7 +522,7 @@ a {
 @media (max-width: 767px) {
   #header nav ul li a .label {
     font-size: 0.85rem;
-    line-height: 1;
+    line-height: 0.75;
   }
 }
 
@@ -916,16 +916,15 @@ a {
 
 @media (max-width: 767px) {
   #about section ul li {
-    --icon-font-size: 2rem;
-    -ms-grid-columns: var(--icon-font-size) auto;
-        grid-template-columns: var(--icon-font-size) auto;
+    -ms-grid-columns: max-content auto;
+        grid-template-columns: -webkit-max-content auto;
+        grid-template-columns: max-content auto;
     grid-gap: 1.5rem;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   #about section ul li {
-    --icon-font-size: 2.5rem;
     text-align: center;
     grid-gap: 1rem;
   }
@@ -933,9 +932,9 @@ a {
 
 @media (min-width: 1025px) {
   #about section ul li {
-    --icon-font-size: 2.5rem;
-    -ms-grid-columns: var(--icon-font-size) auto;
-        grid-template-columns: var(--icon-font-size) auto;
+    -ms-grid-columns: max-content auto;
+        grid-template-columns: -webkit-max-content auto;
+        grid-template-columns: max-content auto;
     grid-gap: 1.5rem;
   }
   #about section ul li:hover {
@@ -950,7 +949,7 @@ a {
 }
 
 #about section ul li i {
-  font-size: var(--icon-font-size);
+  font-size: 3rem;
   color: var(--brand-color);
   -webkit-transition: text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
   transition: text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
@@ -1351,8 +1350,9 @@ a {
 #contact .wrapper section:first-child ul.content li {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2rem auto;
-      grid-template-columns: 2rem auto;
+  -ms-grid-columns: max-content auto;
+      grid-template-columns: -webkit-max-content auto;
+      grid-template-columns: max-content auto;
   grid-gap: 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1399,11 +1399,11 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 16rem;
-  margin-top: calc(var(--page-heading-size) - 2rem);
+  margin-top: 2rem;
 }
 
 #contact .wrapper section:first-child ul i {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #fff;
   -webkit-transition: text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
   transition: text-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
@@ -1491,7 +1491,7 @@ a {
 #contact .wrapper section:last-child form label textarea {
   display: block;
   resize: none;
-  min-height: calc(3 * 2.25rem);
+  min-height: calc(2.25rem + (2 * 1.25rem));
   max-height: calc(2.25rem + (7 * 1.25rem));
 }
 

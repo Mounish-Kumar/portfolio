@@ -54,7 +54,6 @@
                 }
         
                 ul {
-                    $icon-font-size: 2rem;
                     z-index: 1;
 
                     &.content {
@@ -65,7 +64,7 @@
         
                         li {
                             display: grid;
-                            grid-template-columns: $icon-font-size auto;
+                            grid-template-columns: max-content auto;
                             grid-gap: 1rem;
                             align-items: center;
 
@@ -98,16 +97,15 @@
                     }
         
                     &.icons {
-                        $icon-font-size: 2rem;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
                         width: 16rem;
-                        margin-top: calc(var(--page-heading-size) - #{$icon-font-size});
+                        margin-top: 2rem;
                     }
 
                     i {
-                        font-size: $icon-font-size;
+                        font-size: 2.5rem;
                         color: #fff;
                         transition: transform 0.2s ease-in, text-shadow 0.2s ease-in;
 
@@ -134,15 +132,10 @@
                 }
 
                 form {
-                    $grid-gap: 1rem;
-                    $label-font-size: 0.75rem;
                     $font-size: 1.25rem;
                     $padding: 0.5rem;
-                    $border-radius: 5px;
                     $text-box-height: $padding + $font-size + $padding;
-                    $btn-padding-tb: 1rem;
-                    $btn-font-size: 1rem;
-                    $btn-height: $btn-padding-tb + $btn-font-size + $btn-padding-tb;
+                    $border-radius: 5px;
                     display: grid;
                     height: 100%;
                     grid-row-gap: 1rem;
@@ -155,7 +148,7 @@
                         }
                         
                         span {
-                            font-size: $label-font-size;
+                            font-size: 0.75rem;
                             padding: calc(#{$padding} / 2) $padding;
     
                             &.label {
@@ -197,7 +190,7 @@
                         textarea {
                             display: block;
                             resize: none;
-                            min-height: calc(3 * #{$text-box-height});
+                            min-height: calc(#{$text-box-height} + (2 * #{$font-size}));
                             max-height: calc(#{$text-box-height} + (7 * #{$font-size}));
                         }
                     }

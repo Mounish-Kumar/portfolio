@@ -151,16 +151,14 @@ a {
 }
 
 [tooltip]:before {
-    $font-size: 0.8rem;
-    $padding-tb: 0.2rem;
     content: attr(tooltip);
     position: absolute;
     top: calc(0rem - 0.8rem - 2 * 0.2rem - 12px);
     left: 50%;
     transform: translateX(-50%);
-    font-size: $font-size;
+    font-size: 0.8rem;
     white-space: nowrap;
-    padding: $padding-tb 0.4rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 4px;
     color: #fff;
     background-color: rgba(#000, 0.8);
