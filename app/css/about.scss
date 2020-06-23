@@ -26,11 +26,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to top right, color(brand), rgba(#ff1744, 0.9), rgba(#ff8800, 0.7));
-
-        @include desktop {
-            background-image: linear-gradient(to top right, color(brand), rgba(#ff1744, 0.8), rgba(#ff8800, 0.6));
-        }
+        background-image: linear-gradient(to top right, color(brand), rgba(#ff1744, 0.8), rgba(#ff8800, 0.7));
     }
 
     section {

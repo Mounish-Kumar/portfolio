@@ -14,15 +14,22 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.appendChild(script);
         }
 
-        // Make header small on scroll
+        // On scroll
         window.addEventListener("scroll", function () {
+            // Make header small
             let menu = document.getElementById('header');
             if (window.pageYOffset > 0) {
                 menu.classList.add("scrolled");
             } else {
                 menu.classList.remove("scrolled");
             }
+
+            // Parallax
+            
         });
+
+        // Change theme
+        
 
         // Save IP address
         if (!localStorage.getItem("IP_ADDRESS")) {
