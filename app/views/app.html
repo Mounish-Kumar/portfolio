@@ -37,13 +37,15 @@
         </ul>
     </nav>
     <ul class="options">
-        <li><i id="theme" class="la la-sun"></i></li>
+        <li>
+            <i id="dark-theme" class="la la-moon" onclick="changeTheme('dark-theme')"></i>
+            <i id="light-theme" class="la la-sun display-none" style="color:#ffeb3b;" onclick="changeTheme('light-theme')"></i>
+        </li>
         <li>
             <i id="signin" class="la la-sign-in-alt highlight"></i>
-            <!-- <i id="adminMenu" class="la la-bars highlight"></i> -->
+            <i id="adminMenu" class="la la-bars highlight display-none"></i>
         </li>
     </ul>
-    
 </header>
 
 
@@ -101,20 +103,20 @@
         <section data-tilt>
             <p>August 2016 - Present</p>
             <a href="https://www.centrico.tech" target="_blank">
-                <img loading="lazy" data-src="./assets/images/centrico.png" alt="Centrico" class="company-logo">
+                <img loading="lazy" data-src="./assets/images/centrico.png" alt="Centrico" class="company-logo" id="centrico">
             </a>
             <h1>Associate Developer</h1>
             <div class="clients">
                 <p>Clients I worked for</p>
                 <ul>
                     <a href="https://www.sella.it" target="_blank">
-                        <img loading="lazy" data-src="./assets/images/sella.jpg" alt="Sella">
+                        <img loading="lazy" data-src="./assets/images/sella.png" alt="Sella" id="sella">
                     </a>
                     <a href="https://www.hype.it" target="_blank">
-                        <img loading="lazy" data-src="./assets/images/hype.jpg" alt="Hype">
+                        <img loading="lazy" data-src="./assets/images/hype.png" alt="Hype" id="hype">
                     </a>
                     <a href="https://www.axerve.com/en" target="_blank">
-                        <img loading="lazy" data-src="./assets/images/axerve.jpg" alt="Axerve">
+                        <img loading="lazy" data-src="./assets/images/axerve.png" alt="Axerve" id="axerve">
                     </a>
                 </ul>
             </div>
@@ -122,14 +124,14 @@
         <section data-tilt>
             <p>April 2014 - July 2016</p>
             <a href="https://www.wipro.com/en-IN" target="_blank">
-                <img loading="lazy" data-src="./assets/images/wipro.png" alt="Wipro Technologies" class="company-logo">
+                <img loading="lazy" data-src="./assets/images/wipro.png" alt="Wipro Technologies" class="company-logo" id="wipro">
             </a>
             <h1>Project Engineer</h1>
             <div class="clients">
                 <p>Clients I worked for</p>
                 <ul>
                     <a href="https://www.standardbank.co.za" target="_blank">
-                        <img loading="lazy" data-src="./assets/images/standard_bank.jpg" alt="Standard Bank">
+                        <img loading="lazy" data-src="./assets/images/sbsa.png" alt="Standard Bank" id="sbsa">
                     </a>
                 </ul>
             </div>

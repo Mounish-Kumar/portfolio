@@ -23,6 +23,7 @@
             }
 
             &:first-child {
+                $icons-shadow: 3px 3px 11px rgba(#000, 0.5);
                 grid-template-rows: var(--page-heading-size) auto auto;
                 position: relative;
                 background-image: url(/assets/images/contact.jpg);
@@ -45,11 +46,11 @@
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    background-image: linear-gradient(to top right, color(brand), rgba(#ff1744, 0.9), rgba(#ff8800, 0.9));
+                    background-image: linear-gradient(to top right, color(brand), rgba(color(brand), 0.9), rgba(color(brand-secondary), 0.9));
                 }
         
                 h1 {
-                    color: #fff;
+                    color: color(text-inverse);
                     z-index: 1;
                 }
         
@@ -72,7 +73,7 @@
                                 &:hover {
                                     i {
                                         transform: scale(1.3);
-                                        text-shadow: 3px 3px 11px rgba(#000, 0.5);
+                                        text-shadow: $icons-shadow;
                                     }
                                 }
                             }
@@ -83,7 +84,7 @@
         
                             span {
                                 font-family: var(--font-family-secondary);
-                                color: #fff;
+                                color: color(text-inverse);
 
                                 @include mobile {
                                     font-size: 0.95rem;
@@ -106,13 +107,13 @@
 
                     i {
                         font-size: 2.5rem;
-                        color: #fff;
+                        color: color(text-inverse);
                         transition: transform 0.2s ease-in, text-shadow 0.2s ease-in;
 
                         @include desktop {
                             &:hover {
                                 transform: scale(1.3);
-                                text-shadow: 3px 3px 11px rgba(#000, 0.25);
+                                text-shadow: $icons-shadow;
                             }
                         }
                     }
@@ -121,7 +122,7 @@
 
             &:last-child {
                 grid-template-rows: var(--page-heading-size) auto;
-                background-color: #fff;
+                background-color: color(card);
 
                 @include mobile {
                     margin-bottom: var(--nav-height);
@@ -143,7 +144,7 @@
                     label {
                         &.error {
                             span.label, input[type="text"], textarea {
-                                background-color: #ffcdd2;
+                                background-color: rgba(#ff4444, 0.5);
                             }
                         }
                         
@@ -158,7 +159,7 @@
                                 border-top-left-radius: $border-radius;
                                 border-top-right-radius: $border-radius;
                                 padding-bottom: 0;
-                                background-color: #eee;
+                                background-color: color(input-bg);
                             }
     
                             &.field-message {
@@ -180,7 +181,8 @@
                             border-bottom-left-radius: $border-radius;
                             border-bottom-right-radius: $border-radius;
                             outline: none;
-                            background-color: #eee;
+                            color: color(text);
+                            background-color: color(input-bg);
                         }
     
                         input[type="text"] {

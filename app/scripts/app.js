@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $('#app').load('./views/app.html', function() {
 
         // Lazy load images
-        if ('loading' in HTMLImageElement.prototype) {
+        if('loading' in HTMLImageElement.prototype) {
             const images = document.querySelectorAll('img[loading="lazy"]');
             images.forEach(img => {
                 img.src = img.dataset.src;
@@ -14,11 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.appendChild(script);
         }
 
+        // Theme on load
+        changeTheme();
+
         // On scroll
         window.addEventListener("scroll", function () {
             // Make header small
             let menu = document.getElementById('header');
-            if (window.pageYOffset > 0) {
+            if(window.pageYOffset > 0) {
                 menu.classList.add("scrolled");
             } else {
                 menu.classList.remove("scrolled");
@@ -48,8 +51,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         // Save IP address
-        if (!localStorage.getItem("IP_ADDRESS")) {
-            $.getJSON("https://ipapi.co/json", function (data) {
+        if(!localStorage.getItem("IP_ADDRESS")) {
+            $.getJSON("https://ipapi.co/json", function(data) {
                 localStorage.setItem("IP_ADDRESS", data.ip);
             });
         }
@@ -58,6 +61,5 @@ document.addEventListener("DOMContentLoaded", function() {
         const vanilla_tilt = document.createElement('script');
         vanilla_tilt.src = './scripts/vanilla-tilt.min.js';
         document.body.appendChild(vanilla_tilt);
-
     });
 });

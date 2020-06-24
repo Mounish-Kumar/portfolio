@@ -27,6 +27,14 @@
             justify-items: center;
         }
 
+        .dark-theme #loader {
+            background-color: #181818;
+        }
+
+        .light-theme #loader {
+            background-color: #eee;
+        }
+
         #loader img.logo {
             max-width: calc(100vw / 3);
             max-height: calc(100vh / 3);
@@ -66,7 +74,7 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 
-<body>
+<body class="light-theme">
     <div id="loader">
         <img class="logo" src="./assets/images/logo.png" alt="MK">
         <span id="typing" data="mounish.dev, Web Developer, UI/UX Enthusiast"></span>
@@ -77,6 +85,7 @@
     <script src="./scripts/page-loading-animation.js"></script>
     <script src="./scripts/jquery-3.5.1.min.js"></script>
     <script src="./scripts/app.js"></script>
+    <script src="./scripts/change-theme.js"></script>
     <script src="./scripts/download-document.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="./scripts/send-message.js"></script>

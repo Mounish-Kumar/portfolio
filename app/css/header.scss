@@ -1,6 +1,6 @@
 #header {
     --logo-height: calc(var(--header-height) - 2 * var(--header-margin-tb));
-    $header-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    $header-box-shadow: 0 0 8px 0 rgba(#000, 0.2);
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -15,12 +15,12 @@
 
     @include mobile {
         height: var(--header-height);
-        background-color: #fff;
+        background-color: color(card);
         box-shadow: $header-box-shadow;
     }
 
     &.scrolled {
-        background-color: rgba(#fff, 1);
+        background-color: color(card);
         box-shadow: $header-box-shadow;
 
         @include tablet-desktop {
@@ -53,8 +53,8 @@
             bottom: -1px;
             left: 0;
             width: 100vw;
-            background-color: #fff;
-            border-top:  1px solid rgba(#000, .2);
+            background-color: color(card);
+            border-top:  1px solid rgba(#000, .5);
         }
 
         @include tablet-desktop {
@@ -84,7 +84,7 @@
                 }
 
                 a {
-                    color: color(primary-text);
+                    color: color(text);
                     text-decoration: none;
 
                     @include desktop {
@@ -132,13 +132,16 @@
     }
 
     .options {
-        display: grid;
-        grid-template-columns: repeat(2, max-content);
+        display: flex;
         align-items: center;
-        grid-gap: 1rem;
 
         li {
             line-height: 1;
+            cursor: pointer;
+
+            &:not(:first-of-type) {
+                padding-left: 0.5rem;
+            }
 
             i {
                 transition: font-size var(--header-transition-time);

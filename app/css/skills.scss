@@ -1,6 +1,6 @@
 #skills {
     grid-template-rows: var(--page-heading-size) auto;
-    background-color: #eee;
+    background-color: color(bg);
 
     .wrapper {
         display: grid;
@@ -79,7 +79,7 @@
                     grid-template-areas: "progress-bar progress-bar" "img span";
                     align-items: center;
                     max-height: calc(#{$tech-logo-size} + 2 * #{$tech-logo-padding});
-                    background-color: #fff;
+                    background-color: color(card);
                     @extend %shadow;
                     transition: transform 0.2s ease-in;
 

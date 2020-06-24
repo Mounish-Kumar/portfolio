@@ -1,6 +1,6 @@
 #work {
     grid-template-rows: var(--page-heading-size) auto;
-    background: url(/assets/images/work.jpg), rgba(#fff, 0.75);
+    background: url(/assets/images/work.jpg), color(home-bg);
     background-attachment: fixed !important;
 
     .wrapper {
@@ -34,28 +34,35 @@
             text-align: center;
             padding: 1.25rem;
             border-radius: 8px;
-            background-color: #fff;
+            background-color: color(card);
             @extend %dark-shadow;
 
-            img.company-logo {
-                max-width: 100%;
-                transform: translateZ(45px);
+            > a {
+                width: 100%;
 
-                @include mobile {
-                    height: 4rem;
-                }
-
-                @include tablet {
-                    height: 5rem;
-                }
-
-                @include desktop {
-                    height: 5rem;
+                img.company-logo {
+                    margin-top: 15px;
+                    max-width: 100%;
+                    transform: translateZ(45px);
+    
+                    @include mobile {
+                        height: 4rem;
+                    }
+    
+                    @include tablet {
+                        height: 5rem;
+                    }
+    
+                    @include desktop {
+                        height: 5rem;
+                    }
                 }
             }
     
             h1 {
                 font-family: var(--font-family-secondary);
+                font-weight: 700;
+                color: color(brand);
 
                 @include mobile {
                     font-size: 1.2rem;
@@ -70,21 +77,18 @@
             p {
                 font-family: var(--font-family-secondary);
                 font-size: 0.9rem;
-                color: #9e9e9e;
+                color: color(text-secondary);
             }
     
             .clients {
                 ul {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
-                    grid-gap: $grid-gap;
                     margin-top: calc(#{$grid-gap} / 2);
 
                     img {
                         width: 100%;
                         padding: 0 0.5rem;
-                        border-radius: 8px;
-                        background-color: #fff;
                         transform: translateZ(30px);
                     }
                 }
