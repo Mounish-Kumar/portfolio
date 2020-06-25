@@ -39,6 +39,11 @@ a {
 }
 
 
+[disabled="true"], *:disabled {
+    cursor: default;
+}
+
+
 // Don't use it for <i></i>
 [tooltip] {
     position: relative;

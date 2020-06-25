@@ -153,6 +153,20 @@
                 @include tablet-desktop {
                     font-size: 2.5rem;
                 }
+
+                &.la-sun {
+                    color: #ffeb3b;
+
+                    @include desktop {
+                        color: color(text);
+                        transition: transform 0.5s ease-in, color 0.2s ease;
+
+                        &:hover {
+                            transform: rotate(180deg);
+                            color: #ffeb3b;
+                        }
+                    }
+                }
             }
         }
     }
