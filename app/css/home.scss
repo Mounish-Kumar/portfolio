@@ -83,6 +83,10 @@
                 font-size: 1.25rem;
             }
 
+            @include mobile-long {
+                font-size: 1.5rem;
+            }
+
             @include tablet-desktop {
                 font-size: 1.5rem;
             }
@@ -99,6 +103,10 @@
             @include mobile {
                 font-size: 2.25rem;
                 line-height: 1.1;
+            }
+
+            @include mobile-long {
+                font-size: 2.5rem;
             }
 
             @include tablet-desktop {

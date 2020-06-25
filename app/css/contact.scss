@@ -17,6 +17,15 @@
             display: grid;
             padding: var(--container-margin-tb) var(--header-margin-lr);
 
+            @include mobile {
+                min-height: calc(100vh - var(--header-height) - var(--nav-height));
+                align-content: center;
+            }
+
+            @include mobile-long {
+                min-height: max-content !important;
+            }
+
             h1 {
                 font-size: var(--page-heading-font-size);
                 font-weight: var(--page-heading-font-weight);

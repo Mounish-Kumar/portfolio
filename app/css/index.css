@@ -691,6 +691,12 @@ body {
   }
 }
 
+@media (max-width: 767px) and (min-height: 730px) {
+  .light-theme #home .content h2 {
+    font-size: 1.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .light-theme #home .content h2 {
     font-size: 1.5rem;
@@ -710,6 +716,12 @@ body {
   .light-theme #home .content h1 {
     font-size: 2.25rem;
     line-height: 1.1;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 730px) {
+  .light-theme #home .content h1 {
+    font-size: 2.5rem;
   }
 }
 
@@ -793,6 +805,9 @@ body {
   .light-theme #about {
     -ms-grid-rows: 100%;
         grid-template-rows: 100%;
+    min-height: calc(100vh - var(--header-height) - var(--nav-height));
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
 }
 
@@ -882,7 +897,7 @@ body {
   }
 }
 
-@media (max-width: 767px) and (max-width: 767px) and (min-height: 800px) {
+@media (max-width: 767px) and (max-width: 767px) and (min-height: 730px) {
   .light-theme #about section ul {
     -ms-grid-columns: (14rem)[2];
         grid-template-columns: repeat(2, 14rem);
@@ -968,6 +983,22 @@ body {
   background-attachment: fixed !important;
 }
 
+@media (max-width: 767px) {
+  .light-theme #work {
+    min-height: calc(100vh - var(--header-height) - var(--nav-height));
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 730px) {
+  .light-theme #work {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
+  }
+}
+
 .light-theme #work .wrapper {
   display: -ms-grid;
   display: grid;
@@ -1035,7 +1066,6 @@ body {
 }
 
 .light-theme #work .wrapper section > a img.company-logo {
-  margin-top: 15px;
   max-width: 100%;
   -webkit-transform: translateZ(45px);
           transform: translateZ(45px);
@@ -1102,6 +1132,14 @@ body {
   -ms-grid-rows: var(--page-heading-size) auto;
       grid-template-rows: var(--page-heading-size) auto;
   background-color: #eee;
+}
+
+@media (max-width: 767px) {
+  .light-theme #skills {
+    min-height: calc(100vh - var(--header-height) - var(--nav-height));
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
 }
 
 .light-theme #skills .wrapper {
@@ -1175,7 +1213,7 @@ body {
   }
 }
 
-@media (max-width: 767px) and (max-width: 767px) and (min-height: 800px) {
+@media (max-width: 767px) and (max-width: 767px) and (min-height: 730px) {
   .light-theme #skills .wrapper section ul {
     -ms-grid-columns: (14rem)[3];
         grid-template-columns: repeat(3, 14rem);
@@ -1293,6 +1331,22 @@ body {
   display: -ms-grid;
   display: grid;
   padding: var(--container-margin-tb) var(--header-margin-lr);
+}
+
+@media (max-width: 767px) {
+  .light-theme #contact .wrapper section {
+    min-height: calc(100vh - var(--header-height) - var(--nav-height));
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 730px) {
+  .light-theme #contact .wrapper section {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
+  }
 }
 
 .light-theme #contact .wrapper section h1 {
@@ -2111,6 +2165,12 @@ body {
   }
 }
 
+@media (max-width: 767px) and (min-height: 730px) {
+  .dark-theme #home .content h2 {
+    font-size: 1.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .dark-theme #home .content h2 {
     font-size: 1.5rem;
@@ -2130,6 +2190,12 @@ body {
   .dark-theme #home .content h1 {
     font-size: 2.25rem;
     line-height: 1.1;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 730px) {
+  .dark-theme #home .content h1 {
+    font-size: 2.5rem;
   }
 }
 
@@ -2213,6 +2279,9 @@ body {
   .dark-theme #about {
     -ms-grid-rows: 100%;
         grid-template-rows: 100%;
+    min-height: calc(100vh - var(--header-height) - var(--nav-height));
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
 }
 
@@ -2303,7 +2372,7 @@ body {
   }
 }
 
-@media (max-width: 767px) and (max-width: 767px) and (min-height: 800px) {
+@media (max-width: 767px) and (max-width: 767px) and (min-height: 730px) {
   .dark-theme #about section ul {
     -ms-grid-columns: (14rem)[2];
         grid-template-columns: repeat(2, 14rem);
@@ -2389,6 +2458,22 @@ body {
   background-attachment: fixed !important;
 }
 
+@media (max-width: 767px) {
+  .dark-theme #work {
+    min-height: calc(100vh - var(--header-height) - var(--nav-height));
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 730px) {
+  .dark-theme #work {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
+  }
+}
+
 .dark-theme #work .wrapper {
   display: -ms-grid;
   display: grid;
@@ -2456,7 +2541,6 @@ body {
 }
 
 .dark-theme #work .wrapper section > a img.company-logo {
-  margin-top: 15px;
   max-width: 100%;
   -webkit-transform: translateZ(45px);
           transform: translateZ(45px);
@@ -2523,6 +2607,14 @@ body {
   -ms-grid-rows: var(--page-heading-size) auto;
       grid-template-rows: var(--page-heading-size) auto;
   background-color: #181818;
+}
+
+@media (max-width: 767px) {
+  .dark-theme #skills {
+    min-height: calc(100vh - var(--header-height) - var(--nav-height));
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
 }
 
 .dark-theme #skills .wrapper {
@@ -2596,7 +2688,7 @@ body {
   }
 }
 
-@media (max-width: 767px) and (max-width: 767px) and (min-height: 800px) {
+@media (max-width: 767px) and (max-width: 767px) and (min-height: 730px) {
   .dark-theme #skills .wrapper section ul {
     -ms-grid-columns: (14rem)[3];
         grid-template-columns: repeat(3, 14rem);
@@ -2714,6 +2806,22 @@ body {
   display: -ms-grid;
   display: grid;
   padding: var(--container-margin-tb) var(--header-margin-lr);
+}
+
+@media (max-width: 767px) {
+  .dark-theme #contact .wrapper section {
+    min-height: calc(100vh - var(--header-height) - var(--nav-height));
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 730px) {
+  .dark-theme #contact .wrapper section {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
+  }
 }
 
 .dark-theme #contact .wrapper section h1 {

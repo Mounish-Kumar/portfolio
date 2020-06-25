@@ -6,6 +6,8 @@
 
     @include mobile {
         grid-template-rows: 100%;
+        min-height: calc(100vh - var(--header-height) - var(--nav-height));
+        align-content: center;
     }
 
     @include tablet {

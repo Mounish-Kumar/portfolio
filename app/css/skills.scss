@@ -2,6 +2,11 @@
     grid-template-rows: var(--page-heading-size) auto;
     background-color: color(bg);
 
+    @include mobile {
+        min-height: calc(100vh - var(--header-height) - var(--nav-height));
+        align-content: center;
+    }
+
     .wrapper {
         display: grid;
         align-items: center; // Remove to expand
