@@ -600,8 +600,8 @@ body {
   display: block;
   position: relative;
   padding: var(--header-height) var(--header-margin-lr) 0 var(--header-margin-lr);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 0.85)), to(rgba(255, 255, 255, 0.85)));
-  background: linear-gradient(to bottom, rgba(238, 238, 238, 0.85), rgba(255, 255, 255, 0.85));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 0.9)), to(rgba(255, 255, 255, 0.85)));
+  background: linear-gradient(to bottom, rgba(238, 238, 238, 0.9), rgba(255, 255, 255, 0.85));
   overflow: hidden;
 }
 
@@ -625,12 +625,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/assets/images/home.jpg);
+  background-image: url(/assets/images/home_light.jpg);
   background-attachment: fixed !important;
   background-size: cover !important;
   z-index: -1;
-  -webkit-animation: zoomInOut 20s linear infinite;
-          animation: zoomInOut 20s linear infinite;
+  -webkit-animation: zoomInOut 10s linear infinite;
+          animation: zoomInOut 10s linear infinite;
 }
 
 @-webkit-keyframes zoomInOut {
@@ -1005,8 +1005,8 @@ body {
 .light-theme #work {
   -ms-grid-rows: var(--page-heading-size) auto;
       grid-template-rows: var(--page-heading-size) auto;
-  background: url(/assets/images/work.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 0.85)), to(rgba(255, 255, 255, 0.85)));
-  background: url(/assets/images/work.jpg), linear-gradient(to bottom, rgba(238, 238, 238, 0.85), rgba(255, 255, 255, 0.85));
+  background: url(/assets/images/work.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 0.9)), to(rgba(255, 255, 255, 0.85)));
+  background: url(/assets/images/work.jpg), linear-gradient(to bottom, rgba(238, 238, 238, 0.9), rgba(255, 255, 255, 0.85));
   background-attachment: fixed !important;
 }
 
@@ -2112,8 +2112,8 @@ body {
   display: block;
   position: relative;
   padding: var(--header-height) var(--header-margin-lr) 0 var(--header-margin-lr);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.95)), to(rgba(0, 0, 0, 0.85)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.95)), to(rgba(0, 0, 0, 0.65)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65));
   overflow: hidden;
 }
 
@@ -2137,12 +2137,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/assets/images/home.jpg);
+  background-image: url(/assets/images/home_dark.jpg);
   background-attachment: fixed !important;
   background-size: cover !important;
   z-index: -1;
-  -webkit-animation: zoomInOut 20s linear infinite;
-          animation: zoomInOut 20s linear infinite;
+  -webkit-animation: zoomInOut 10s linear infinite;
+          animation: zoomInOut 10s linear infinite;
 }
 
 @keyframes zoomInOut {
@@ -2507,8 +2507,8 @@ body {
 .dark-theme #work {
   -ms-grid-rows: var(--page-heading-size) auto;
       grid-template-rows: var(--page-heading-size) auto;
-  background: url(/assets/images/work.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.95)), to(rgba(0, 0, 0, 0.85)));
-  background: url(/assets/images/work.jpg), linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+  background: url(/assets/images/work.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.95)), to(rgba(0, 0, 0, 0.65)));
+  background: url(/assets/images/work.jpg), linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65));
   background-attachment: fixed !important;
 }
 

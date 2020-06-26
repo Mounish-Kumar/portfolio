@@ -61,8 +61,15 @@
 
         #typing:after {
             content: "_";
-            color: #212121;
             animation: cursorBlink 0.3s infinite;
+        }
+
+        .light-theme #typing:after {
+            color: #212121;
+        }
+
+        .dark-theme #typing:after {
+            color: #eee;
         }
 
         @keyframes cursorBlink {
