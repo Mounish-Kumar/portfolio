@@ -2,6 +2,12 @@ $(function() {
     // Load app
     $('#app').load('./views/app.html', function() {
 
+        // Vh in mobile
+        setViewportHeight();
+        window.addEventListener('resize', () => {
+            setViewportHeight();
+        });
+
         lazyLoadImages();
 
         changeTheme();
@@ -21,6 +27,11 @@ $(function() {
         addScript('./scripts/vanilla-tilt.min.js');
     });
 });
+
+function setViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
 
 function lazyLoadImages() {
     if('loading' in HTMLImageElement.prototype) {
