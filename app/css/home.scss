@@ -8,7 +8,7 @@
 
     @include mobile {
         height: 100vh;
-        height: calc(var(--vh, 1vh) * 100);
+        height: calc(100 * var(--vh));
     }
 
     @include tablet-desktop {

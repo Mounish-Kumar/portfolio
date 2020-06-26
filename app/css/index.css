@@ -608,7 +608,7 @@ body {
 @media (max-width: 767px) {
   .light-theme #home {
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(100 * var(--vh));
   }
 }
 
@@ -2119,7 +2119,7 @@ body {
 @media (max-width: 767px) {
   .dark-theme #home {
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(100 * var(--vh));
   }
 }
 
