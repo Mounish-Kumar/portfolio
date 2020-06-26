@@ -3,7 +3,7 @@
     display: block;
     position: relative;
     padding: var(--header-height) var(--header-margin-lr) 0 var(--header-margin-lr);
-    background-color: color(home-bg);
+    background: color(home-bg);
     overflow: hidden;
 
     @include mobile {
