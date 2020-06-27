@@ -1,8 +1,10 @@
-var animationDelay = 1000;
+import $ from 'jquery';
 
-function sendMessage() {
+const animationDelay = 1000;
+
+export var sendMessage = function() {
     hideAllMessages();
-    const requestBody = prepareRequestBody();
+    let requestBody = prepareRequestBody();
 
     if(validateMessage(requestBody)) {
         requestBody['ipAddress'] = localStorage.getItem("IP_ADDRESS");
@@ -30,7 +32,7 @@ function sendMessage() {
             error: function (error) {
                 formLoading(false, 'error');
                 setTimeout(() => {
-                    const data = error && error.responseJSON;
+                    let data = error && error.responseJSON;
                     if(data) {
                         setErrorMessage(data.message)
                         setFieldErrorMessages(data.fieldErrorMessages);
@@ -41,7 +43,7 @@ function sendMessage() {
     }
 }
 
-function hideAllMessages() {
+var hideAllMessages = function() {
     $(".response-message").addClass("hide"); // Hide message
     $(".response-message > span").html(""); // Empty message
     $('.field-message').addClass("hide"); // Hide field message
@@ -49,7 +51,7 @@ function hideAllMessages() {
     $('form > label').removeClass("error"); // Remove field error class
 }
 
-function prepareRequestBody() {
+var prepareRequestBody = function() {
     return {
         name: $('[name="name"] > input').val(),
         email: $('[name="email"] > input').val(),
@@ -58,7 +60,7 @@ function prepareRequestBody() {
     };
 }
 
-function validateMessage(requestBody) {
+var validateMessage = function(requestBody) {
     let fieldErrorMessages = [];
     for(let key in requestBody) {
         let fieldErrorMessage = validateField(key);
@@ -72,7 +74,7 @@ function validateMessage(requestBody) {
     }
 }
 
-function validateField(key) {
+export var validateField = function(key) {
     let fieldErrorMessage = null;
     let value = $('[name="'+ key +'"] > input').val();
     if(key === 'message') value = $('[name="'+ key +'"] > textarea').val();
@@ -101,7 +103,7 @@ function validateField(key) {
     return fieldErrorMessage;
 }
 
-function formLoading(isLoading, result) {
+var formLoading = function(isLoading, result) {
     // Make fields readonly
     $('[name="name"] > input').prop('readonly', isLoading);
     $('[name="email"] > input').prop('readonly', isLoading);
@@ -128,7 +130,7 @@ function formLoading(isLoading, result) {
     }
 }
 
-function setSuccessMessage(message) {
+var setSuccessMessage = function(message) {
     if(message) {
         $(".response-message.success > span").html(message); // Success message
         $(".response-message.success").removeClass("hide"); // Show success message
@@ -139,14 +141,14 @@ function setSuccessMessage(message) {
     }
 }
 
-function setErrorMessage(message) {
+var setErrorMessage = function(message) {
     if(message) {
         $(".response-message.error > span").html(message); // Error message
         $(".response-message.error").removeClass("hide"); // Show error message
     }
 }
 
-function setFieldErrorMessages(fieldErrorMessages) {
+var setFieldErrorMessages = function(fieldErrorMessages) {
     if(fieldErrorMessages && fieldErrorMessages.length > 0) {
         fieldErrorMessages.map(fieldErrorMessage => {
             $('[name="' + fieldErrorMessage.field + '"]').addClass("error"); // Add field error class
@@ -156,7 +158,7 @@ function setFieldErrorMessages(fieldErrorMessages) {
     }
 }
 
-function resetFields() {
+var resetFields = function() {
     $('[name="name"] > input').val("");
     $('[name="email"] > input').val("");
     $('[name="mobile"] > input').val("");

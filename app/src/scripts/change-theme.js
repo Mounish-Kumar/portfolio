@@ -1,4 +1,17 @@
-function changeTheme(newTheme) {
+import centricoImg from  "../assets/images/centrico.png";
+import sellaImg from "../assets/images/sella.png";
+import hypeImg from "../assets/images/hype.png";
+import axerveImg from "../assets/images/axerve.png";
+import wiproImg from "../assets/images/wipro.png";
+import sbsaImg from "../assets/images/sbsa.png";
+import centricoWhiteImg from "../assets/images/centrico_white.png";
+import sellaWhiteImg from "../assets/images/sella_white.png";
+import hypeWhiteImg from "../assets/images/hype_white.png";
+import axerveWhiteImg from "../assets/images/axerve_white.png";
+import wiproWhiteImg from "../assets/images/wipro_white.png";
+import sbsaWhiteImg from "../assets/images/sbsa_white.png";
+
+export var changeTheme = function(newTheme) {
     if(newTheme) {
         let oldTheme = newTheme === 'dark-theme' ? 'light-theme' : 'dark-theme';
 
@@ -16,34 +29,34 @@ function changeTheme(newTheme) {
     }
 }
 
-function changeImages(theme) {
-    const baseUrl = "./assets/images/";
+var changeImages = function(theme) {
+    const baseUrl = "../assets/images/";
 
     switch(theme) {
         case "light-theme":
-            document.getElementById("centrico").src = baseUrl + "centrico.png";
-            document.getElementById("sella").src = baseUrl + "sella.png";
-            document.getElementById("hype").src = baseUrl + "hype.png";
-            document.getElementById("axerve").src = baseUrl + "axerve.png";
-            document.getElementById("wipro").src = baseUrl + "wipro.png";
-            document.getElementById("sbsa").src = baseUrl + "sbsa.png";
+            document.getElementById("centrico").src = centricoImg;
+            document.getElementById("sella").src = sellaImg;
+            document.getElementById("hype").src = hypeImg;
+            document.getElementById("axerve").src = axerveImg;
+            document.getElementById("wipro").src = wiproImg;
+            document.getElementById("sbsa").src = sbsaImg;
             break;
 
         case "dark-theme":
-            document.getElementById("centrico").src = baseUrl + "centrico_white.png";
-            document.getElementById("sella").src = baseUrl + "sella_white.png";
-            document.getElementById("hype").src = baseUrl + "hype_white.png";
-            document.getElementById("axerve").src = baseUrl + "axerve_white.png";
-            document.getElementById("wipro").src = baseUrl + "wipro_white.png";
-            document.getElementById("sbsa").src = baseUrl + "sbsa_white.png";
+            document.getElementById("centrico").src = centricoWhiteImg;
+            document.getElementById("sella").src = sellaWhiteImg;
+            document.getElementById("hype").src = hypeWhiteImg;
+            document.getElementById("axerve").src = axerveWhiteImg;
+            document.getElementById("wipro").src = wiproWhiteImg;
+            document.getElementById("sbsa").src = sbsaWhiteImg;
             break;
     }
 }
 
-function isDay() {
-    let startTime = '07:00:00';
-    let endTime = '19:00:00';
-    let currentDate = new Date();
+var isDay = function() {
+    const startTime = '07:00:00';
+    const endTime = '19:00:00';
+    const currentDate = new Date();
 
     let startDate = new Date(currentDate.getTime());
     startDate.setHours(startTime.split(":")[0]);
@@ -55,6 +68,5 @@ function isDay() {
     endDate.setMinutes(endTime.split(":")[1]);
     endDate.setSeconds(endTime.split(":")[2]);
 
-    let isValid = startDate < currentDate && endDate > currentDate;
-    return isValid;
+    return startDate < currentDate && endDate > currentDate;
 }

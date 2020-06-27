@@ -1,52 +1,51 @@
+import '../styles/index.scss';
+
+import $ from 'jquery';
+import "./vanilla-tilt.min.js";
+
+import { changeTheme } from "./change-theme";
+import { parallax } from "./parallax";
+import { downloadResume, downloadDocument } from "./download-document";
+import { sendMessage, validateField } from "./send-message";
+import { uploadDocument } from "./upload-document";
+
 $(function() {
-    // Load app
-    $('#app').load('./views/app.html', function() {
 
-        // Vh in mobile
+    // Window functions
+    window.changeTheme = changeTheme;
+    window.downloadResume = downloadResume;
+    window.downloadDocument = downloadDocument;
+    window.sendMessage = sendMessage;
+    window.validateField = validateField;
+    window.uploadDocument = uploadDocument;
+
+    // Vh in mobile
+    setViewportHeight();
+    window.addEventListener('resize', () => {
         setViewportHeight();
-        window.addEventListener('resize', () => {
-            setViewportHeight();
-        });
-
-        lazyLoadImages();
-
-        changeTheme();
-
-        var containers = $('.container');
-
-        $(document).scroll(function () {
-            makeHeaderSmall();
-
-            parallax();
-
-            navigationActive(containers);
-        });
-
-        getIpAddress();
-
-        addScript('./scripts/vanilla-tilt.min.js');
     });
+
+    changeTheme();
+
+    let containers = $('.container');
+
+    $(document).scroll(function () {
+        makeHeaderSmall();
+
+        parallax();
+
+        navigationActive(containers);
+    });
+
+    getIpAddress();
 });
 
-function setViewportHeight() {
+var setViewportHeight = function() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
-function lazyLoadImages() {
-    if('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            img.src = img.dataset.src;
-        })
-    } else {
-        const script = document.createElement('script');
-        script.src = './scripts/lazysizes.min.js';
-        document.body.appendChild(script);
-    }
-}
-
-function makeHeaderSmall() {
+var makeHeaderSmall = function() {
     let menu = document.getElementById('header');
     if(window.pageYOffset > 0) {
         menu.classList.add("scrolled");
@@ -55,13 +54,13 @@ function makeHeaderSmall() {
     }
 }
 
-function navigationActive(containers) {
-    let scrollTop = (4 * 16) + $(this).scrollTop();
+var navigationActive = function(containers) {
+    let scrollTop = (4 * 16) + $(window).scrollTop();
     let currentContainer = null;
     for(let container of containers) {
         if(scrollTop >= container.offsetTop) currentContainer = container;
     }
-    if($(window).scrollTop() + $(window).height() == $(document).height()) { // Reached end of document
+    if(scrollTop + $(window).height() >= $(document).height()) { // Reached end of document
         let lastIndex = containers.length - 1;
         currentContainer = containers[lastIndex];
     }
@@ -73,7 +72,7 @@ function navigationActive(containers) {
     }
 }
 
-function getIpAddress() {
+var getIpAddress = function() {
     if(!localStorage.getItem("IP_ADDRESS")) {
         $.getJSON("https://ipapi.co/json", function(data) {
             localStorage.setItem("IP_ADDRESS", data.ip);
@@ -81,8 +80,8 @@ function getIpAddress() {
     }
 }
 
-function addScript(url) {
-    const scriptTag = document.createElement('script');
+var addScript = function(url) {
+    let scriptTag = document.createElement('script');
     scriptTag.src = url;
     document.body.appendChild(scriptTag);
 }

@@ -1,4 +1,4 @@
-function parallax() {
+export var parallax = function() {
     let scrollY = window.scrollY;
     let home = document.getElementById("home");
     let homeImage = home.getElementsByTagName("img")[0];

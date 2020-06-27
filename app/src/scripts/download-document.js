@@ -1,13 +1,14 @@
-function downloadResume() {
-    let hiddenElement = document.createElement("a");
-    hiddenElement.href = "http://localhost:8080/api/v1/document/resume";
-    hiddenElement.target = "_blank";
-    hiddenElement.click();
+export var downloadResume = function() {
+    openLinkInNewTab("http://localhost:8080/api/v1/document/resume");
 }
 
-function downloadDocument(id) {
+export var downloadDocument = function(id) {
+    openLinkInNewTab("http://localhost:8080/api/v1/document/download/" + id);
+}
+
+var openLinkInNewTab = function(link) {
     let hiddenElement = document.createElement("a");
-    hiddenElement.href = "http://localhost:8080/api/v1/document/download/" + id;
+    hiddenElement.href = link;
     hiddenElement.target = "_blank";
     hiddenElement.click();
 }

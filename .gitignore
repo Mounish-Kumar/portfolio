@@ -31,10 +31,10 @@ build/
 .vscode/
 
 ### App ###
-/app/node_modules
+/app/.cache
 /app/dist
+/app/node_modules
 /app/src/assets/samples
 /app/src/styles/*.css.map
 /app/src/styles/*.css
-!/app/src/styles/index.css
 

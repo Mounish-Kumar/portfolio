@@ -1,12 +1,12 @@
 var isPageLoaded = false;
-var charDelay = 80;
-var textDelay = 800;
+const charDelay = 80;
+const textDelay = 800;
 
 document.onreadystatechange = function () {
     if(document.readyState === "complete") isPageLoaded = true;
 };
 
-function addText(txt) {
+addText = function(txt) {
     return new Promise((resolve, reject) => {
         let i = 0;
         let interval = setInterval(() => {
@@ -21,7 +21,7 @@ function addText(txt) {
     });
 }
 
-function removeText() {
+removeText = function() {
     return new Promise((resolve, reject) => {
         let interval = setInterval(() => {
             let txt = document.getElementById("typing").innerHTML;
@@ -35,13 +35,13 @@ function removeText() {
     });
 }
 
-function delay(time) {
+delay = function(time) {
     return new Promise((resolve, reject) => {
         setTimeout(() => resolve(), time);
     });
 }
 
-function stopPageLoading() {
+stopPageLoading = function() {
     return new Promise((resolve, reject) => {
         if(isPageLoaded) {
             document.getElementById("app").classList.remove("display-none");
@@ -51,7 +51,7 @@ function stopPageLoading() {
     });
 }
 
-function addRemoveText() {
+addRemoveText = function() {
     let dataStr = document.getElementById("typing").getAttribute("data");
     let dataArr = dataStr.split(",");
     let promise = null;
@@ -69,7 +69,7 @@ function addRemoveText() {
     return promise;
 }
 
-function infiniteAddRemoveText() {
+infiniteAddRemoveText = function() {
     addRemoveText().then(infiniteAddRemoveText);
 }
 

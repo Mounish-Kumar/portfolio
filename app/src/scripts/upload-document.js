@@ -1,36 +1,9 @@
-function getBase64(id) {
-    return new Promise((resolve, reject) => {
-        let selectedFiles = document.getElementById(id).files;
-        if(selectedFiles.length > 0) {
-            let fileToUpload = selectedFiles[0];
-            let fileReader = new FileReader();
-            fileReader.onload = function(event) {
-                let base64 = event.target.result;
-                resolve(base64);
-            };
-            fileReader.readAsDataURL(fileToUpload);
-        }
-    });
-    
-}
+import $ from 'jquery';
 
-function getFileName(id) {
-    let fileName = null;
-    let fullPath = document.getElementById(id).value;
-    if(fullPath) {
-        let startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-        fileName = fullPath.substring(startIndex);
-        if(fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
-            fileName = fileName.substring(1);
-        }
-    }
-    return fileName;
-}
-
-function uploadDocument() {
-    elementId = "uploadDoc";
+export var uploadDocument = function() {
+    const elementId = "uploadDoc";
     getBase64(elementId).then((base64) => {
-        const requestBody = {
+        let requestBody = {
             key: "resume",
             fileName: getFileName(elementId),
             fileContent: base64
@@ -54,4 +27,33 @@ function uploadDocument() {
             }
         });
     });
+}
+
+var getBase64 = function(id) {
+    return new Promise((resolve, reject) => {
+        let selectedFiles = document.getElementById(id).files;
+        if(selectedFiles.length > 0) {
+            let fileToUpload = selectedFiles[0];
+            let fileReader = new FileReader();
+            fileReader.onload = function(event) {
+                let base64 = event.target.result;
+                resolve(base64);
+            };
+            fileReader.readAsDataURL(fileToUpload);
+        }
+    });
+    
+}
+
+var getFileName = function(id) {
+    let fileName = null;
+    let fullPath = document.getElementById(id).value;
+    if(fullPath) {
+        let startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+        fileName = fullPath.substring(startIndex);
+        if(fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
+            fileName = fileName.substring(1);
+        }
+    }
+    return fileName;
 }
