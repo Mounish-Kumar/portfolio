@@ -1,6 +1,6 @@
 #work {
     grid-template-rows: var(--page-heading-size) auto;
-    background: url(/assets/images/work.jpg), color(home-bg);
+    background: url(/src/assets/images/work.jpg), color(home-bg);
     background-attachment: fixed !important;
 
     @include mobile {

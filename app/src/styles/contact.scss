@@ -35,7 +35,7 @@
                 $icons-shadow: 3px 3px 11px rgba(#000, 0.5);
                 grid-template-rows: var(--page-heading-size) auto auto;
                 position: relative;
-                background-image: url(/assets/images/contact.jpg);
+                background-image: url(/src/assets/images/contact.jpg);
                 background-attachment: fixed;
                 
                 @include mobile {
