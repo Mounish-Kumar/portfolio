@@ -36,7 +36,6 @@
 
 
 :root {
-    scroll-behavior: smooth;
     --nav-height: 4rem;
     --header-margin-tb: 0.5rem;
     --header-transition-time: 0.5s;
@@ -66,6 +65,8 @@
     }
 
     @include desktop {
+        scroll-behavior: smooth;
+
         --header-height: 4rem;
         --header-margin-lr: 4.5rem;
 
