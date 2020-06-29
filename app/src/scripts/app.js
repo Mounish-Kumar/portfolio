@@ -19,11 +19,13 @@ $(function() {
     window.validateField = validateField;
     window.uploadDocument = uploadDocument;
 
-    // Vh in mobile
+    // Change vh
     setViewportHeight();
-    window.addEventListener('resize', () => {
-        setViewportHeight();
-    });
+    if(window.innerWidth >= 768) { // Change vh on resize only for Tablet & desktop
+        window.addEventListener('resize', () => {
+            setViewportHeight();
+        });
+    }
 
     changeTheme();
 
