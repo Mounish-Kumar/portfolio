@@ -7,11 +7,11 @@ export var parallax = function() {
     let h2 = homeContent.getElementsByTagName("h2")[0];
     let action = homeContent.getElementsByClassName("action")[0];
     if(window.innerWidth <= 767) { // Parallax for mobile
-        homeContent.style.top = 3 * 16 + scrollY * 0.8 + 'px';
-        homeContent.style.transform = 'scale(' + (1 + scrollY / (764 * 1.6)) + ')';
-        homeImage.style.bottom = 0 - scrollY * 0.8 + 'px';
-        action.style.top = 0 - scrollY * 0.7 + 'px';
-        action.style.transform = 'scale(' + (1 + scrollY / 764) + ')';
+        // homeContent.style.top = 3 * 16 + scrollY * 0.8 + 'px';
+        // homeContent.style.transform = 'scale(' + (1 + scrollY / (764 * 1.6)) + ')';
+        // homeImage.style.bottom = 0 - scrollY * 0.8 + 'px';
+        // action.style.top = 0 - scrollY * 0.7 + 'px';
+        // action.style.transform = 'scale(' + (1 + scrollY / 764) + ')';
     } else { // Parallax for tablet & desktop
         homeImage.style.bottom = 0 - scrollY * 1.2 + 'px';
         homeImage.style.transform = 'scale(' + (1 + scrollY / (464 * 2)) + ')';
