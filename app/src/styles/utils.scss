@@ -6,11 +6,11 @@
     background-size: cover !important;
     background-position: center !important;
     scroll-snap-align: start !important;
-    scroll-margin-top: var(--header-height);
+    // scroll-margin-top: var(--header-height);
 
-    @include tablet-desktop {
-        scroll-margin-top: calc(var(--header-height) - 1rem);
-    }
+    // @include tablet-desktop {
+    //     scroll-margin-top: calc(var(--header-height) - 1rem);
+    // }
 
     > h1 {
         font-size: var(--page-heading-font-size);

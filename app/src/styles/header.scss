@@ -6,36 +6,22 @@
     justify-content: space-between;
     top: 0;
     left: 0;
+    height: var(--header-height);
     width: 100vw;
     margin: 0;
     padding: var(--header-margin-tb) var(--header-margin-lr);
     background-color: transparent;
     z-index: 100;
-    transition: box-shadow var(--header-transition-time), background-color var(--header-transition-time);
-
-    @include mobile {
-        height: var(--header-height);
-        background-color: color(card);
-        box-shadow: $header-box-shadow;
-    }
+    transition: background-color var(--header-transition-time), box-shadow var(--header-transition-time),
+                top var(--header-transition-time);
 
     &.scrolled {
         background-color: color(card);
         box-shadow: $header-box-shadow;
+    }
 
-        @include tablet-desktop {
-            img.logo {
-                height: calc(var(--logo-height) - 1rem);
-            }
-
-            nav ul li a .label {
-                font-size: 1.125rem;
-            }
-
-            .options li i {
-                font-size: 2rem;
-            }
-        }
+    &.scroll-up {
+        top: calc(0rem - var(--header-height) - 1rem);
     }
 
     & > a {
@@ -43,7 +29,6 @@
 
         img.logo {
             height: var(--logo-height);
-            transition: height var(--header-transition-time);
         }
     }
 
@@ -54,7 +39,7 @@
             left: 0;
             width: 100vw;
             background-color: color(card);
-            border-top:  1px solid rgba(#000, .5);
+            border-top:  1px solid color(border-bg);
         }
 
         @include tablet-desktop {
@@ -123,7 +108,6 @@
 
                         @include tablet-desktop {
                             font-size: 1.25rem;
-                            transition: font-size var(--header-transition-time);
                         }
                     }
                 }
@@ -144,26 +128,16 @@
             }
 
             i {
-                transition: font-size var(--header-transition-time);
-            
-                @include mobile {
-                    font-size: 2rem;
-                }
-        
-                @include tablet-desktop {
-                    font-size: 2.5rem;
-                }
+                font-size: 2.25rem;
 
                 &.la-sun {
                     color: #ffeb3b;
 
                     @include desktop {
-                        color: color(text);
-                        transition: transform 0.5s ease-in, color 0.2s ease;
+                        transition: transform 0.5s ease-in;
 
                         &:hover {
                             transform: rotate(180deg);
-                            color: #ffeb3b;
                         }
                     }
                 }

@@ -14,7 +14,8 @@
         btn-bg: linear-gradient(45deg, #e0e0e0, #e0e0e0, #fff, #e0e0e0, #e0e0e0),
         bg: #eee,
         card: #fff,
-        input-bg: #eee
+        input-bg: #eee,
+        border-bg: rgba(#000, 0.2)
     );
 
     @function color($color-name) {
@@ -38,7 +39,8 @@
         btn-bg: linear-gradient(45deg, #000, #000, #181818, #000, #000),
         bg: #181818,
         card: #2e2e2e,
-        input-bg: #181818
+        input-bg: #181818,
+        border-bg: rgba(#000, 0.6)
     );
 
     @function color($color-name) {

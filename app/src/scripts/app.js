@@ -30,12 +30,24 @@ $(function() {
     changeTheme();
 
     let containers = $('.container');
-
+    let header = document.getElementById('header');
+    let prevScrollTop = 0;
     $(document).scroll(function () {
-        makeHeaderSmall();
+        let scrollTop = $(window).scrollTop();
+        if(scrollTop > 3 * 16) {
+            header.classList.add("scrolled");
+            if(scrollTop >= prevScrollTop) {
+                header.classList.add("scroll-up");
+            } else {
+                header.classList.remove("scroll-up");
+            }
+        } else {
+            header.classList.remove("scrolled");
+            header.classList.remove("scroll-up");
+        }
+        prevScrollTop = scrollTop;
 
         parallax();
-
         navigationActive(containers);
     });
 
@@ -47,20 +59,11 @@ var setViewportHeight = function() {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
-var makeHeaderSmall = function() {
-    let menu = document.getElementById('header');
-    if(window.pageYOffset > 0) {
-        menu.classList.add("scrolled");
-    } else {
-        menu.classList.remove("scrolled");
-    }
-}
-
 var navigationActive = function(containers) {
-    let scrollTop = (4 * 16) + $(window).scrollTop();
+    let scrollTop = $(window).scrollTop();
     let currentContainer = null;
     for(let container of containers) {
-        if(scrollTop >= container.offsetTop) currentContainer = container;
+        if(scrollTop >= (container.offsetTop - 2*16)) currentContainer = container;
     }
     if(scrollTop + $(window).height() >= $(document).height()) { // Reached end of document
         let lastIndex = containers.length - 1;

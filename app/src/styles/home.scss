@@ -27,6 +27,10 @@
         background-size: cover !important;
         z-index: -1;
         animation: zoomInOut 10s linear infinite;
+
+        @include desktop {
+            animation: none;
+        }
     }
 
     @keyframes zoomInOut {
@@ -50,7 +54,7 @@
 
         @include tablet-desktop {
             left: var(--header-margin-lr);
-            height: calc(100% - var(--header-height));
+            height: calc(100% - var(--header-height) - 1rem);
         }
     }
     

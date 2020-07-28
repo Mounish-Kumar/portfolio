@@ -7,9 +7,9 @@ export var parallax = function() {
     let h2 = homeContent.getElementsByTagName("h2")[0];
     let action = homeContent.getElementsByClassName("action")[0];
     if(window.innerWidth >= 768) { // Parallax for tablet & desktop
-        homeImage.style.bottom = 0 - scrollY * 1.2 + 'px';
-        homeImage.style.transform = 'scale(' + (1 + scrollY / (464 * 2)) + ')';
-        homeContent.style.bottom = 0 - scrollY * 0.8 + 'px';
+        homeImage.style.bottom = 0 - scrollY * 1.1 + 'px';
+        homeImage.style.transform = 'scale(' + (1 + scrollY / (464 * 1.5)) + ')';
+        homeContent.style.bottom = 0 - scrollY * 0.65 + 'px';
         h2.style.fontSize = (1.5 + scrollY / (464 * 1.2)) + 'rem';
         h1.style.fontSize = (2.5 + scrollY / 464) + 'rem';
     }
