@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { serviceBaseUrl } from './app.js';
 
 const animationDelay = 1000;
 
@@ -11,7 +12,7 @@ export var sendMessage = function() {
         formLoading(true, null);
         
         $.ajax({
-            url: "http://localhost:8080/api/v1/message/send",
+            url: `${serviceBaseUrl}/message/send`,
             method: "POST",
             data: JSON.stringify(requestBody),
             headers: {
@@ -76,8 +77,8 @@ var validateMessage = function(requestBody) {
 
 export var validateField = function(key) {
     let fieldErrorMessage = null;
-    let value = $('[name="'+ key +'"] > input').val();
-    if(key === 'message') value = $('[name="'+ key +'"] > textarea').val();
+    let value = $(`[name="${key}"] > input`).val();
+    if(key === 'message') value = $(`[name="${key}"] > textarea`).val();
 
     if(!value) fieldErrorMessage = { field: key, message: 'Mandatory' };
     else {
@@ -96,9 +97,9 @@ export var validateField = function(key) {
 
     if(fieldErrorMessage) setFieldErrorMessages([ fieldErrorMessage ]);
     else {
-        $('[name="'+ key +'"] > .field-message').addClass("hide"); // Hide field message
-        $('[name="'+ key +'"] > .field-message').html(""); // Empty field message
-        $('[name="'+ key +'"]').removeClass("error"); // Remove field error class
+        $(`[name="${key}"] > .field-message`).addClass("hide"); // Hide field message
+        $(`[name="${key}"] > .field-message`).html(""); // Empty field message
+        $(`[name="${key}"]`).removeClass("error"); // Remove field error class
     }
     return fieldErrorMessage;
 }
@@ -151,9 +152,9 @@ var setErrorMessage = function(message) {
 var setFieldErrorMessages = function(fieldErrorMessages) {
     if(fieldErrorMessages && fieldErrorMessages.length > 0) {
         fieldErrorMessages.map(fieldErrorMessage => {
-            $('[name="' + fieldErrorMessage.field + '"]').addClass("error"); // Add field error class
-            $('[name="' + fieldErrorMessage.field + '"] > .field-message.error').html(fieldErrorMessage.message); // Field error message
-            $('[name="' + fieldErrorMessage.field + '"] > .field-message.error').removeClass("hide"); // Show field error message
+            $(`[name="${fieldErrorMessage.field}"]`).addClass("error"); // Add field error class
+            $(`[name="${fieldErrorMessage.field}"] > .field-message.error`).html(fieldErrorMessage.message); // Field error message
+            $(`[name="${fieldErrorMessage.field}"] > .field-message.error`).removeClass("hide"); // Show field error message
         });
     }
 }

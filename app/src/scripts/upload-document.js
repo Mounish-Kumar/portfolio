@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { serviceBaseUrl } from './app.js';
 
 export var uploadDocument = function() {
     const elementId = "uploadDoc";
@@ -10,7 +11,7 @@ export var uploadDocument = function() {
         };
 
         $.ajax({
-            url: "http://localhost:8080/api/v1/document",
+            url: `${serviceBaseUrl}/document`,
             method: "POST",
             data: JSON.stringify(requestBody),
             headers: {

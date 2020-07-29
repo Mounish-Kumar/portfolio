@@ -1,9 +1,11 @@
+import { serviceBaseUrl } from './app.js';
+
 export var downloadResume = function() {
-    openLinkInNewTab("http://localhost:8080/api/v1/document/resume");
+    openLinkInNewTab(`${serviceBaseUrl}/document/resume`);
 }
 
 export var downloadDocument = function(id) {
-    openLinkInNewTab("http://localhost:8080/api/v1/document/download/" + id);
+    openLinkInNewTab(`${serviceBaseUrl}/document/download/${id}`);
 }
 
 var openLinkInNewTab = function(link) {

@@ -9,6 +9,8 @@ import { downloadResume, downloadDocument } from "./download-document";
 import { sendMessage, validateField } from "./send-message";
 import { uploadDocument } from "./upload-document";
 
+export var serviceBaseUrl = 'http://api.mounish.dev/api/v1';
+
 $(function() {
 
     // Window functions
@@ -34,7 +36,7 @@ $(function() {
     let prevScrollTop = 0;
     $(document).scroll(function () {
         let scrollTop = $(window).scrollTop();
-        if(scrollTop > 3 * 16) {
+        if(scrollTop > 1.5 * 16) {
             header.classList.add("scrolled");
             if(scrollTop >= prevScrollTop) {
                 header.classList.add("scroll-up");
@@ -56,7 +58,7 @@ $(function() {
 
 var setViewportHeight = function() {
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
 var navigationActive = function(containers) {
@@ -70,10 +72,10 @@ var navigationActive = function(containers) {
         currentContainer = containers[lastIndex];
     }
     if(window.history.pushState) {
-        let id = '#' + currentContainer.id;
+        let id = `#${currentContainer.id}`;
         window.history.pushState(null, null, id);
-        $('#header').find(".active").removeClass("active");
-        $('[href="' + id + '"]').addClass("active");
+        $("#header").find(".active").removeClass("active");
+        $(`[href="${id}"]`).addClass("active");
     }
 }
 
