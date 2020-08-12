@@ -8,9 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.context.annotation.Lazy;
@@ -20,8 +18,7 @@ import org.springframework.context.annotation.Lazy;
 public class Document {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generator")
-	@SequenceGenerator(name = "generator", sequenceName = "DOCUMENT_ID_SEQ", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 

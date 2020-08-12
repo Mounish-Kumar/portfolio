@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -20,8 +19,7 @@ import org.hibernate.annotations.CreationTimestamp;
 public class Message {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generator")
-	@SequenceGenerator(name = "generator", sequenceName = "MESSAGE_ID_SEQ", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 	

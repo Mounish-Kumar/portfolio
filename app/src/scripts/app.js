@@ -9,7 +9,8 @@ import { downloadResume, downloadDocument } from "./download-document";
 import { sendMessage, validateField } from "./send-message";
 import { uploadDocument } from "./upload-document";
 
-export var serviceBaseUrl = 'http://api.mounish.dev/api/v1';
+// export var serviceBaseUrl = 'http://api.mounish.dev/api/v1';
+export var serviceBaseUrl = 'http://localhost:8080/api/v1';
 
 $(function() {
 
@@ -65,7 +66,7 @@ var navigationActive = function(containers) {
     let scrollTop = $(window).scrollTop();
     let currentContainer = null;
     for(let container of containers) {
-        if(scrollTop >= (container.offsetTop - 2*16)) currentContainer = container;
+        if(scrollTop >= (container.offsetTop - 3*16)) currentContainer = container;
     }
     if(scrollTop + $(window).height() >= $(document).height()) { // Reached end of document
         let lastIndex = containers.length - 1;
