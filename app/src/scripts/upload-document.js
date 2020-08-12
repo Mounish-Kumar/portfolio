@@ -5,7 +5,7 @@ export var uploadDocument = function() {
     const elementId = "uploadDoc";
     getBase64(elementId).then((base64) => {
         let requestBody = {
-            key: "resume",
+            key: "RESUME",
             fileName: getFileName(elementId),
             fileContent: base64
         };

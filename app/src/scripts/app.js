@@ -9,8 +9,8 @@ import { downloadResume, downloadDocument } from "./download-document";
 import { sendMessage, validateField } from "./send-message";
 import { uploadDocument } from "./upload-document";
 
-// export var serviceBaseUrl = 'http://api.mounish.dev/api/v1';
-export var serviceBaseUrl = 'http://localhost:8080/api/v1';
+//export var serviceBaseUrl = 'http://localhost:8080/api/v1';
+export var serviceBaseUrl = 'http://portfolio-env-1.eba-uyuw4rua.us-east-2.elasticbeanstalk.com/api/v1';
 
 $(function() {
 

@@ -22,7 +22,7 @@ public class Document {
 	@Column(name = "ID")
 	private Long id;
 
-	@Column(name = "KEY")
+	@Column(name = "DOC_KEY")
 	private String key;
 
 	@Column(name = "FILE_NAME")
