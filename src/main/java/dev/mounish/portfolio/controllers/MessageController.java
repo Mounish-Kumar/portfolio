@@ -10,7 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +29,6 @@ import dev.mounish.portfolio.repositories.MessageRepository;
 import dev.mounish.portfolio.services.EmailService;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/api/v1/message")
 public class MessageController {
 	
