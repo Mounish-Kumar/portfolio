@@ -2,7 +2,7 @@
     position: relative;
     grid-gap: 2rem;
     grid-template-areas: "content";
-    background-image: url(/assets/images/about.jpg);
+    background-image: url(/assets/images/about.webp);
 
     @include mobile {
         grid-template-rows: 100%;

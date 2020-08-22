@@ -1,15 +1,15 @@
-import centricoImg from  "../assets/images/centrico.png";
-import sellaImg from "../assets/images/sella.png";
-import hypeImg from "../assets/images/hype.png";
-import axerveImg from "../assets/images/axerve.png";
-import wiproImg from "../assets/images/wipro.png";
-import sbsaImg from "../assets/images/sbsa.png";
-import centricoWhiteImg from "../assets/images/centrico_white.png";
-import sellaWhiteImg from "../assets/images/sella_white.png";
-import hypeWhiteImg from "../assets/images/hype_white.png";
-import axerveWhiteImg from "../assets/images/axerve_white.png";
-import wiproWhiteImg from "../assets/images/wipro_white.png";
-import sbsaWhiteImg from "../assets/images/sbsa_white.png";
+import centricoImg from  "../assets/images/centrico.webp";
+import sellaImg from "../assets/images/sella.webp";
+import hypeImg from "../assets/images/hype.webp";
+import axerveImg from "../assets/images/axerve.webp";
+import wiproImg from "../assets/images/wipro.webp";
+import sbsaImg from "../assets/images/sbsa.webp";
+import centricoWhiteImg from "../assets/images/centrico_white.webp";
+import sellaWhiteImg from "../assets/images/sella_white.webp";
+import hypeWhiteImg from "../assets/images/hype_white.webp";
+import axerveWhiteImg from "../assets/images/axerve_white.webp";
+import wiproWhiteImg from "../assets/images/wipro_white.webp";
+import sbsaWhiteImg from "../assets/images/sbsa_white.webp";
 
 export var changeTheme = function(newTheme) {
     if(newTheme) {

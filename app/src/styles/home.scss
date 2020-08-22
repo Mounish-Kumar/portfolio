@@ -45,6 +45,7 @@
     img {
         position: absolute;
         bottom: 0;
+        z-index: 1;
 
         @include mobile {
             left: 50%;
@@ -143,6 +144,7 @@
             display: grid;
             grid-gap: 0.5rem;
             text-align: center;
+            z-index: 2;
 
             @include mobile {
                 grid-template-columns: repeat(2, 125px);

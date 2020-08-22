@@ -1,6 +1,6 @@
 #work {
     grid-template-rows: var(--page-heading-size) auto;
-    background: url(/assets/images/work.jpg), color(home-bg);
+    background: url(/assets/images/work.webp), color(home-bg);
     background-attachment: fixed !important;
 
     @include mobile {
@@ -69,7 +69,7 @@
     
             h1 {
                 font-family: var(--font-family-secondary);
-                font-weight: 700;
+                font-weight: 600;
                 color: color(brand);
 
                 @include mobile {

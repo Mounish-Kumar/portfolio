@@ -4,6 +4,7 @@ import $ from 'jquery';
 import "./vanilla-tilt.min.js";
 
 import { changeTheme } from "./change-theme";
+import { animate } from "./animate-elements";
 import { parallax } from "./parallax";
 import { downloadResume, downloadDocument } from "./download-document";
 import { sendMessage, validateField } from "./send-message";
@@ -31,6 +32,8 @@ $(function() {
     }
 
     changeTheme();
+
+    animate();
 
     let containers = $('.container');
     let header = document.getElementById('header');

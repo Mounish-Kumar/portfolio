@@ -16,6 +16,12 @@
     }
 }
 
+@mixin mobile-tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
 @mixin desktop {
     @media (min-width: 1025px) {
         @content;
@@ -45,6 +51,7 @@
     --page-heading-font-weight: 500;
     --page-heading-size: 4rem;
     --container-margin-tb: 4rem;
+    --container-margin-tb-neg: -4rem;
     --font-family-primary: 'Josefin Sans', sans-serif;
     --font-family-secondary: 'Open Sans', sans-serif;
 

@@ -2,20 +2,12 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171131121-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-171131121-1');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Mounish Kumar">
     <meta name="Description" content="Best portfolio website of a Fullstack Web Developer and Web Designer">
     <title>Mounish: Web Developer</title>
-    <link async href="./assets/images/logo.png" rel="shortcut icon" />
+    <link async href="./assets/images/logo.webp" rel="shortcut icon" />
     <link async href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -91,14 +83,14 @@
 
 <body class="light-theme">
     <div id="loader">
-        <img class="logo" src="./assets/images/logo.png" alt="MK">
+        <img class="logo" src="./assets/images/logo.webp" alt="MK">
         <span id="typing" data="mounish.dev, Web Developer, UI/UX Enthusiast"></span>
     </div>
 
     <div id="app" class="display-none">
         <header id="header">
             <a href="#home">
-                <img class="logo" src="./assets/images/logo.png" alt="MK">
+                <img class="logo" src="./assets/images/logo.webp" alt="MK">
             </a>
             <nav>
                 <ul>
@@ -144,14 +136,20 @@
 
 
         <div id="home" class="container">
-            <img src="./assets/images/mounish.png" alt="Mounish Kumar" />
+            <img src="./assets/images/mounish.webp" alt="Mounish Kumar"
+                class="anim-all" data-anim="hero"/>
             <div class="content">
-                <h2>Hey, I'm <span class="highlight">Mounish Kumar</span></h2>
-                <h1>Let's turn ideas<br> into reality</h1>
-                <h3>Full-stack Web Developer</h3>
+                <h2 class="anim-all" data-anim="up-all" data-delay="0.3s">
+                    Hey, I'm <span class="highlight">Mounish Kumar</span>
+                </h2>
+                <h1 class="anim-all" data-anim="up-all" data-delay="0.6s">
+                    Let's turn ideas<br> into reality
+                </h1>
+                <h3 class="anim-all" data-anim="up-all" data-delay="0.8s">Full-stack Web Developer</h3>
                 <div class="action">
-                    <a href="#about" class="btn">Know More</a>
-                    <a class="btn primary" onclick="downloadResume()">Resume</a>
+                    <a href="#about" class="btn anim-all" data-anim="up-all" data-delay="1s">Know More</a>
+                    <a class="btn primary anim-all" data-anim="up-all" onclick="downloadResume()"
+                        data-delay="1.2s">Resume</a>
                 </div>
             </div>
         </div>
@@ -159,8 +157,8 @@
 
         <div id="about" class="container">
             <section>
-                <h1>About Me</h1>
-                <p>
+                <h1 class="anim">About Me</h1>
+                <p class="anim" data-delay="0.3s">
                     Hello world! My name is Mounish Kumar.
                     I'm a Full-stack Web Developer and UI/UX Enthusiast based in Chennai, India.
                     I got a Bachelor of Engineering degree from Anna University.<br><br>
@@ -169,19 +167,19 @@
                 </p>
                 <div class="horizontal-scroll-m">
                     <ul id="services">
-                        <li>
+                        <li class="anim" data-delay="0.6s">
                             <i class="la la-code"></i>
                             <span class="label">Full-stack Web Development</span>
                         </li>
-                        <li>
+                        <li class="anim" data-delay="0.8s">
                             <i class="la la-laptop-code"></i>
                             <span class="label">Responsive Web Design</span>
                         </li>
-                        <li>
+                        <li class="anim" data-delay="1s">
                             <i class="la la-mobile"></i>
                             <span class="label">Progressive Web App</span>
                         </li>
-                        <li>
+                        <li class="anim" data-delay="1.2s">
                             <i class="la la-palette"></i>
                             <span class="label">Graphic Design</span>
                         </li>
@@ -192,12 +190,14 @@
 
 
         <div id="work" class="container">
-            <h1>My <span class="highlight">Work</span></h1>
+            <h1>
+                My <span class="highlight">Work</span>
+            </h1>
             <div class="wrapper horizontal-scroll-m">
                 <section data-tilt>
                     <p>August 2016 - Present</p>
                     <a href="https://www.centrico.tech" target="_blank" rel="noreferrer">
-                        <img src="./assets/images/centrico.png" alt="Centrico" class="company-logo" id="centrico">
+                        <img src="./assets/images/centrico.webp" alt="Centrico" class="company-logo" id="centrico">
                     </a>
                     <h1>Associate Developer</h1>
                     <div class="clients">
@@ -205,17 +205,17 @@
                         <ul>
                             <li>
                                 <a href="https://www.sella.it" target="_blank" rel="noreferrer">
-                                    <img src="./assets/images/sella.png" alt="Sella" id="sella">
+                                    <img src="./assets/images/sella.webp" alt="Sella" id="sella">
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.hype.it" target="_blank" rel="noreferrer">
-                                    <img src="./assets/images/hype.png" alt="Hype" id="hype">
+                                    <img src="./assets/images/hype.webp" alt="Hype" id="hype">
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.axerve.com/en" target="_blank" rel="noreferrer">
-                                    <img src="./assets/images/axerve.png" alt="Axerve" id="axerve">
+                                    <img src="./assets/images/axerve.webp" alt="Axerve" id="axerve">
                                 </a>
                             </li>
                         </ul>
@@ -224,7 +224,7 @@
                 <section data-tilt>
                     <p>April 2014 - July 2016</p>
                     <a href="https://www.wipro.com/en-IN" target="_blank" rel="noreferrer">
-                        <img src="./assets/images/wipro.png" alt="Wipro Technologies" class="company-logo" id="wipro">
+                        <img src="./assets/images/wipro.webp" alt="Wipro Technologies" class="company-logo" id="wipro">
                     </a>
                     <h1>Project Engineer</h1>
                     <div class="clients">
@@ -232,7 +232,7 @@
                         <ul>
                             <li>
                                 <a href="https://www.standardbank.co.za" target="_blank" rel="noreferrer">
-                                    <img src="./assets/images/sbsa.png" alt="Standard Bank" id="sbsa">
+                                    <img src="./assets/images/sbsa.webp" alt="Standard Bank" id="sbsa">
                                 </a>
                             </li>
                         </ul>
@@ -243,48 +243,50 @@
 
 
         <div id="skills" class="container">
-            <h1>My <span class="highlight">Skills</span></h1>
+            <h1 class="anim">
+                My <span class="highlight">Skills</span>
+            </h1>
             <div class="wrapper">
                 <section>
-                    <h1>Frontend</h1>
+                    <h1 class="anim" data-delay="0.2s">Frontend</h1>
                     <div class="horizontal-scroll-m">
                         <ul>
-                            <li tooltip="80%">
+                            <li tooltip="80%" class="anim" data-delay="0.4s">
                                 <div class="progress-bar" style="width: 80% !important"></div>
                                 <img src="./assets/images/skills/angular.png" alt="Angular">
                                 <span class="label">Angular</span>
                             </li>
-                            <li tooltip="60%">
-                                <div class="progress-bar" style="width: 60% !important"></div>
+                            <li tooltip="70%" class="anim" data-delay="0.6s">
+                                <div class="progress-bar" style="width: 70% !important"></div>
                                 <img src="./assets/images/skills/react.png" alt="React">
                                 <span class="label">React</span>
                             </li>
-                            <li tooltip="70%">
+                            <li tooltip="70%" class="anim" data-delay="0.8s">
                                 <div class="progress-bar" style="width: 70% !important"></div>
                                 <img src="./assets/images/skills/js.png" alt="JavaScript">
                                 <span class="label">JavaScript ES6</span>
                             </li>
-                            <li tooltip="80%">
-                                <div class="progress-bar" style="width: 80% !important"></div>
-                                <img src="./assets/images/skills/html.png" alt="HTML">
-                                <span class="label">HTML 5</span>
+                            <li tooltip="50%" class="anim" data-delay="1s">
+                                <div class="progress-bar" style="width: 50% !important"></div>
+                                <img src="./assets/images/skills/npm.png" alt="NPM">
+                                <span class="label">NPM</span>
                             </li>
-                            <li tooltip="80%">
+                            <li tooltip="80%" class="anim" data-delay="1.2s">
                                 <div class="progress-bar" style="width: 80% !important"></div>
                                 <img src="./assets/images/skills/css.png" alt="CSS">
-                                <span class="label">CSS 3</span>
+                                <span class="label">CSS</span>
                             </li>
-                            <li tooltip="80%">
+                            <li tooltip="80%" class="anim" data-delay="1.4s">
                                 <div class="progress-bar" style="width: 80% !important"></div>
-                                <img src="./assets/images/skills/sass.png" alt="Sass">
-                                <span class="label">Sass</span>
+                                <img src="./assets/images/skills/sass.png" alt="SASS">
+                                <span class="label">SASS</span>
                             </li>
-                            <li tooltip="70%">
-                                <div class="progress-bar" style="width: 70% !important"></div>
-                                <img src="./assets/images/skills/bootstrap.png" alt="Bootstrap">
-                                <span class="label">Bootstrap 4</span>
+                            <li tooltip="80%" class="anim" data-delay="1.6s">
+                                <div class="progress-bar" style="width: 80% !important"></div>
+                                <img src="./assets/images/skills/html.png" alt="HTML">
+                                <span class="label">HTML</span>
                             </li>
-                            <li tooltip="50%">
+                            <li tooltip="50%" class="anim" data-delay="1.8s">
                                 <div class="progress-bar" style="width: 50% !important"></div>
                                 <img src="./assets/images/skills/photoshop.png" alt="Adobe Photoshop">
                                 <span class="label">Photoshop</span>
@@ -293,47 +295,47 @@
                     </div>
                 </section>
                 <section>
-                    <h1>Backend</h1>
+                    <h1 class="anim" data-delay="0.2s">Backend</h1>
                     <div class="horizontal-scroll-m">
                         <ul>
-                            <li tooltip="70%">
+                            <li tooltip="70%" class="anim" data-delay="0.4s">
                                 <div class="progress-bar" style="width: 70% !important"></div>
                                 <img src="./assets/images/skills/java.png" alt="Java">
-                                <span class="label">Java 8</span>
+                                <span class="label">Java</span>
                             </li>
-                            <li tooltip="60%">
-                                <div class="progress-bar" style="width: 60% !important"></div>
-                                <img src="./assets/images/skills/spring_boot.png" alt="Spring Boot">
-                                <span class="label">Spring Boot</span>
-                            </li>
-                            <li tooltip="70%">
-                                <div class="progress-bar" style="width: 70% !important"></div>
-                                <img src="./assets/images/skills/spring.png" alt="Spring">
-                                <span class="label">Spring Data JPA</span>
-                            </li>
-                            <li tooltip="70%">
+                            <li tooltip="70%" class="anim" data-delay="0.6s">
                                 <div class="progress-bar" style="width: 70% !important"></div>
                                 <img src="./assets/images/skills/rest.png" alt="RESTful WS">
                                 <span class="label">RESTful WS</span>
                             </li>
-                            <li tooltip="50%">
+                            <li tooltip="60%" class="anim" data-delay="0.8s">
+                                <div class="progress-bar" style="width: 60% !important"></div>
+                                <img src="./assets/images/skills/spring_boot.png" alt="Spring Boot">
+                                <span class="label">Spring Boot</span>
+                            </li>
+                            <li tooltip="70%" class="anim" data-delay="1s">
+                                <div class="progress-bar" style="width: 70% !important"></div>
+                                <img src="./assets/images/skills/spring.png" alt="Spring">
+                                <span class="label">Spring Data JPA</span>
+                            </li>
+                            <li tooltip="50%" class="anim" data-delay="1.2s">
                                 <div class="progress-bar" style="width: 50% !important"></div>
                                 <img src="./assets/images/skills/sql.png" alt="SQL">
                                 <span class="label">Oracle SQL</span>
                             </li>
-                            <li tooltip="50%">
+                            <li tooltip="50%" class="anim" data-delay="1.4s">
                                 <div class="progress-bar" style="width: 50% !important"></div>
                                 <img src="./assets/images/skills/maven.png" alt="Maven">
                                 <span class="label">Maven</span>
                             </li>
-                            <li tooltip="50%">
+                            <li tooltip="50%" class="anim" data-delay="1.6s">
                                 <div class="progress-bar" style="width: 50% !important"></div>
                                 <img src="./assets/images/skills/git.png" alt="Git">
                                 <span class="label">Git</span>
                             </li>
-                            <li tooltip="50%">
+                            <li tooltip="50%" class="anim" data-delay="1.8s">
                                 <div class="progress-bar" style="width: 50% !important"></div>
-                                <img src="./assets/images/skills/svn.jpg" alt="SVN">
+                                <img src="./assets/images/skills/svn.webp" alt="SVN">
                                 <span class="label">SVN</span>
                             </li>
                         </ul>
@@ -346,31 +348,35 @@
         <div id="contact" class="container">
             <div class="wrapper">
                 <section>
-                    <h1>Contact Info</h1>
+                    <h1 class="anim">Contact Info</h1>
                     <ul class="content">
                         <li>
-                            <a href="mailto:contact@mounish.dev" target="_blank" rel="noreferrer">
+                            <a href="mailto:contact@mounish.dev" target="_blank" rel="noreferrer"
+                                class="anim" data-anim="right" data-delay="0.2s">
                                 <i class="la la-envelope"></i>
                             </a>
-                            <span>contact@mounish.dev</span>
+                            <span class="anim" data-anim="left" data-delay="0.2s">contact@mounish.dev</span>
                         </li>
                         <li>
-                            <a href="https://www.mounish.dev" target="_blank" rel="noreferrer">
+                            <a href="https://www.mounish.dev" target="_blank" rel="noreferrer"
+                                class="anim" data-anim="right" data-delay="0.4s">
                                 <i class="la la-globe-asia"></i>
                             </a>
-                            <span>www.mounish.dev</span>
+                            <span class="anim" data-anim="left" data-delay="0.4s">www.mounish.dev</span>
                         </li>
                         <li>
-                            <a href="tel:+919994444988" target="_blank" rel="noreferrer">
+                            <a href="tel:+919994444988" target="_blank" rel="noreferrer"
+                                class="anim" data-anim="right" data-delay="0.6s">
                                 <i class="la la-phone"></i>
                             </a>
-                            <span>+91 999 4444 988</span>
+                            <span class="anim" data-anim="left" data-delay="0.6s">+91 999 4444 988</span>
                         </li>
                         <li>
-                            <a href="https://goo.gl/maps/JLvnPFKH7LFKa5LC7" target="_blank" rel="noreferrer">
+                            <a href="https://goo.gl/maps/JLvnPFKH7LFKa5LC7" target="_blank" rel="noreferrer"
+                                class="anim" data-anim="right" data-delay="0.8s">
                                 <i class="la la-map-marker-alt"></i>
                             </a>
-                            <span>
+                            <span class="anim" data-anim="left" data-delay="0.8s">
                                 247, Rice Mill Road<br>
                                 Vinayagar Kovil Street 7<br>
                                 Moolapalayam, Erode<br>
@@ -379,32 +385,39 @@
                         </li>
                     </ul>
                     <ul class="icons">
-                        <li><a href="https://dribbble.com/Mounish" target="_blank" rel="noreferrer"><i class="la la-dribbble"></i></a></li>
-                        <li><a href="https://github.com/Mounish-Kumar" target="_blank" rel="noreferrer"><i class="la la-github"></i></a></li>
-                        <li><a href="https://api.whatsapp.com/send?phone=+919994444988" target="_blank" rel="noreferrer"><i
-                                    class="la la-whatsapp"></i></a></li>
-                        <li><a href="mailto:contact@mounish.dev" target="_blank" rel="noreferrer"><i class="la la-envelope"></i></a></li>
+                        <li class="anim" data-delay="0.2s">
+                            <a href="https://github.com/Mounish-Kumar" target="_blank" rel="noreferrer"><i class="la la-github"></i></a>
+                        </li>
+                        <li class="anim" data-delay="0.4s">
+                            <a href="https://dribbble.com/Mounish" target="_blank" rel="noreferrer"><i class="la la-dribbble"></i></a>
+                        </li>
+                        <li class="anim" data-delay="0.6s">
+                            <a href="https://api.whatsapp.com/send?phone=+919994444988" target="_blank" rel="noreferrer"><i class="la la-whatsapp"></i></a>
+                        </li>
+                        <li class="anim" data-delay="0.8s">
+                            <a href="mailto:contact@mounish.dev" target="_blank" rel="noreferrer"><i class="la la-envelope"></i></a>
+                        </li>
                     </ul>
                 </section>
                 <section>
-                    <h1>Let's Connect</h1>
+                    <h1 class="anim">Let's Connect</h1>
                     <form>
-                        <label name="name">
+                        <label name="name" class="anim" data-delay="0.2s">
                             <span class="label">Name</span>
                             <input type="text" onkeyup="validateField('name')">
                             <span class="field-message error hide"></span>
                         </label>
-                        <label name="email">
+                        <label name="email" class="anim" data-delay="0.4s">
                             <span class="label">Email</span>
                             <input type="text" onkeyup="validateField('email')">
                             <span class="field-message error hide"></span>
                         </label>
-                        <label name="mobile">
+                        <label name="mobile" class="anim" data-delay="0.6s">
                             <span class="label">Phone Number</span>
                             <input type="text" onkeyup="validateField('mobile')">
                             <span class="field-message error hide"></span>
                         </label>
-                        <label name="message">
+                        <label name="message" class="anim" data-delay="0.8s">
                             <span class="label">Message</span>
                             <textarea onkeyup="validateField('message')"></textarea>
                             <span class="field-message error hide"></span>
@@ -419,7 +432,8 @@
                             <i class="la la-times-circle"></i>
                             <span></span>
                         </span>
-                        <button name="send-message" class="btn primary" type="button" onclick="sendMessage()">
+                        <button name="send-message" class="btn primary anim" type="button" onclick="sendMessage()"
+                            data-delay="1s">
                             <span>SEND</span>
                             <i class="la la-rocket"></i>
                         </button>
@@ -429,8 +443,15 @@
         </div>
     </div>
 
-    <script src="./scripts/page-loading-animation.js"></script>
-    <script src="./scripts/app.js"></script>
+    <script async src="./scripts/page-loading-animation.js"></script>
+    <script async src="./scripts/app.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171131121-1"></script>
+    <script async>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-171131121-1');
+    </script>
 </body>
 
 </html>
