@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.mounish.portfolio.common.PageRequestBuilder;
@@ -44,7 +43,7 @@ public class DocumentController {
 	SpecificationBuilder specificationBuilder;
 	
 	@PostMapping
-	@ResponseBody ResponseEntity<Object> saveDocument(@Valid @RequestBody final DocumentDTO documentDTO) {
+	ResponseEntity<Object> saveDocument(@Valid @RequestBody final DocumentDTO documentDTO) {
 		LOG.debug(" ::: DocumentController >> saveDocument >> documentDTO : ", documentDTO);
 		ResponseEntity<Object> responseEntity = null;
 		Document document = new Document();
@@ -57,7 +56,7 @@ public class DocumentController {
 	}
 	
 	@PostMapping("/search")
-	@ResponseBody ResponseEntity<Object> getDocuments(@RequestBody final SearchRequest searchRequest) {
+	ResponseEntity<Object> getDocuments(@RequestBody final SearchRequest searchRequest) {
 		LOG.debug(" ::: DocumentController >> getDocuments >> searchRequest : ", searchRequest);
 		ResponseEntity<Object> responseEntity = null;
 		PageRequest pageRequest = PageRequestBuilder.createPageRequest(searchRequest);
@@ -95,7 +94,7 @@ public class DocumentController {
 	}
 	
 	@GetMapping("/resume")
-	@ResponseBody ResponseEntity<Object> downloadLatestResume() {
+	ResponseEntity<Object> downloadLatestResume() {
 		LOG.debug(" ::: DocumentController >> downloadLatestResume");
 		ResponseEntity<Object> responseEntity = null;
 		List<Document> documents = documentRepository.findByKeyOrderByCreationDateDesc("RESUME");
@@ -110,7 +109,7 @@ public class DocumentController {
 	}
 	
 	@GetMapping("/download/{id}")
-	@ResponseBody ResponseEntity<Object> downloadDocument(@PathVariable final Long id) {
+	ResponseEntity<Object> downloadDocument(@PathVariable final Long id) {
 		LOG.debug(" ::: DocumentController >> downloadDocument >> id : " + id);
 		ResponseEntity<Object> responseEntity = null;
 		Document document = documentRepository.getOne(id);
@@ -124,7 +123,7 @@ public class DocumentController {
 	}
 	
 	@DeleteMapping("/{id}")
-	@ResponseBody ResponseEntity<Object> deleteDocument(@PathVariable final Long id) {
+	ResponseEntity<Object> deleteDocument(@PathVariable final Long id) {
 		LOG.debug(" ::: DocumentController >> deleteDocument >> id : " + id);
 		ResponseEntity<Object> responseEntity = null;
 		if(documentRepository.existsById(id)) {

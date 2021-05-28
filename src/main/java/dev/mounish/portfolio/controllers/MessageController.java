@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.mounish.portfolio.common.PageRequestBuilder;
@@ -44,7 +43,7 @@ public class MessageController {
 	EmailService emailService;
 	
 	@PostMapping("/send")
-	@ResponseBody ResponseEntity<Object> sendMessage(@Valid @RequestBody final Message message) {
+	ResponseEntity<Object> sendMessage(@Valid @RequestBody final Message message) {
 		LOG.debug(" ::: MessageController >> sendMessage >> message : ", message);
 		ResponseEntity<Object> responseEntity = null;
 		Message savedMessage = messageRepository.save(message);
@@ -89,7 +88,7 @@ public class MessageController {
 	}
 	
 	@PostMapping("/search")
-	@ResponseBody ResponseEntity<Object> getMessages(@RequestBody final SearchRequest searchRequest) {
+	ResponseEntity<Object> getMessages(@RequestBody final SearchRequest searchRequest) {
 		LOG.debug(" ::: MessageController >> getMessages >> searchRequest : ", searchRequest);
 		ResponseEntity<Object> responseEntity = null;
 		PageRequest pageRequest = PageRequestBuilder.createPageRequest(searchRequest);
@@ -110,7 +109,7 @@ public class MessageController {
 	}
 	
 	@DeleteMapping("/{id}")
-	@ResponseBody ResponseEntity<Object> deleteMessage(@PathVariable final Long id) {
+	ResponseEntity<Object> deleteMessage(@PathVariable final Long id) {
 		LOG.debug(" ::: MessageController >> deleteMessage >> id : " + id);
 		ResponseEntity<Object> responseEntity = null;
 		if(messageRepository.existsById(id)) {
