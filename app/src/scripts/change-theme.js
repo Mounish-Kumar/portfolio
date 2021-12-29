@@ -1,3 +1,4 @@
+import walmartImg from "../assets/images/walmart.webp";
 import centricoImg from "../assets/images/centrico.webp";
 import sellaImg from "../assets/images/sella.webp";
 import fabrickImg from "../assets/images/fabrick.webp";
@@ -5,6 +6,7 @@ import hypeImg from "../assets/images/hype.webp";
 import axerveImg from "../assets/images/axerve.webp";
 import wiproImg from "../assets/images/wipro.webp";
 import sbsaImg from "../assets/images/sbsa.webp";
+import walmartWhiteImg from "../assets/images/walmart_white.webp";
 import centricoWhiteImg from "../assets/images/centrico_white.webp";
 import sellaWhiteImg from "../assets/images/sella_white.webp";
 import fabrickWhiteImg from "../assets/images/fabrick_white.webp";
@@ -36,6 +38,7 @@ var changeImages = function (theme) {
 
   switch (theme) {
     case "light-theme":
+      document.getElementById("walmart").src = walmartImg;
       document.getElementById("centrico").src = centricoImg;
       document.getElementById("sella").src = sellaImg;
       document.getElementById("fabrick").src = fabrickImg;
@@ -46,6 +49,7 @@ var changeImages = function (theme) {
       break;
 
     case "dark-theme":
+      document.getElementById("walmart").src = walmartWhiteImg;
       document.getElementById("centrico").src = centricoWhiteImg;
       document.getElementById("sella").src = sellaWhiteImg;
       document.getElementById("fabrick").src = fabrickWhiteImg;

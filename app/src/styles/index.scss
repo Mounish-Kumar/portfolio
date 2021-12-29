@@ -1,52 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 @import "root.scss";
 
-
 .light-theme {
-    $colors: (
-        brand: #ff1744,
-        brand-secondary: #ff8800,
-        text: #212121,
-        text-secondary: #9e9e9e,
-        text-inverse: #fff,
-        home-bg: linear-gradient(to bottom, rgba(#eee, 0.9), rgba(#fff, 0.85)),
-        home-img: url(/assets/images/home_light.webp),
-        btn-bg: linear-gradient(45deg, #e0e0e0, #e0e0e0, #fff, #e0e0e0, #e0e0e0),
-        bg: #eee,
-        card: #fff,
-        input-bg: #eee,
-        border-bg: rgba(#000, 0.2)
-    );
+  $colors: (
+    brand: #ff1744,
+    brand-secondary: #ff8800,
+    text: #212121,
+    text-secondary: #9e9e9e,
+    text-inverse: #fff,
+    home-bg: linear-gradient(to bottom, rgba(#eee, 0.9), rgba(#fff, 0.85)),
+    home-img: url(/assets/images/home_light.webp),
+    btn-bg: linear-gradient(45deg, #e0e0e0, #e0e0e0, #fff, #e0e0e0, #e0e0e0),
+    bg: #eee,
+    card: #fff,
+    card-transparent: rgba(#fff, 0.7),
+    input-bg: #eee,
+    border-bg: rgba(#000, 0.2),
+  );
 
-    @function color($color-name) {
-        @return map-get($colors, $color-name);
-    }
+  @function color($color-name) {
+    @return map-get($colors, $color-name);
+  }
 
-    color: color(text);
-    @import "main.scss";
+  color: color(text);
+  @import "main.scss";
 }
 
-
 .dark-theme {
-    $colors: (
-        brand: #ff1744,
-        brand-secondary: #ff8800,
-        text: #fff,
-        text-secondary: #9e9e9e,
-        text-inverse: #fff,
-        home-bg: linear-gradient(to bottom, rgba(#000, 0.95), rgba(#000, 0.75)),
-        home-img: url(/assets/images/home_dark.webp),
-        btn-bg: linear-gradient(45deg, #000, #000, #181818, #000, #000),
-        bg: #181818,
-        card: #2e2e2e,
-        input-bg: #181818,
-        border-bg: rgba(#000, 0.6)
-    );
+  $colors: (
+    brand: #ff1744,
+    brand-secondary: #ff8800,
+    text: #fff,
+    text-secondary: #9e9e9e,
+    text-inverse: #fff,
+    home-bg: linear-gradient(to bottom, rgba(#000, 0.95), rgba(#000, 0.75)),
+    home-img: url(/assets/images/home_dark.webp),
+    btn-bg: linear-gradient(45deg, #000, #000, #181818, #000, #000),
+    bg: #181818,
+    card: #2e2e2e,
+    card-transparent: rgba(#2e2e2e, 0.7),
+    input-bg: #181818,
+    border-bg: rgba(#000, 0.6),
+  );
 
-    @function color($color-name) {
-        @return map-get($colors, $color-name);
-    }
+  @function color($color-name) {
+    @return map-get($colors, $color-name);
+  }
 
-    color: color(text);
-    @import "main.scss";
+  color: color(text);
+  @import "main.scss";
 }
